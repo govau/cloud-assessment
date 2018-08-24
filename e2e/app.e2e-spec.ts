@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('ccfa App', () => {
+describe('cloud-assessment App', () => {
   let page: AppPage;
 
   beforeEach(() => {
