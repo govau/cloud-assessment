@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-xs-8">
+    <h1>
+      About the product
+    </h1>
+
+    <p>
+      Description text Ut facilisis pulvinar interdum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+      ac turpis egestas. Phasellus pretium nibh nibh, eget ultricies lorem rhoncus eget. Maecenas in rutrum velit. Nunc vehicula
+      ut sapien ac tristique. Suspendisse viverra velit quis enim porta pellentesque. Fusce quis dictum neque. Nam laoreet
+      sagittis nibh, eu maximus turpis ultricies in. Sed tincidunt lacus ac tempor viverra. Nunc quis nibh erat. Nullam eu
+      dolor felis. Maecenas id facilisis eros. Nulla vehicula, lorem non consequat semper, odio mauris mollis mauris, eu
+      eleifend dui massa id purus. Morbi sit amet bibendum urna, a gravida nisl.
+    </p>
+
+    <form #form="ngForm">
+      <h3>
+        What sort of cloud service are you assessing?
+      </h3>
+
+      <div>
+        <h1>What is the name of the product?</h1>
+        <input 
+          type="text" placeholder="Enter product name here" 
+          [(ngModel)]="productName" required name="productName" #productNameModel="ngModel"
+          minlength="4" required>
+        <div *ngIf="productNameModel.invalid && form.submitted" class="alert alert-danger">
+          <div *ngIf="productNameModel.errors.required">
+            Name is required.
+          </div>
+          <div *ngIf="productNameModel.errors.minlength">
+            Name must be at least 4 characters long.
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h1>How many users will need the product?</h1>
+        <input type="text" placeholder="Enter number of user here" [(ngModel)]="numberOfUser" name="numberOfUser">
+      </div>
+
+      <div>
+        <h1>What is your primary purpose for using for this product?</h1>
+        <textarea type="text" style="width:250px;height:150px;" placeholder="Provide a brief description of the main purpose for using this product."
+          [(ngModel)]="productBrief" name="productBrief"></textarea>
+      </div>
+
+      <app-question-direction-button (goNextButtonClick)='goNext()'>
+      </app-question-direction-button>
+    </form>
+  </div>
+
+  <div class="col-xs-4">
+    <h1>Help section</h1>
+    <p>Sed finibus placerat erat a tempor. Sed malesuada fermentum tincidunt. Duis at mollis orci. Phasellus pretium, urna
+      a feugiat semper, urna dui consectetur mi, pretium tincidunt sem enim nec justo. Interdum et malesuada fames ac ante
+      ipsum primis in faucibus.
+    </p>
+    <h1><a href="#">More info</a></h1>
+  </div>
+</div>
