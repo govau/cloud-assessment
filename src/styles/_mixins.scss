@@ -1,0 +1,210 @@
+$global-container-width: 79%;
+$global-container-width-mobile: 89.4%;
+$global-max-form-input-width: 500px;
+$global-input-elements-height-px: 50px;
+$global-button-height-px: $global-input-elements-height-px;
+$global-form-input-fontsize-px: 16px;
+
+@mixin flex-container($min-width: 100%) {
+  display: flex;
+  min-width: $min-width;
+}
+
+@mixin centered-flex-container($min-width: $global-container-width) {
+  @include flex-container($min-width);
+  align-items: center;
+}
+
+@mixin uikit-link-reset() {
+  transition: none !important;
+  border-bottom: none !important;
+  text-decoration: inherit !important;
+  color: inherit !important;
+
+  &:hover,
+  &:focus {
+    background: inherit !important;
+    border-color: inherit !important;
+  }
+}
+
+@mixin uikit-list-reset($rootMargin: 0) {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: $rootMargin !important;
+
+  > li {
+    margin-bottom: 0 !important;
+
+    > ol,
+    > ul {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+@mixin grid-background($color: $uikit-colour-Border) {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="2" width="2"><rect width="1" height="1" fill="#{ $color }"/></svg>');
+  background-repeat: repeat;
+  background-position: 1px 1px;
+}
+
+$browser-context: 16;
+@function em($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1em;
+}
+
+@mixin set-fontsize-lineheight-in-em($fontsize-px, $lineheight-px) {
+  font-size: em($fontsize-px);
+  line-height: em($lineheight-px, $fontsize-px);
+}
+
+@mixin summary-list-container {
+  border: 1px solid #CCC;
+  margin: 0 0 em(20px) 0;
+  border-radius: 3px;
+  box-shadow: 0 3px 1px 0 #f3f0ed;
+
+  @media all and (min-width: $uikit-media-sm) {
+    margin-bottom: em(40px);
+  }
+}
+
+@mixin summary-list-header($add-border-bottom) {
+  $local-fontsize: 16px;
+  font-size: $local-fontsize;
+  background-color: $uikit-colour-Background;
+  padding: em(15px, $local-fontsize);
+  line-height: em(19px, $local-fontsize);
+  margin: 0;
+
+  @if $add-border-bottom == true {
+    border-bottom: 1px solid #CCC;
+  } @else {
+    border-bottom: none;
+  }
+
+  @media all and (min-width: $uikit-media-xs) {
+    $local-fontsize: 18px;
+    font-size: $local-fontsize;
+    line-height: em(22px, $local-fontsize);
+    padding: em(15px, $local-fontsize) em(20px, $local-fontsize);
+  }
+}
+
+@mixin summary-list-list($padding-left-mobile: 12px, $padding-left-desktop: 20px) {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 em($padding-left-mobile);
+
+  @media all and (min-width: $uikit-media-xs) {
+    padding: 0 em($padding-left-desktop);
+  }
+}
+
+@mixin summary-list-listitem($add-border-to-last-item: false) {
+  $local-padding-top: 15px;
+  position: relative;
+  padding: em($local-padding-top) 0;
+  border-bottom: 1px solid #DDDDDD;
+  margin: 0;
+
+  &:last-child {
+    @if($add-border-to-last-item == false) {
+      border: none;
+    }
+  }
+}
+
+@mixin prefixSmallIcon($path) {
+  content: ' ';
+  display: inline-block;
+  vertical-align: text-top;
+  background-image: url($path);
+  background-repeat: no-repeat;
+}
+
+@mixin infoBiteIcon($path) {
+  $local-fontsize: 14px;
+
+  @include prefixSmallIcon($path);
+  width: em(20px, $local-fontsize);
+  height: em(20px, $local-fontsize);
+  margin-right: em(5px, $local-fontsize);
+}
+
+@mixin document-icon($icon) {
+  content: ' ';
+  display: inline-block;
+  vertical-align: text-bottom;
+  width: em(17px);
+  height: em(20px);
+  background-image: url($icon);
+  background-repeat: no-repeat;
+  margin-right: 10px;
+}
+
+@mixin document-type-classes() {
+  &.pdf:before {
+    @include document-icon('assets/svg/pdf-icon.svg');
+  }
+
+  &.jpeg:before {
+    @include document-icon('assets/svg/jpeg-icon.svg');
+  }
+}
+
+@mixin table-outline() {
+  border-radius: 3px;
+  border-collapse: collapse;
+  box-shadow: 0 0 0 1px #CCCCCC, 0 3px 1px 1px #F3F0ED;
+}
+
+@mixin table-heading() {
+  background-color: $uikit-colour-Background;
+  line-height: em(20px);
+  font-weight: bold;
+  border-bottom: solid 1px #CCCCCC;
+}
+
+@mixin set-desktop-width($desktop-width-px) {
+  @media all and (min-width: $uikit-media-xs) {
+    max-width: em($desktop-width-px, $global-form-input-fontsize-px);
+  }
+}
+
+@mixin set-section-header-prompt-page() {
+  margin-top: em(30px, 20px);
+  @media all and (min-width: $uikit-media-xs) {
+    margin-top: em(50px, 25px);
+  }
+}
+
+@mixin accordion-group() {
+  moa-accordion {
+    &:first-of-type .root{
+      border-radius: 3px 3px 0 0;
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    &:last-of-type .root{
+      border-radius: 0 0 3px 3px;
+      margin-bottom: 0;
+    }
+
+    &:not(:first-of-type):not(:last-of-type) .root{
+      border-radius: 0;
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+  }
+}
