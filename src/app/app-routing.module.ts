@@ -4,6 +4,7 @@ import { ROUTE_PATH } from './Routes';
 
 import { HomeComponent } from './layouts/home/home.component';
 import { AboutComponent } from './layouts/about/about.component';
+import { ContactComponent } from './layouts/contact/contact.component';
 import { DataSecurityComponent } from './layouts/accessment/data-security/data-security.component';
 import { TypeOfCloudServiceComponent } from './layouts/accessment/type-of-cloud-service/type-of-cloud-service.component';
 import { AboutTheProductComponent } from './layouts/accessment/about-the-product/about-the-product.component';
@@ -11,6 +12,7 @@ import { AboutTheProductComponent } from './layouts/accessment/about-the-product
 const routes: Routes = [
     { path: ROUTE_PATH.HOME, component: HomeComponent },
     { path: ROUTE_PATH.ABOUT, component: AboutComponent },
+    { path: ROUTE_PATH.CONTACT, component: ContactComponent },
     {
         path: ROUTE_PATH.ACCESSMENT,
         children: [

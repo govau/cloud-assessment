@@ -1,3 +1,7 @@
+@import '../../../styles/global-includes';
+
 header {
     padding-bottom: 0px;
+    border-bottom: solid $cloud-blue;
+    @include rem(border-bottom-width, 8px);
 }

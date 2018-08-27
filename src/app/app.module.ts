@@ -21,6 +21,7 @@ import { AboutComponent } from './layouts/about/about.component';
 import { DataSecurityComponent } from './layouts/accessment/data-security/data-security.component';
 import { TypeOfCloudServiceComponent } from './layouts/accessment/type-of-cloud-service/type-of-cloud-service.component';
 import { AboutTheProductComponent } from './layouts/accessment/about-the-product/about-the-product.component';
+import { ContactComponent } from './layouts/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { AboutTheProductComponent } from './layouts/accessment/about-the-product
     DataSecurityComponent,
     TypeOfCloudServiceComponent,
     AboutTheProductComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

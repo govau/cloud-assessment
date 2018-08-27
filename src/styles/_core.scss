@@ -1,0 +1,5 @@
+@import '/global-includes';
+
+.main {
+  @include rem(margin, 50px 0px);
+}

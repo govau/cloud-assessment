@@ -1,7 +1,33 @@
+@import '../../../styles/global-includes';
+
 #mainmenu {
-  padding-top: 32px;
+  @include rem(padding-top, 32px);
+  overflow: visible;
+}
+
+.mainmenu-right {
+  float: right;
 }
 
 ul.navbar-nav {
   padding-left: 0px;
+}
+
+.navigation {
+  .au-link-list--inline {
+    @include rem(margin-bottom, 8px);
+     > li {
+      margin: 0px;
+      > a {
+        text-decoration: none;
+        @include rem(padding, 16px 16px 15px 16px);
+        @include rem(border-bottom-width, 8px);
+      }
+      &.active a {
+        color: #fff;
+        border-bottom: solid #fff;
+        @include rem(border-bottom-width, 8px);
+      }
+    }
+  }
 }
