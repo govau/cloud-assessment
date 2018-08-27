@@ -1,0 +1,7 @@
+@import 'colors';
+@import 'breakpoints';
+@import 'mixins';
+
+// uikit stuff needs the other vars defined first, otherwise it will use the uikit defaults
+@import "../../node_modules/sass-versioning/dist/_index.scss";
+@import "../../node_modules/@gov.au/core/lib/sass/_module.scss";
