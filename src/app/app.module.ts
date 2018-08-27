@@ -14,14 +14,16 @@ import { SiteFooterComponent } from './components/site-footer/site-footer.compon
 import { NaviComponent } from './components/navi/navi.component';
 import { QuestionDirectionButtonComponent } from './components/question-direction-button/question-direction-button.component';
 import { HelpSectionComponent } from './components/help-section/help-section.component';
-
+// page
 import { HomeComponent } from './layouts/home/home.component';
+import { AccessmentComponent } from "./layouts/accessment/accessment.component";
 import { AboutComponent } from './layouts/about/about.component';
-// Accessment
+import { ContactComponent } from './layouts/contact/contact.component';
+// accessment question
 import { DataSecurityComponent } from './layouts/accessment/data-security/data-security.component';
 import { TypeOfCloudServiceComponent } from './layouts/accessment/type-of-cloud-service/type-of-cloud-service.component';
 import { AboutTheProductComponent } from './layouts/accessment/about-the-product/about-the-product.component';
-import { ContactComponent } from './layouts/contact/contact.component';
+import { CloudAssesmentReportComponent } from './layouts/accessment/cloud-assesment-report/cloud-assesment-report.component';
 
 @NgModule({
   declarations: [
@@ -33,11 +35,14 @@ import { ContactComponent } from './layouts/contact/contact.component';
     HelpSectionComponent,
 
     HomeComponent,
+    AccessmentComponent,
     AboutComponent,
+    ContactComponent,
+
     DataSecurityComponent,
     TypeOfCloudServiceComponent,
     AboutTheProductComponent,
-    ContactComponent,
+    CloudAssesmentReportComponent,
   ],
   imports: [
     BrowserModule,

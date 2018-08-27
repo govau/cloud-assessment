@@ -37,7 +37,7 @@ export class AboutTheProductComponent implements OnInit {
       // this.formDataService.setProductName(this.productName);
       // this.formDataService.setNumberOfUser(this.numberOfUser);
       // this.formDataService.setProductBrief(this.productBrief);
-      this.router.navigate([ROUTE_PATH.ACCESSMENT, ROUTE_PATH.HOME]);
+      this.router.navigate([ROUTE_PATH.ACCESSMENT, ROUTE_PATH.CLOUD_ASSESMENT_REPORT]);
     } else {
       console.log('AboutTheProductComponent form invalid');
     }
