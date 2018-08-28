@@ -1,0 +1,16 @@
+@import '../../../styles/global-includes';
+.main {
+    margin-top: 0px;
+}
+.row {
+    @include rem(padding, 50px);
+}
+.highlight {
+    background-color: $cloud-light-grey;
+    .au-responsive-media-img {
+        width: 100%;
+    }
+}
+p.cta {
+    @include rem(margin-top, 48px);
+}

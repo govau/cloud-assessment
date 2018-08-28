@@ -3,6 +3,10 @@
 #mainmenu {
   @include rem(padding-top, 32px);
   overflow: visible;
+  .container {
+    @include rem(padding-left, 62px);
+    @include rem(padding-right, 62px);
+  }
 }
 
 .mainmenu-right {

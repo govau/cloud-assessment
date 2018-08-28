@@ -1,5 +1,14 @@
 @import '/global-includes';
 
+// .main {
+//   @include rem(margin, 50px 0px);
+// }
+
 .main {
-  @include rem(margin, 50px 0px);
+  .row {
+    @include rem(padding, 50px);
+  }
+  h1, h2, h3 {
+    font-weight: normal;
+  }
 }

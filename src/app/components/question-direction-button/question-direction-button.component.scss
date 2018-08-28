@@ -1,0 +1,21 @@
+@import '../../../styles/global-includes';
+
+.form-navigation {
+    @include rem(margin-top, 32px);
+    @include rem(padding, 0px 0px 32px);
+    border-top: 1px solid $cloud-teal;
+    .col-xs-6 {
+        padding: 0px;
+        &:first-child {
+            border-right: 1px solid $cloud-light-grey;
+        }
+    }
+    .au-direction-link {
+        font-size: 1.25rem;
+        @include rem(padding-top, 16px);
+        float:right;
+        &.au-direction-link--left {
+            float: left;
+        }
+    }
+}

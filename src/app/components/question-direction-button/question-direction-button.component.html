@@ -1,11 +1,6 @@
-<div>
-  <hr>
-  <button 
-    type="button"
-    class="au-direction-link au-direction-link--left" 
-    (click)="goPrevious()">Previous</button>
-  <button 
-    type="submit"
-    class="au-direction-link" 
-    (click)='goNext()'>Next</button>
+<div class="row form-navigation">
+  <div class="col-xs-6"><button type="button" class="au-direction-link au-direction-link--left" (click)="goPrevious()">Previous</button></div>
+  <div class="col-xs-6">
+    <button type="submit" class="au-direction-link" (click)='goNext()'>Next</button>
+  </div>
 </div>

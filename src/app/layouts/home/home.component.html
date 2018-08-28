@@ -1,16 +1,25 @@
-<div style="text-align:center">
-    <h1>
-      Welcome to {{ title }}!
-    </h1>
-    <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="row highlight">
+  <div class="col-sm-12 col-md-6 col-md-push-6">
+    <img class="au-responsive-media-img" src="http://placehold.it/350x150" alt="Brand image">
+  </div>
+  <div class="intro__text col-sm-12 col-md-5 col-md-pull-6">
+    <h2>Start a new assessment
+    </h2>
+    <p>To get started, you'll need to know the following:</p>
+    <ul>
+      <li>The product or service that you would like to assess</li>
+      <li>The classification requirements for your data</li>
+    </ul>
+    <p class="cta">
+      <button class="au-btn  au-btn--primary" (click)="startAccessment()">Get started</button>
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <h2>About the framework</h2>
+    <p class="cta">
+      <button class="au-btn  au-btn--secondary" (click)="learnMore()">Learn more</button></p>
   </div>
 
-<p>
-  home works!
-</p>
-<button (click)="startAccessment()">Get started</button>
-
-<p>
-  About the framework
-</p>
-<button (click)="learnMore()">Learn more</button>
+</div>

@@ -1,0 +1,9 @@
+@import '../../../styles/global-includes';
+
+
+.help-text {
+    background-color: $cloud-light-grey;
+    @include rem(padding, 32px);
+    border-left: solid $cloud-dark-grey;
+    @include rem(border-right-width, 4px);
+}
