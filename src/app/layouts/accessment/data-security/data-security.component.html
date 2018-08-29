@@ -3,7 +3,6 @@
     <h1>
       Data security
     </h1>
-
     <p>
       Description text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu ex lacus. Curabitur nibh enim, fringilla
       quis lectus ac, semper luctus diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras non orci a felis
@@ -12,12 +11,9 @@
       tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque habitant morbi tristique senectus et
       netus et malesuada fames ac turpis egestas. Pellentesque pellentesque arcu et consectetur accumsan.
     </p>
+    <app-form-radio-question></app-form-radio-question>
 
     <form #form="ngForm">
-      <h3>
-        What level of protection does your data require?
-      </h3>
-
       <div>
         <label *ngFor="let option of options;">
           <input type="radio" [value]="option" [(ngModel)]="selectedOption" required #dataSecurity="ngModel" name="dataSecurity">

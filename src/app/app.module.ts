@@ -24,6 +24,7 @@ import { DataSecurityComponent } from './layouts/accessment/data-security/data-s
 import { TypeOfCloudServiceComponent } from './layouts/accessment/type-of-cloud-service/type-of-cloud-service.component';
 import { AboutTheProductComponent } from './layouts/accessment/about-the-product/about-the-product.component';
 import { CloudAssesmentReportComponent } from './layouts/accessment/cloud-assesment-report/cloud-assesment-report.component';
+import { FormRadioQuestionComponent } from './components/form-radio-question/form-radio-question.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { CloudAssesmentReportComponent } from './layouts/accessment/cloud-assesm
     TypeOfCloudServiceComponent,
     AboutTheProductComponent,
     CloudAssesmentReportComponent,
+    FormRadioQuestionComponent,
   ],
   imports: [
     BrowserModule,
