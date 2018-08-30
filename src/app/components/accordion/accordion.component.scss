@@ -1,0 +1,107 @@
+// @import '../../../styles/global-includes';
+
+// $accordion-border-radius: 3px;
+// $accordion-border-radius-inner: $accordion-border-radius - 1;
+
+// @mixin chevron($imgPath) {
+//   content: ' ';
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   right: 1.25em;
+//   width: 1.2em;
+//   background-image: url($imgPath);
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   z-index: 0;
+//   transition: transform 0.25s ease-in;
+// }
+
+// .root {
+//   @include summary-list-container();
+
+//   .header {
+//     position: relative;
+//     border-radius: 3px;
+//     cursor: pointer;
+
+//     h4 {
+//       @include summary-list-header($add-border-bottom: false);
+
+//       &.responsive{
+//         @media all and (max-width: $uikit-media-md) {
+//           display: none;
+//         }
+
+//         @media all and (min-width: $uikit-media-md) {
+//           display: block;
+//         }
+//       }
+//     }
+
+//     .stacked {
+//       @include summary-list-header($add-border-bottom: false);
+//       padding: em(11px) em(15px);
+
+//       .top {
+//         font-weight: bold;
+//         padding: 0;
+//         line-height: em(22px);
+//       }
+
+//       .bottom {
+//         padding: 0;
+//         color: #4A4A4A;
+//         font-size: em(14px);
+//         font-weight: normal;
+//         line-height: em(19px);
+//         letter-spacing: em(-0.1px);
+//       }
+
+//       &.responsive{
+//         @media all and (max-width: $uikit-media-md) {
+//           display: block;
+//         }
+
+//         @media all and (min-width: $uikit-media-md) {
+//           display: none;
+//         }
+//       }
+//     }
+
+//     &:after {
+//       @include chevron('../../../assets/svg/chevron-down.svg');
+//     }
+
+//     &.open {
+//       border-radius: $accordion-border-radius-inner $accordion-border-radius-inner 0 0;
+//       &:after {
+//         transform: rotate(-180deg);
+//       }
+//     }
+
+//     &:hover, &:focus {
+//       background-color: #CCC;
+//     }
+//   }
+
+//   .body {
+//     display: none;
+
+//     &.open {
+//       display: block;
+//       border-top: 1px solid #CCC;
+//       font-size: 1em;
+//     }
+//   }
+// }
+
+// // Todo: Potentially refactor so that accordion body
+// //       is part of the accordion template.
+// :host {
+//   ::ng-deep {
+//     .accordion-body {
+//       padding: 0 em(15px);
+//     }
+//   }
+// }

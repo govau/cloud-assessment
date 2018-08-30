@@ -1,17 +1,63 @@
 <div>
   <h1>Cloud assesment report</h1>
-  <p>One morning, when Gregor Samsa woke from troubled 
-    dreams, he found himself transformed in his bed into 
-    a horrible vermin. He lay on his armour-like back, 
-    and if he lifted his head a little he could see his 
-    brown belly, slightly domed and divided by arches into 
-    stiff sections. The bedding was hardly able to cover 
-    <strong>strong</strong> it and seemed ready to slide 
-    off any moment. His many legs, pitifully thin 
-    compared with the size of the rest of him, waved about 
-    helplessly as he looked. "What's happened to me? " he 
-    thought. It wasn't a dream. His room, a proper human 
-    room although a little too small, lay peacefully 
-    between its four familiar walls.</p>
+  <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
+    He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided
+    by arches into stiff sections. The bedding was hardly able to cover
+    <strong>strong</strong> it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of
+    the rest of him, waved about helplessly as he looked. "What's happened to me? " he thought. It wasn't a dream. His room,
+    a proper human room although a little too small, lay peacefully between its four familiar walls.</p>
   <button type="button" (click)="printReport()">Print report</button>
 </div>
+
+<pre>{{ formData | json }}</pre>
+
+<app-accordion></app-accordion>
+
+<!-- <div class='ci--accordion root'>
+  <div
+    [ngClass]='{ "header": true, "open": open }'
+    (click)='toggleAccordion()'
+    role='heading'>
+    <h4
+      *ngIf='header'
+      [ngClass]='{ "responsive": hasResponsiveHeader }'>
+      {{ header }}
+    </h4>
+    <div
+      *ngIf='stackedHeader'
+      class='stacked'
+      [ngClass]='{ "responsive": hasResponsiveHeader }'>
+      <h4 class='top'>{{ stackedHeader.top }}</h4>
+      <h4 class='bottom'>{{ stackedHeader.bottom }}</h4>
+    </div>
+  </div>
+  <div
+    class='body'
+    [ngClass]='{ "open": open }'
+    [attr.aria-hidden]='!open'
+    [attr.aria-expanded]='open'
+    role='region'>
+    <ng-content></ng-content>
+  </div>
+</div>
+
+<app-accordion
+  *ngFor='let item of carePlans' [open]='false' [hasResponsiveHeader]='true' [header]='getHeader(item)' [stackedHeader]='{
+  top: getMobileHeader(item), bottom: item.name.toUpperCase() }'>
+  <div class='accordion-body'>
+    <span class='dateRange'> Start date:
+      <strong>17 January 2018</strong>
+    </span>
+    <h4 class='summary-header'>This care plan was accessed on:</h4>
+    <table class="access-history-summary">
+      <tbody>
+        <tr class="summary-row">
+          <td class="access-history-date">16 September 2018</td>
+          <td class="access-history-time">
+            <span>10:47:20 AEST</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</app-accordion> -->

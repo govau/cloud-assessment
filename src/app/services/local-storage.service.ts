@@ -10,7 +10,7 @@ export class LocalStorageService {
 
     set(data: any): void {
         try {
-            localStorage.setItem(this.localStorageKey, JSON.stringify(data));
+            window.localStorage.setItem(this.localStorageKey, JSON.stringify(data));
         } catch (e) {
             console.error('Error saving to localStorage', e);
         }
@@ -18,7 +18,7 @@ export class LocalStorageService {
 
     get() {
         try {
-            return JSON.parse(localStorage.getItem(this.localStorageKey));
+            return JSON.parse(window.localStorage.getItem(this.localStorageKey));
         } catch (e) {
             console.error('Error getting data from localStorage', e);
             return null;
@@ -26,6 +26,10 @@ export class LocalStorageService {
     }
 
     clear() {
-        localStorage.clear();
+        window.localStorage.clear();
+    }
+
+    exist(): boolean {
+        return this.get() != null;
     }
 }

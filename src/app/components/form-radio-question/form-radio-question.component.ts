@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-form-radio-question',
@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-radio-question.component.scss']
 })
 export class FormRadioQuestionComponent implements OnInit {
+  @Input() options: any;
+  @Input() model: number;
+  @Input() showError: boolean;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onClick() {
+    this.showError = false;
+  }
 }

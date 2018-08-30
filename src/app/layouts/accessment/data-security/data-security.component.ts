@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
 import { FormDataService } from '../../../services/formData.service';
-import { ROUTE_PATH } from '../../../Routes';
+import { LocalStorageService } from '../../../services/local-storage.service';
+import { WorkFlowService } from '../../../services/work-flow.service';
 
 @Component({
   selector: 'app-data-security',
@@ -16,8 +16,9 @@ export class DataSecurityComponent implements OnInit {
   @ViewChild('form') form: NgForm;
 
   constructor(
-    private router: Router,
     private formDataService: FormDataService,
+    private localStorageService: LocalStorageService,
+    private workFlowService: WorkFlowService,
   ) { }
 
   ngOnInit() {
@@ -27,11 +28,9 @@ export class DataSecurityComponent implements OnInit {
 
   goNext() {
     if (this.form.valid) {
-      console.log('form valid');
       this.formDataService.setFormDataByName('dataSecurity', this.selectedOption);
-      this.router.navigate([ROUTE_PATH.ACCESSMENT, ROUTE_PATH.TYPE_OF_CLOUD_SERVICE]);
-    } else {
-      console.log('a form invalid');
+      // this.localStorageService.set(this.formDataService.getFormData());
+      this.workFlowService.goNext();
     }
   }
 }

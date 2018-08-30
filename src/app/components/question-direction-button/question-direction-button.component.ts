@@ -1,17 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Location } from '@angular/common';
-
-// const WORKFLOW = [
-//   HOME: 'home',
-//   ACCESSMENT: 'accessment',
-//   ABOUT: 'about',
-
-//   // Accessment questions
-//   DATA_SECURITY: 'data-security',
-//   TYPE_OF_CLOUD_SERVICE: 'type_of_cloud_service',
-
-//   RESULT: 'result'
-// ];
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-question-direction-button',
@@ -20,23 +7,21 @@ import { Location } from '@angular/common';
 })
 export class QuestionDirectionButtonComponent implements OnInit {
   @Output() goNextButtonClick = new EventEmitter();
+  @Output() goPreviousButtonClick = new EventEmitter();
+  @Input() showPrevious: boolean;
 
   constructor(
-    private location: Location
   ) { }
 
   ngOnInit() {
+    // this.showPrevious = true;
   }
 
   goPrevious() {
-    this.location.back();
+    this.goPreviousButtonClick.emit();
   }
 
   goNext() {
-    console.log('go next start...');
     this.goNextButtonClick.emit();
-    console.log('go next complete...');
   }
-
-
 }

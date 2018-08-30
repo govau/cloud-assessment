@@ -1,4 +1,4 @@
-export class FormData {
+export class AccessmentReportData {
     dataSecurity: string;
     typeOfCloudService: string;
     productName: string;

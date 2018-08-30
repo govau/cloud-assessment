@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AccessmentReportData } from './classes/AccessmentReportData';
 import { FormDataService } from './services/formData.service';
 import { LocalStorageService } from './services/local-storage.service';
 
@@ -9,7 +10,7 @@ import { LocalStorageService } from './services/local-storage.service';
 })
 
 export class AppComponent implements OnInit {
-  @Input() formData;
+  formData: AccessmentReportData;
 
   constructor(
     private formDataService: FormDataService,
@@ -20,12 +21,18 @@ export class AppComponent implements OnInit {
     this.formData = this.formDataService.getFormData();
   }
 
+  // todo testing, remove later
+  writeLocalStoage() {
+    this.formData.dataSecurity = 'None';
+    this.localStorageService.set(this.formData);
+  }
+
   readLocalStoage() {
     console.log(this.localStorageService.get());
   }
 
   clearLocalStoage() {
+    this.localStorageService.clear();
     console.log('clearLocalStoage');
-    this.formDataService.clearLocalStorage();
   }
 }

@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
 import { FormDataService } from '../../../services/formData.service';
-import { ROUTE_PATH } from '../../../Routes';
+import { LocalStorageService } from '../../../services/local-storage.service';
+import { WorkFlowService } from '../../../services/work-flow.service';
+// import { ROUTE_PATH } from '../../../Routes';
 
 @Component({
   selector: 'app-about-the-product',
@@ -17,8 +19,10 @@ export class AboutTheProductComponent implements OnInit {
   @ViewChild('form') form: NgForm;
 
   constructor(
-    private router: Router,
+    // private router: Router,
     private formDataService: FormDataService,
+    private localStorageService: LocalStorageService,
+    private workFlowService: WorkFlowService,
   ) { }
 
   ngOnInit() {
@@ -33,11 +37,7 @@ export class AboutTheProductComponent implements OnInit {
       this.formDataService.setFormDataByName('productName', this.productName);
       this.formDataService.setFormDataByName('numberOfUser', this.numberOfUser);
       this.formDataService.setFormDataByName('productBrief', this.productBrief);
-      this.formDataService.clearLocalStorage();
-      // this.formDataService.setProductName(this.productName);
-      // this.formDataService.setNumberOfUser(this.numberOfUser);
-      // this.formDataService.setProductBrief(this.productBrief);
-      this.router.navigate([ROUTE_PATH.ACCESSMENT, ROUTE_PATH.CLOUD_ASSESMENT_REPORT]);
+      this.workFlowService.goNext();
     } else {
       console.log('AboutTheProductComponent form invalid');
     }

@@ -1,32 +1,36 @@
 import { Injectable } from '@angular/core';
 
-import { FormData } from '../classes/FormData';
-import { LocalStorageService } from './local-storage.service';
+import { AccessmentReportData } from '../classes/AccessmentReportData';
+// import { LocalStorageService } from './local-storage.service';
 
 @Injectable()
 export class FormDataService {
 
-    private formData: FormData;
+    private formData: AccessmentReportData;
 
     constructor(
-        private localStorageService: LocalStorageService
+        // private localStorageService: LocalStorageService
     ) {
-        this.formData = new FormData();
+        this.formData = new AccessmentReportData();
     }
 
-    getFormData(): FormData {
+    getFormData(): AccessmentReportData {
         // Return the entire Form Data
-        const localData = this.localStorageService.get();
-        if (localData !== null) {
-            console.log(1);
-            this.formData = localData;
-        }
+        // const localData = this.localStorageService.get();
+        // if (localData !== null) {
+        //     console.log(1);
+        //     this.formData = localData;
+        // }
         return this.formData;
     }
 
-    setFormData(data: FormData) {
+    setFormData(data: AccessmentReportData) {
         // set the entire Form Data
         this.formData = data;
+    }
+
+    clearFormData() {
+        this.formData = new AccessmentReportData();
     }
 
     getFormDataByName(propertyName: string): any {
@@ -35,12 +39,13 @@ export class FormDataService {
 
     setFormDataByName(propertyName: string, value: any) {
         this.formData[propertyName] = value;
-        this.localStorageService.set(this.formData);
-        this.formData = this.localStorageService.get();
+        console.log(this.formData);
+        // this.localStorageService.set(this.formData);
+        // this.formData = this.localStorageService.get();
     }
 
     clearLocalStorage() {
-        this.localStorageService.clear();
+        // this.localStorageService.clear();
     }
 
     // getPersonal(): Personal {

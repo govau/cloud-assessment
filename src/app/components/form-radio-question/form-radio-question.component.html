@@ -1,32 +1,12 @@
 <div class="form-answer-radio">
-    <label class="au-control-input">
-        <!-- <span class="au-control-input__text help-text">Least</span> -->
-        <input class="au-control-input__input" type="radio" name="radio-ex">
-        <span class="au-control-input__text">0</span>
-      </label>
-      <label class="au-control-input">
-        <input class="au-control-input__input" type="radio" name="radio-ex" checked>
-        <span class="au-control-input__text">1</span>
-      </label>
-      <label class="au-control-input">
-        <input class="au-control-input__input" type="radio" name="radio-ex">
-        <span class="au-control-input__text">2</span>
-      </label>
-      <label class="au-control-input">
-        <input class="au-control-input__input" type="radio" name="radio-ex">
-        <span class="au-control-input__text">3</span>
-      </label>
-      <label class="au-control-input">
-        <input class="au-control-input__input" type="radio" name="radio-ex">
-        <span class="au-control-input__text">4</span>
-      </label>
-      <label class="au-control-input">
-                  <!-- <span class="au-control-input__text help-text">Most</span> -->
-        <input class="au-control-input__input" type="radio" name="radio-ex">
-        <span class="au-control-input__text">5</span>
-      </label>
-      <label class="au-control-input unsure">
-        <input class="au-control-input__input" type="radio" name="radio-ex">
-        <span class="au-control-input__text">I don't know</span>
-      </label>
+  <label *ngFor="let option of options;" class="au-control-input">
+    <input 
+      class="au-control-input__input" type="radio" name="integerOption" 
+      [value]="option" [(ngModel)]="model"
+      required (click)="onClick()">
+    <span class="au-control-input__text">{{ option }}</span>
+  </label>
+  <div *ngIf="showError" class="errorMessage">
+    radio error message !!!
+  </div>
 </div>

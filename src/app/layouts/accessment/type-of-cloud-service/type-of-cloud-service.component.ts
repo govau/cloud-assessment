@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 import { FormDataService } from '../../../services/formData.service';
-import { ROUTE_PATH } from '../../../Routes';
+import { LocalStorageService } from '../../../services/local-storage.service';
+import { WorkFlowService } from '../../../services/work-flow.service';
 
 @Component({
   selector: 'app-type-of-cloud-service',
@@ -13,10 +14,12 @@ import { ROUTE_PATH } from '../../../Routes';
 export class TypeOfCloudServiceComponent implements OnInit {
   options: string[];
   selectedOption: string;
+  @ViewChild('form') form: NgForm;
 
   constructor(
-    private router: Router,
     private formDataService: FormDataService,
+    private localStorageService: LocalStorageService,
+    private workFlowService: WorkFlowService,
   ) { }
 
   ngOnInit() {
@@ -28,7 +31,10 @@ export class TypeOfCloudServiceComponent implements OnInit {
   }
 
   goNext() {
-    this.formDataService.setFormDataByName('typeOfCloudService', this.selectedOption);
-    this.router.navigate([ROUTE_PATH.ACCESSMENT, ROUTE_PATH.ABOUT_THE_PRODUCT]);
+    if (this.form.valid) {
+      this.formDataService.setFormDataByName('typeOfCloudService', this.selectedOption);
+      // this.localStorageService.set(this.formDataService.getFormData());
+      this.workFlowService.goNext();
+    }
   }
 }

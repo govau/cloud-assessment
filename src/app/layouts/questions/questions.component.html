@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-xs-8">
+    <h1>
+      {{currentQuestion.category}}
+    </h1>
+    <h2>
+      {{currentQuestion.subCategory}} > {{currentQuestion.quality}}
+    </h2>
+    <p>
+      {{currentQuestion.description}}
+    </p>
+    <!-- form controls-->
+    <form #myform="ngForm">
+
+      <!-- <div class="form-answer-radio">
+        <label *ngFor="let option of options;" class="au-control-input">
+          <input class="au-control-input__input" type="radio" name="integerOption" [value]="option" [(ngModel)]="currentQuestion.assessmentValue" required>
+          <span class="au-control-input__text">{{ option }}</span>
+        </label>
+        <div *ngIf="showError" class="errorMessage">
+          radio error message !!!
+        </div>
+      </div> -->
+
+      <div class="row" [ngSwitch]="currentQuestion.valueType">
+
+        <div *ngSwitchCase="'Integer'">
+          <div class="form-answer-radio">
+            <label *ngFor="let option of options;" class="au-control-input">
+              <input class="au-control-input__input" type="radio" name="integerOption" [value]="option" [(ngModel)]="currentQuestion.assessmentValue"
+                required>
+              <span class="au-control-input__text">{{ option }}</span>
+            </label>
+            <div *ngIf="showError" class="errorMessage">
+              radio error message !!!
+            </div>
+          </div>
+        </div>
+
+        <div *ngSwitchCase="'List'">
+          List
+          <!-- <div>
+            <label *ngFor="let option of options;">
+              <input type="radio" [value]="option" [(ngModel)]="selectedOption" required name="listOption" #listOption="ngModel">
+              <span>{{ option }}</span>
+            </label>
+            <div *ngIf="form.controls.listOption?.invalid && form.submitted" class="errorMessage">
+              List error message !!!
+            </div>
+          </div> -->
+        </div>
+      </div>
+
+      <!-- <app-form-radio-question [options]="options" 
+        [(model)]="currentQuestion.assessmentValue" [(showError)]="showError"></app-form-radio-question> -->
+      <app-question-direction-button 
+        (goNextButtonClick)="goNext()" (goPreviousButtonClick)="goPrevious()" 
+        [showPrevious]="true"></app-question-direction-button>
+    </form>
+  </div>
+  <div class="col-xs-4">
+    <app-help-section></app-help-section>
+  </div>
+</div>
+<!-- debug -->
+<div class="row">
+  <pre>{{currentQuestion|json}}</pre>
+</div>

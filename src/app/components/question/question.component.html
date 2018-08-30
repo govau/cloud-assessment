@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-xs-8">
+    <h1>
+      {{question.category}}
+    </h1>
+    <h2>
+      {{question.quality}}
+    </h2>
+
+    <p>
+      Description text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu ex lacus. Curabitur nibh enim, fringilla
+      quis lectus ac, semper luctus diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras non orci a felis
+      convallis rutrum dapibus ut eros. Proin sit amet diam vel justo ultrices finibus eget id turpis. Curabitur sed diam
+      nec purus consectetur consequat quis quis nulla. Phasellus sodales eu velit ut lobortis. Pellentesque habitant morbi
+      tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque habitant morbi tristique senectus et
+      netus et malesuada fames ac turpis egestas. Pellentesque pellentesque arcu et consectetur accumsan.
+    </p>
+    <!-- <form #form="ngForm">
+      <h3>
+        What level of protection does your data require?
+      </h3>
+
+      <div>
+        <label *ngFor="let option of options;">
+          <input type="radio" [value]="option" [(ngModel)]="selectedOption" required #dataSecurity="ngModel" name="dataSecurity">
+          <span>{{ option }}</span>
+        </label>
+        <div *ngIf="form.controls.dataSecurity?.invalid && form.submitted" class="errorMessage">
+          data security error message !!!
+        </div>
+      </div>
+
+      <app-question-direction-button (goNextButtonClick)="goNext()">
+      </app-question-direction-button>
+    </form> -->
+
+    <app-question-direction-button (goNextButtonClick)="goNext()">
+    </app-question-direction-button>
+  </div>
+
+  <div class="col-xs-4">
+    <app-help-section></app-help-section>
+  </div>
+</div>

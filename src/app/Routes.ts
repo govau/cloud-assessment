@@ -3,6 +3,8 @@ export const ROUTE_PATH = {
     ACCESSMENT: 'accessment',
     ABOUT: 'about',
     CONTACT: 'contact',
+    QUESTIONS: 'questions',
+    RESULT: 'result',
     // Accessment questions
     DATA_SECURITY: 'data-security',
     TYPE_OF_CLOUD_SERVICE: 'type-of-cloud-service',
