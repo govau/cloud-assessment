@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ROUTE_PATH } from '../../Routes';
-// import { LocalStorageService } from '../../services/local-storage.service';
-// import { FormDataService } from '../../services/formData.service';
-// import { WorkFlowService } from '../../services/work-flow.service';
+// config
+import { CONFIG_DATA } from '../../data/ConfigData';
+// service
+import { QuestionDataService } from '../../services/question-data.service';
+import { LocalStorageService } from '../../services/local-storage.service';
 
 @Component({
     selector: 'app-accessment',
@@ -11,61 +12,35 @@ import { ROUTE_PATH } from '../../Routes';
     styleUrls: ['./accessment.component.scss']
 })
 export class AccessmentComponent implements OnInit {
+    showModal: boolean;
 
     constructor(
         private router: Router,
-        // private localStorageService: LocalStorageService,
-        // private formDataService: FormDataService,
-        // private workFlowService: WorkFlowService,
+        private questionDataService: QuestionDataService,
+        private localStorageService: LocalStorageService,
     ) { }
 
     ngOnInit() {
-        // this.currentQuestion = {
-        //     category: 'Vendor',
-        //     subCategory: '',
-        //     quality: 'Business & financial health',
-        //     description: 'Degree to which the vendor is deemed to be in a healthy business and financial situation',
-        //     reference: `Example: Does the vendor have a track record of stability and is in a
-        //     healthy financial position with sufficient capital to operate successfully over the long term?`,
-        //     condition: '',
-        //     relationship: '',
-        //     valueType: 'Integer',
-        //     defaultValue: '4/5',
-        //     requiredValueRationale: '',
-        //     assessmentValue: '',
-        //     assessmentValueRationale: '',
-        // };
     }
 
     startAccessment() {
-        this.router.navigateByUrl(ROUTE_PATH.QUESTIONS);
+        if (this.localStorageService.exist()) {
+            this.showModal = true;
+        } else {
+            this.questionDataService.reset();
+            this.router.navigateByUrl(CONFIG_DATA.ROUTE_PATH.QUESTIONS);
+        }
     }
 
-    // startAccessment() {
-    //     this.formDataService.clearFormData();
-    //     if (this.localStorageService.exist()) {
-    //         // todo modal
-    //         if (confirm('Do you want to load data?')) {
-    //             this.formDataService.setFormData(this.localStorageService.get());
-    //         } else {
-    //             // this.localStorageService.clear();
-    //         }
-    //     }
-    //     this.workFlowService.goNext();
-    // }
+    yes() {
+        this.questionDataService.reset();
+        this.questionDataService.restore(this.localStorageService.get());
+        this.router.navigateByUrl(CONFIG_DATA.ROUTE_PATH.QUESTIONS);
+    }
 
-    // startAccessment() {
-    //     console.log('startAccessment');
-    //     this.action = 'question';
-    // }
-
-    // submitAccessment() {
-    //     console.log('submitAccessment');
-    //     this.action = 'report';
-    // }
-
-    // restartAccessment() {
-    //     console.log('restartAccessment');
-    //     this.action = 'landing';
-    // }
+    no() {
+        this.questionDataService.reset();
+        this.localStorageService.clear();
+        this.router.navigateByUrl(CONFIG_DATA.ROUTE_PATH.QUESTIONS);
+    }
 }

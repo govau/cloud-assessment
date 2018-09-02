@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AccessmentReportData } from './classes/AccessmentReportData';
-import { FormDataService } from './services/formData.service';
 import { LocalStorageService } from './services/local-storage.service';
 
 @Component({
@@ -13,12 +12,11 @@ export class AppComponent implements OnInit {
   formData: AccessmentReportData;
 
   constructor(
-    private formDataService: FormDataService,
-    private localStorageService: LocalStorageService) {
+    private localStorageService: LocalStorageService
+  ) {
   }
 
   ngOnInit() {
-    this.formData = this.formDataService.getFormData();
   }
 
   // todo testing, remove later

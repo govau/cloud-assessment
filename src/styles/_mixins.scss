@@ -16,7 +16,7 @@ $baseline-px: $font-size-base;
       // If the value is zero, return 0
       @if $value == 0 {
         $rem-values: append($rem-values, $value); }
-      @elseif $value == 'auto' {
+      @else if $value == 'auto' {
         $rem-values: append($rem-values, auto); }
       @else {
         $rem-values: append($rem-values, $value / $baseline-rem); } }

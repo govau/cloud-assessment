@@ -4,41 +4,110 @@ import { QuestionData } from '../data/QuestionData';
 
 @Injectable()
 export class QuestionDataService {
-  private currentIndex: number;
+  public currentIndex: number;
   private allQuestions: QuestionItem[];
-  private question: QuestionItem;
 
   constructor() {
-    // this.currentIndex = 0;
-    this.resetIndex();
-    this.allQuestions = QuestionData;
+    this.reset();
   }
 
-  public get(): QuestionItem {
+  get all(): QuestionItem[] {
+    return this.allQuestions;
+  }
+
+  get isFirst(): boolean {
+    return this.currentIndex === 0;
+  }
+
+  get isLast(): boolean {
+    return (this.currentIndex === (this.allQuestions.length - 1));
+  }
+
+  get count(): number {
+    return this.allQuestions.length;
+  }
+
+  get index(): number {
+    return this.currentIndex;
+  }
+
+  public getCurrent(): QuestionItem {
     return this.allQuestions[this.currentIndex];
   }
 
-  public getNext() {
-    // this.currentIndex++;
-    if (this.currentIndex === this.allQuestions.length - 1) {
-      console.log('last one then submit');
-    } else {
+  public Next(): QuestionItem {
+    // if (!this.isLast) {
+    //   this.currentIndex++;
+    //   return this.getCurrent();
+    // } else {
+    //   return null;
+    // }
+
+    if (!this.isLast) {
       this.currentIndex++;
-      // this.submittedd = false;
-    }
-  }
-
-  public getPrevious() {
-    // this.currentIndex--;
-    if (this.currentIndex === 0) {
-      console.log('first one then submit');
+      // console.log(this.currentIndex);
+      const q = this.getCurrent();
+      if (this.checkRules()) {
+        return this.Next();
+      } else {
+        return q;
+        // if (this.isLast) {
+        //   console.log('^%%^^%$&^%^&');
+        //   return null;
+        // } else {
+        //   return q;
+        // }
+      }
     } else {
-      this.currentIndex--
-      // this.submittedd = false;
+      return null;
     }
   }
 
-  public resetIndex() {
+  public Previous(): QuestionItem {
+    // if (!this.isFirst) {
+    //   this.currentIndex--;
+    //   return this.getCurrent();
+    // } else {
+    //   return null;
+    // }
+
+    if (!this.isFirst) {
+      this.currentIndex--;
+      console.log(this.currentIndex);
+      const q = this.getCurrent();
+      if (this.checkRules()) {
+        console.log('has rule');
+        return this.Previous();
+      } else {
+        console.log('no rule');
+        return q;
+      }
+    } else {
+      return null;
+    }
+  }
+
+  public reset() {
     this.currentIndex = 0;
+    this.allQuestions = QuestionData.map(x => Object.assign({}, x));
+  }
+
+  public restore(data: any) {
+    this.allQuestions = data;
+  }
+
+  private checkRules(): boolean {
+    if (this.currentIndex === 3) {
+      if (this.allQuestions[0].assessmentValue === 'Saas') {
+        return true;
+      }
+    }
+
+    if (this.currentIndex === 6) {
+      if (this.allQuestions[0].assessmentValue === 'Saas') {
+        return true;
+      }
+    }
+    return false;
   }
 }

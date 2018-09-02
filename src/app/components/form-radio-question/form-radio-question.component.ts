@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 })
 export class FormRadioQuestionComponent implements OnInit {
   @Input() options: any;
-  @Input() model: number;
+  @Input() modelData: number;
   @Input() showError: boolean;
 
   constructor() { }

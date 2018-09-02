@@ -17,7 +17,7 @@ export default interface StackedHeader {
 })
 export class AccordionComponent implements OnInit {
 
-  static IDcounter: number = 0;
+  static IDcounter: number;
   @Input() header?: string;
   @Input() stackedHeader?: StackedHeader;
   @Input() hasResponsiveHeader?: boolean;
@@ -26,7 +26,9 @@ export class AccordionComponent implements OnInit {
 
   @Output() toggle = new EventEmitter<AccordionToggleData>();
 
-  constructor() { }
+  constructor() {
+    AccordionComponent.IDcounter = 0;
+  }
 
   ngOnInit() {
     this.index = AccordionComponent.IDcounter;

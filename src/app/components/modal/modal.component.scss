@@ -1,0 +1,150 @@
+@import '../../../styles/global-includes';
+
+$mobile-padding-px: 20px;
+$desktop-padding-px: 40px;
+$cross-size: 14px;
+
+@mixin cross($cross-size: 14px, $bar-width: 2px) {
+  &:before, &:after {
+    content: "";
+    display: block;
+    width: $cross-size;
+    height: $bar-width;
+    background-color: #979797;
+    position: absolute;
+    left: calc(50% - #{$cross-size / 2});
+    top: calc(50% - #{$bar-width / 2});
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
+
+:host {
+  .dialog-box {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 0 30px 0 rgba(0,0,0,0.3);
+    z-index: 6;
+
+    &.large {
+      height: 90%;
+    }
+
+    // @media all and (min-width: $uikit-media-sm) {
+      width: em(730px);
+    // }
+
+    .header {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      border-bottom: 1px solid #CCCCCC;
+      background-color: #FFFFFF;
+      border-radius: 10px 10px 0 0;
+      flex-shrink: 0;
+
+    //   @media all and (min-width: $uikit-media-sm) {
+        flex-direction: row;
+        border-bottom: 1px solid #CCCCCC;
+        min-height: em(100px);
+        box-sizing: border-box;
+    //   }
+
+      h3 {
+        margin: auto;
+        font-weight: bold;
+        $local-fontsize: 20px;
+        font-size: $local-fontsize;
+        line-height: em(24px, $local-fontsize);
+        padding: em($mobile-padding-px, $local-fontsize);
+
+        // @media all and (min-width: $uikit-media-sm) {
+          text-align: left;
+          margin: unset;
+          $local-fontsize: 26px;
+          font-size: $local-fontsize;
+          line-height: em(30px, $local-fontsize);
+          padding: em(35px, $local-fontsize) em($desktop-padding-px, $local-fontsize);
+        // }
+      }
+
+      .close {
+        $local-padding: calc(50% - #{$cross-size / 2});
+        cursor: pointer;
+        position: relative;
+        background-color: #FFFFFF;
+        border-top: none;
+        border-right: none;
+        padding: 0 $local-padding;
+        flex: 0 0 50px;
+        border-left: none;
+        border-bottom: 1px solid #CCC;
+        border-radius: 10px 10px 0 0;
+        width: 100%;
+        margin: auto;
+        min-height: 100%;
+
+
+        // @media all and (min-width: $uikit-media-sm) {
+          padding: em(65px);
+          border-left: 1px solid #CCC;
+          border-bottom: none;
+          margin: unset;
+          border-radius: 0 10px 0 0;
+          flex: 0 0 100px;
+        // }
+
+        @include cross();
+      }
+    }
+
+    .content {
+      $local-fontsize: 20px;
+      padding: em($mobile-padding-px, $local-fontsize);
+      flex-basis: 100%;
+      position: relative;
+
+    //   @media all and (min-width: $uikit-media-sm) {
+        padding: em(40px);
+    //   }
+    }
+
+    .buttonBar {
+      display: flex;
+      justify-content: space-between;
+      padding: em($mobile-padding-px);
+      flex-shrink: 0;
+
+    //   @media all and (min-width: $uikit-media-sm) {
+        display: block;
+        padding: em(20px) em($desktop-padding-px);
+    //   }
+
+      button {
+        font-size: em(16px);
+        width: em(135px);
+        min-height: em(40px);
+        border-radius: 4px;
+        border: 1px solid #355F5F;
+
+        // @media all and (min-width: $uikit-media-sm) {
+          width: em(150px);
+          height: em(50px);
+
+          &.first {
+            margin-right: 40px;
+          }
+        // }
+      }
+    }
+  }
+}

@@ -1,65 +1,49 @@
 <div class="row">
   <div class="col-xs-8">
-    <h1>
-      {{currentQuestion.category}}
-    </h1>
-    <h2>
-      {{currentQuestion.subCategory}} > {{currentQuestion.quality}}
-    </h2>
+    <h2>{{processBar}}</h2>
+    <h4 class="au-display-xxxl">{{currentQuestion.quality}}</h4>
+    <h5 class="au-display-lg">{{subTitle}}</h5>
     <p>
       {{currentQuestion.description}}
     </p>
-    <!-- form controls-->
     <form #myform="ngForm">
-
-      <!-- <div class="form-answer-radio">
-        <label *ngFor="let option of options;" class="au-control-input">
-          <input class="au-control-input__input" type="radio" name="integerOption" [value]="option" [(ngModel)]="currentQuestion.assessmentValue" required>
-          <span class="au-control-input__text">{{ option }}</span>
-        </label>
-        <div *ngIf="showError" class="errorMessage">
-          radio error message !!!
-        </div>
-      </div> -->
-
-      <div class="row" [ngSwitch]="currentQuestion.valueType">
-
+      <div class="controlPadding" [ngSwitch]="currentQuestion.valueType">
         <div *ngSwitchCase="'Integer'">
           <div class="form-answer-radio">
-            <label *ngFor="let option of options;" class="au-control-input">
-              <input class="au-control-input__input" type="radio" name="integerOption" [value]="option" [(ngModel)]="currentQuestion.assessmentValue"
+            <label *ngFor="let option of radioButtonListOptions;" class="au-control-input">
+              <input class="au-control-input__input" type="radio" name="integerOption" [value]="option.value" [(ngModel)]="currentQuestion.assessmentValue"
                 required>
-              <span class="au-control-input__text">{{ option }}</span>
+              <span class="au-control-input__text">{{ option.text }}</span>
             </label>
             <div *ngIf="showError" class="errorMessage">
               radio error message !!!
             </div>
           </div>
         </div>
-
         <div *ngSwitchCase="'List'">
-          List
-          <!-- <div>
-            <label *ngFor="let option of options;">
-              <input type="radio" [value]="option" [(ngModel)]="selectedOption" required name="listOption" #listOption="ngModel">
-              <span>{{ option }}</span>
+          <div class="form-answer-radio">
+            <label *ngFor="let option of currentQuestion.options;" class="au-control-input">
+              <input class="au-control-input__input" type="radio" name="listOption" [value]="option" [(ngModel)]="currentQuestion.assessmentValue"
+                required>
+              <span class="au-control-input__text">{{ option }}</span>
             </label>
-            <div *ngIf="form.controls.listOption?.invalid && form.submitted" class="errorMessage">
+            <div *ngIf="showError" class="errorMessage">
               List error message !!!
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
-
-      <!-- <app-form-radio-question [options]="options" 
-        [(model)]="currentQuestion.assessmentValue" [(showError)]="showError"></app-form-radio-question> -->
-      <app-question-direction-button 
-        (goNextButtonClick)="goNext()" (goPreviousButtonClick)="goPrevious()" 
-        [showPrevious]="true"></app-question-direction-button>
+      <div class="controlPadding">
+        <label for="textarea">Comments</label>
+        <textarea class="au-text-input au-text-input--block" name="textarea" id="textarea"
+          [(ngModel)]="currentQuestion.comments">
+          </textarea>
+      </div>
+      <app-question-direction-button (goNextButtonClick)="goNext()" (goPreviousButtonClick)="goPrevious()" [showPrevious]="showPrevious"></app-question-direction-button>
     </form>
   </div>
   <div class="col-xs-4">
-    <app-help-section></app-help-section>
+    <app-help-section [helpText]="currentQuestion.reference"></app-help-section>
   </div>
 </div>
 <!-- debug -->

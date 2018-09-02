@@ -1,0 +1,17 @@
+<div *ngIf="show" class='modal'>
+  <div class='mask'></div>
+  <div class='dialog-box'>
+    <div class='header'>
+      <h3>{{ title }}</h3>
+    </div>
+    <div class='content'>
+      <ng-content></ng-content>
+    </div>
+    <div class='buttonBar'>
+      <button *ngIf='secondaryButtonText !== undefined' class='uikit-btn uikit-btn--tertiary first ci--secondaryButton' (click)="secondaryClicked()">{{
+        secondaryButtonText }}</button>
+      <button *ngIf='primaryButtonText !== undefined' class='uikit-btn ci--primaryButton' (click)="primaryClicked()">{{ primaryButtonText
+        }}</button>
+    </div>
+  </div>
+</div>

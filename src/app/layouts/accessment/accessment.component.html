@@ -19,15 +19,8 @@
     </p>
 </div>
 
-<!-- <div *ngIf="action==='landing'">
-    
-</div>
-<div *ngIf="action==='question'">
-    question->
-    <app-question [question]="currentQuestion"></app-question>
-    <button type="button" (click)="submitAccessment()">Submit</button>
-</div>
-<div *ngIf="action==='report'">
-    report
-    <button type="button" (click)="restartAccessment()">Restart</button>
-</div> -->
+<app-modal [(show)]="showModal" [title]="'Local storage'"
+    [primaryButtonText]="'No'" [secondaryButtonText]="'Yes'"
+    (primaryButtonClick)='no()' (secondaryButtonClick)='yes()'>
+    <div>Do you want to load your local storage data </div>
+</app-modal>

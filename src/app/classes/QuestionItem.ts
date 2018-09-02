@@ -1,4 +1,5 @@
 export default interface QuestionItem {
+    id: number;
     category: string;
     subCategory: string;
     quality: string;
@@ -7,8 +8,10 @@ export default interface QuestionItem {
     condition: string;
     relationship: string;
     valueType: string;
-    defaultValue: string;
+    defaultValue: any;
     requiredValueRationale: string;
-    assessmentValue: number;
+    assessmentValue: string;
     assessmentValueRationale: string;
+    options?: any[];
+    comments?: string;
 }

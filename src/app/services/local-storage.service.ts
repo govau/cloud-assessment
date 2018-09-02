@@ -5,7 +5,7 @@ export class LocalStorageService {
     localStorageKey: string;
 
     constructor() {
-        this.localStorageKey = 'userInput';
+        this.localStorageKey = 'CloudAssessment';
     }
 
     set(data: any): void {
