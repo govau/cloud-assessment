@@ -29,6 +29,24 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 
+## Docker
+
+There is a Dockerfile here to assist with local development if desired.
+
+Some helpful commands:
+
+```bash
+# build the image locally
+docker build . --tag cloud-assessment
+
+# Create a new container
+docker run -it --rm \
+  -p 4200:4200 \
+  -v $PWD:/app \
+  -w /app \
+  cloud-assessment
+```
+
 ## CircleCI
 
 [CircleCI](https://circleci.com/gh/govau/cloud-assessment) is building this project. You can login to circle with github.
