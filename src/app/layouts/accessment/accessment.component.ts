@@ -9,7 +9,7 @@ import { LocalStorageService } from '../../services/local-storage.service';
 @Component({
     selector: 'app-accessment',
     templateUrl: './accessment.component.html',
-    styleUrls: ['./accessment.component.scss']
+    styleUrls: ['./accessment.component.scss'],
 })
 export class AccessmentComponent implements OnInit {
     showModal: boolean;

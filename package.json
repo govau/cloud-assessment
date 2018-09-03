@@ -46,6 +46,7 @@
     "@gov.au/skip-link": "^2.0.9",
     "@gov.au/tags": "^3.1.4",
     "@gov.au/text-inputs": "^2.0.9",
+    "angular-progress-bar": "^1.0.5",
     "core-js": "^2.4.1",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"

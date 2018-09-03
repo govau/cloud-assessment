@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, Router } from '@angular/router';
 import { CONFIG_DATA } from './data/ConfigData';
 // pages
 import { HomeComponent } from './layouts/home/home.component';
@@ -17,13 +17,13 @@ const routes: Routes = [
     { path: CONFIG_DATA.ROUTE_PATH.QUESTIONS, component: QuestionsComponent },
     { path: CONFIG_DATA.ROUTE_PATH.RESULT, component: ResultComponent },
     // {
-    //     path: ROUTE_PATH.ACCESSMENT,
+    //     path: CONFIG_DATA.ROUTE_PATH.ACCESSMENT,
     //     children: [
-    //         { path: '', component: AccessmentComponent },
-    //         { path: ROUTE_PATH.CLOUD_ASSESMENT_REPORT, component: CloudAssesmentReportComponent },
-    //         { path: ROUTE_PATH.DATA_SECURITY, component: DataSecurityComponent },
-    //         { path: ROUTE_PATH.TYPE_OF_CLOUD_SERVICE, component: TypeOfCloudServiceComponent },
-    //         { path: ROUTE_PATH.ABOUT_THE_PRODUCT, component: AboutTheProductComponent },
+    //         // { path: '', component: AccessmentComponent },
+    //         // { path: '1', component: QuestionsComponent },
+    //         // { path: '2', component: QuestionsComponent },
+    //         // { path: '3', component: QuestionsComponent },
+    //         // { path: '4', component: QuestionsComponent },
     //     ]
     // },
     {
@@ -42,4 +42,14 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 
-export class AppRoutingModule { }
+export class AppRoutingModule {
+    // constructor(router: Router) {
+    //     const config = router.config;
+    //     const temp = config.find(x => x.path === CONFIG_DATA.ROUTE_PATH.ACCESSMENT);
+    //     temp.children.push({ path: '', component: AccessmentComponent });
+    //     temp.children.push({ path: '1', component: QuestionsComponent });
+    //     temp.children.push({ path: '2', component: QuestionsComponent });
+    //     temp.children.push({ path: '3', component: QuestionsComponent });
+    //     router.resetConfig(config);
+    // }
+}

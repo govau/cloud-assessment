@@ -1,4 +1,7 @@
 <div class="row">
+  <progress-bar [progress]="processBarProgress" [color]="'#488aff'"></progress-bar>
+</div>
+<div class="row">
   <div class="col-xs-8">
     <h2>{{processBar}}</h2>
     <h4 class="au-display-xxxl">{{currentQuestion.quality}}</h4>
@@ -6,6 +9,7 @@
     <p>
       {{currentQuestion.description}}
     </p>
+
     <form #myform="ngForm">
       <div class="controlPadding" [ngSwitch]="currentQuestion.valueType">
         <div *ngSwitchCase="'Integer'">
@@ -35,12 +39,12 @@
       </div>
       <div class="controlPadding">
         <label for="textarea">Comments</label>
-        <textarea class="au-text-input au-text-input--block" name="textarea" id="textarea"
-          [(ngModel)]="currentQuestion.comments">
+        <textarea class="au-text-input au-text-input--block" name="textarea" id="textarea" [(ngModel)]="currentQuestion.comments">
           </textarea>
       </div>
       <app-question-direction-button (goNextButtonClick)="goNext()" (goPreviousButtonClick)="goPrevious()" [showPrevious]="showPrevious"></app-question-direction-button>
     </form>
+
   </div>
   <div class="col-xs-4">
     <app-help-section [helpText]="currentQuestion.reference"></app-help-section>

@@ -19,6 +19,8 @@ export class QuestionsComponent implements OnInit {
   @ViewChild('myform') form: NgForm;
   private formSubmitted: boolean;
 
+  myFood: string;
+
   constructor(
     private router: Router,
     private questionDataService: QuestionDataService,
@@ -40,6 +42,10 @@ export class QuestionsComponent implements OnInit {
 
   get processBar(): string {
     return (this.questionDataService.index + 1) + ' of ' + this.questionDataService.count;
+  }
+
+  get processBarProgress(): number {
+    return Math.floor((this.questionDataService.index + 1) / this.questionDataService.count * 100);
   }
 
   get radioButtonListOptions(): any {
@@ -70,30 +76,9 @@ export class QuestionsComponent implements OnInit {
       } else {
         this.formReset();
       }
-      // if (this.questionDataService.isLast) {
-      //   this.localStorageService.clear();
-      //   this.router.navigateByUrl(CONFIG_DATA.ROUTE_PATH.RESULT);
-      // } else {
-      //   this.localStorageService.set(this.questionDataService.all);
-      //   this.currentQuestion = this.questionDataService.Next();
-      //   this.formReset();
-      // }
     } else {
       this.formSubmitted = true;
     }
-
-    // if (this.form.valid) {
-    //   if (this.questionDataService.isLast) {
-    //     this.localStorageService.clear();
-    //     this.router.navigateByUrl(CONFIG_DATA.ROUTE_PATH.RESULT);
-    //   } else {
-    //     this.localStorageService.set(this.questionDataService.all);
-    //     this.currentQuestion = this.questionDataService.Next();
-    //     this.formReset();
-    //   }
-    // } else {
-    //   this.formSubmitted = true;
-    // }
   }
 
   private formReset() {

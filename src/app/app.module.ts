@@ -16,6 +16,7 @@ import { NaviComponent } from './components/navi/navi.component';
 import { QuestionDirectionButtonComponent } from './components/question-direction-button/question-direction-button.component';
 import { HelpSectionComponent } from './components/help-section/help-section.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { ProgressBarModule } from "angular-progress-bar"
 // todo remove
 import { AccordionComponent } from './components/accordion/accordion.component';
 import { FormRadioQuestionComponent } from './components/form-radio-question/form-radio-question.component';
@@ -27,6 +28,7 @@ import { AboutComponent } from './layouts/about/about.component';
 import { ContactComponent } from './layouts/contact/contact.component';
 import { QuestionsComponent } from './layouts/questions/questions.component';
 import { ResultComponent } from './layouts/result/result.component';
+
 
 
 @NgModule({
@@ -48,10 +50,15 @@ import { ResultComponent } from './layouts/result/result.component';
     QuestionsComponent,
     ResultComponent,
   ],
+  // entryComponents: [
+  //   AccessmentComponent,
+  //   QuestionsComponent
+  // ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    ProgressBarModule,
   ],
   providers: [
     LocalStorageService,
