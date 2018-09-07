@@ -20,6 +20,16 @@ export const Config = {
             ]
         }
     ],
+    QuestionType: {
+        Integer: 'Integer',
+        OR: 'OR',
+        XOR: 'XOR'
+    },
+    QuestionResultSymbol: {
+        Red: 'red',
+        Orange: 'orange',
+        Green: 'green'
+    },
     // todo
     RatingOptions: [
         { text: '0', value: 0 },

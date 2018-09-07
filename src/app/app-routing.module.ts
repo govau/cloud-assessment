@@ -17,7 +17,7 @@ const routes: Routes = [
     { path: Config.RoutePath.CONTACT, component: ContactComponent },
     { path: Config.RoutePath.ASSESSMENT, component: AssessmentComponent },
     { path: Config.RoutePath.QUESTIONS, component: QuestionsComponent, canActivate: [AssessmentGuard] },
-    { path: Config.RoutePath.RESULT, component: ResultComponent },
+    { path: Config.RoutePath.RESULT, component: ResultComponent, canActivate: [AssessmentGuard] },
     // todo unique url per question
     // {
     //     path: Config.RoutePath.QUESTIONS,

@@ -3,68 +3,69 @@
   <div class="col-xs-4 left-col">
     <h2>Assessment Categories</h2>
     <table>
-      <tr>
-        <td>Vendor</td>
-        <td><span class="red-light">1</span></td>
-        <td><span class="orange-light">2</span></td>
-        <td><span class="green-light">3</span></td>
-      </tr> 
-      <tr>
-        <td>Commercials</td>
-        <td><span class="red-light">1</span></td>
-        <td><span class="orange-light">2</span></td>
-        <td><span class="green-light">3</span></td>
-      </tr>
-      <tr>
-        <td>Compliance</td>
-        <td><span class="red-light">1</span></td>
-        <td><span class="orange-light">2</span></td>
-        <td><span class="green-light">3</span></td>
-      </tr>
-      <tr>
-        <td>Security</td>
-        <td><span class="red-light">1</span></td>
-        <td><span class="orange-light">2</span></td>
-        <td><span class="green-light">3</span></td>
-      </tr>
-      <tr>
-        <td>Functionality</td>
-        <td><span class="red-light">1</span></td>
-        <td><span class="orange-light">2</span></td>
-        <td><span class="green-light">3</span></td>
-      </tr>
-      <tr>
-        <td>Operability</td>
-        <td><span class="red-light">1</span></td>
-        <td><span class="orange-light">2</span></td>
-        <td><span class="green-light">3</span></td>
-      </tr>
-
-      <tr>
-        <td>Support</td>
-        <td><span class="red-light">1</span></td>
-        <td><span class="orange-light">2</span></td>
-        <td><span class="green-light">3</span></td>
+      <tr *ngFor="let item of Categories">
+        <td style='width: 200px'>{{item}}</td>
+        <td style="display:inline-flex; float: right">
+          <span class="red-light">{{CountRedByCategory(item)}}</span>
+          <span class="orange-light">{{CountOrangeByCategory(item)}}</span>
+          <span class="green-light">{{CountGreenByCategory(item)}}</span></td>
       </tr>
     </table>
-
+    <button class="au-btn" type="button" (click)="printReport()">Print Report</button>
   </div>
 
   <!-- RIGHT COLUMN -->
   <div class="col-xs-8 right-col">
     <h1>Cloud assessment report</h1>
-    <p>Here are your assessment results sorted by assessment category. If you need to share these results you can you the
+    <p>Here are your assessment results sorted by assessment category. If you need to share these results you can you
+      the
       Prin report button to print or save a PDF copy.</p>
-    <p>The service your have assessed is Sample Service, which you have indicated is categorised as SaaS and is estimated
-      to be used by 100 users.
-      <p>You have indicated that the main purpose for use of Sample Service is as follows:</p>
-      <ul>
-        <li>To provide our development team with a collaboration tool to communicate on development projects</li>
-        <li>These assessment results were produced on 28/08/2018</li>
-      </ul>
+    <!-- <p>The service your have assessed is Sample Service, which you have indicated is categorised as SaaS and is
+      estimated
+      to be used by 100 users.</p>
+    <p>You have indicated that the main purpose for use of Sample Service is as follows:</p>
+    <ul>
+      <li>To provide our development team with a collaboration tool to communicate on development projects</li>
+      <li>These assessment results were produced on 28/08/2018</li>
+    </ul> -->
 
-      <!-- VENDOR PANEL -->
-      <div class="panel panel-default">
+    <div class="panel panel-default" *ngFor="let item of Categories">
+      <div class="panel-heading">{{item}}
+        <p style="float: right"><span class="red-light">{{CountRedByCategory(item)}}</span>
+          <span class="orange-light">{{CountOrangeByCategory(item)}}</span>
+          <span class="green-light">{{CountGreenByCategory(item)}}</span></p>
+      </div>
+
+      <div *ngFor="let question of GetQuestionsByCategory(item)">
+        <div class="panel-body" [ngClass]="{'panel-green':CalculateSymbol(question)==='green', 'panel-orange': CalculateSymbol(question)==='orange', 'panel-red':CalculateSymbol(question)==='red'}">
+          <h2 *ngIf="CalculateSymbol(question)==='green'">
+            <span style="color: #21B87D; font-size:1.3em; padding:5px;">&#10004;</span>
+            {{question.Quality}}
+          </h2>
+          <h2 *ngIf="CalculateSymbol(question)==='orange'">
+            <span style="color: #FFB951; font-size:1.3em; padding:5px;">&#33;</span>
+            {{question.Quality}}
+          </h2>
+          <h2 *ngIf="CalculateSymbol(question)==='red'">
+            <span style="color: #FF625C; font-size:1.3em; padding:5px;">&#10005;</span>
+            {{question.Quality}}
+          </h2>
+          <p *ngIf="question.ValueType==='Integer'">You provided a raiting of {{question.AssessmentValue}}/5</p>
+          <p *ngIf="question.ValueType==='OR'">You answered {{GetXORAssessmentValue(question.AssessmentValue)}}</p>
+          <p *ngIf="question.ValueType==='XOR'">You answered {{question.AssessmentValue}}</p>
+          <div *ngIf="question.Comments">
+            <p>You provided the following rationale for the score:
+            </p>
+            <ul>
+              <li>{{question.Comments}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VENDOR PANEL -->
+    <!-- <div class="panel panel-default">
         <div class="panel-heading">Vendor
           <p style="float: right"><span class="red-light">1</span>
             <span class="orange-light">2</span>
@@ -77,9 +78,11 @@
           <p>You provided the following rationale for the score:
           </p>
           <ul>
-            <li>Donec rutrum porttitor ipsum, at euismod libero varius id. Etiam urna felis, blandit id consequat vitae,
+            <li>Donec rutrum porttitor ipsum, at euismod libero varius id. Etiam urna felis, blandit id consequat
+              vitae,
               ullamcorper in dolor. Integer eget ligula tempor, mollis est quis, semper leo</li>
-            <li>Maecenas a diam at augue accumsan finibus. Sed pretium ante ex. Nam tempus feugiat pretium. Ut imperdiet
+            <li>Maecenas a diam at augue accumsan finibus. Sed pretium ante ex. Nam tempus feugiat pretium. Ut
+              imperdiet
               laoreet ipsum sed venenatis. Cras in pretium tellus, vitae luctus neque.</li>
           </ul>
         </div>
@@ -90,9 +93,11 @@
           <p>You provided the following rationale for the score:
           </p>
           <ul>
-            <li>Donec rutrum porttitor ipsum, at euismod libero varius id. Etiam urna felis, blandit id consequat vitae,
+            <li>Donec rutrum porttitor ipsum, at euismod libero varius id. Etiam urna felis, blandit id consequat
+              vitae,
               ullamcorper in dolor. Integer eget ligula tempor, mollis est quis, semper leo</li>
-            <li>Maecenas a diam at augue accumsan finibus. Sed pretium ante ex. Nam tempus feugiat pretium. Ut imperdiet
+            <li>Maecenas a diam at augue accumsan finibus. Sed pretium ante ex. Nam tempus feugiat pretium. Ut
+              imperdiet
               laoreet ipsum sed venenatis. Cras in pretium tellus, vitae luctus neque.</li>
           </ul>
         </div>
@@ -102,20 +107,23 @@
           <p>You provided the following rationale for the score:
           </p>
           <ul>
-            <li>Donec rutrum porttitor ipsum, at euismod libero varius id. Etiam urna felis, blandit id consequat vitae,
+            <li>Donec rutrum porttitor ipsum, at euismod libero varius id. Etiam urna felis, blandit id consequat
+              vitae,
               ullamcorper in dolor. Integer eget ligula tempor, mollis est quis, semper leo</li>
-            <li>Maecenas a diam at augue accumsan finibus. Sed pretium ante ex. Nam tempus feugiat pretium. Ut imperdiet
+            <li>Maecenas a diam at augue accumsan finibus. Sed pretium ante ex. Nam tempus feugiat pretium. Ut
+              imperdiet
               laoreet ipsum sed venenatis. Cras in pretium tellus, vitae luctus neque.</li>
           </ul>
         </div>
 
-      </div>
-      <p class="top">&#10224; <a (click)="backToTop()">Back to top</a></p>
+      </div> -->
+
+    <p class="top">&#10224; <a (click)="backToTop()">Back to top</a></p>
   </div>
 </div>
 
-<div class="row">
+<!-- <div class="row">
   <pre>{{result|json}}</pre>
   <a [href]="downloadJsonHref" download="download.json">Download</a>
   <p class="top">&#10224; <a (click)="backToTop()">Back to top</a></p>
-</div>
+</div> -->

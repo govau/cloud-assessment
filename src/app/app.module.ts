@@ -8,6 +8,7 @@ import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 // service
 import { WorkFlowService } from './services/work-flow.service';
 import { LocalStorageService } from './services/local-storage.service';
+import { ReportService } from "./services/report.service";
 // components
 import { AppComponent } from './app.component';
 import { SiteHeaderComponent } from './components/site-header/site-header.component';
@@ -61,6 +62,7 @@ import { AssessmentGuard } from './guards/assessment.guard';
     AssessmentGuard,
     WorkFlowService,
     LocalStorageService,
+    ReportService,
   ],
   bootstrap: [AppComponent]
 })
