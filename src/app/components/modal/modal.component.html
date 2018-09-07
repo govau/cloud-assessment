@@ -8,10 +8,12 @@
       <ng-content></ng-content>
     </div>
     <div class='buttonBar'>
-      <button *ngIf='secondaryButtonText !== undefined' class='uikit-btn uikit-btn--tertiary first ci--secondaryButton' (click)="secondaryClicked()">{{
-        secondaryButtonText }}</button>
-      <button *ngIf='primaryButtonText !== undefined' class='uikit-btn ci--primaryButton' (click)="primaryClicked()">{{ primaryButtonText
-        }}</button>
+      <button *ngIf='secondaryButtonText !== undefined' class='uikit-btn uikit-btn--tertiary first ci--secondaryButton'
+        (click)="secondaryClicked()">
+        {{ secondaryButtonText }}</button>
+      <button *ngIf='primaryButtonText !== undefined' class='uikit-btn ci--primaryButton' (click)="primaryClicked()">
+        {{ primaryButtonText }}
+      </button>
     </div>
   </div>
 </div>

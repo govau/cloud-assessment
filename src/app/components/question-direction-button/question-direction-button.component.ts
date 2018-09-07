@@ -14,7 +14,6 @@ export class QuestionDirectionButtonComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // this.showPrevious = true;
   }
 
   goPrevious() {

@@ -1,0 +1,5 @@
+<div class="progress-outer">
+  <div class="progress-inner" [style.width]="whichProgress(progress) + '%'" [style.background-color]="degraded == null ? color : whichColor(progress)">
+    {{progressText}}
+  </div>
+</div>

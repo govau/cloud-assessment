@@ -1,3 +1,121 @@
 <div class="row">
+  <!-- LEFT COLUMN -->
+  <div class="col-xs-4 left-col">
+    <h2>Assessment Categories</h2>
+    <table>
+      <tr>
+        <td>Vendor</td>
+        <td><span class="red-light">1</span></td>
+        <td><span class="orange-light">2</span></td>
+        <td><span class="green-light">3</span></td>
+      </tr> 
+      <tr>
+        <td>Commercials</td>
+        <td><span class="red-light">1</span></td>
+        <td><span class="orange-light">2</span></td>
+        <td><span class="green-light">3</span></td>
+      </tr>
+      <tr>
+        <td>Compliance</td>
+        <td><span class="red-light">1</span></td>
+        <td><span class="orange-light">2</span></td>
+        <td><span class="green-light">3</span></td>
+      </tr>
+      <tr>
+        <td>Security</td>
+        <td><span class="red-light">1</span></td>
+        <td><span class="orange-light">2</span></td>
+        <td><span class="green-light">3</span></td>
+      </tr>
+      <tr>
+        <td>Functionality</td>
+        <td><span class="red-light">1</span></td>
+        <td><span class="orange-light">2</span></td>
+        <td><span class="green-light">3</span></td>
+      </tr>
+      <tr>
+        <td>Operability</td>
+        <td><span class="red-light">1</span></td>
+        <td><span class="orange-light">2</span></td>
+        <td><span class="green-light">3</span></td>
+      </tr>
+
+      <tr>
+        <td>Support</td>
+        <td><span class="red-light">1</span></td>
+        <td><span class="orange-light">2</span></td>
+        <td><span class="green-light">3</span></td>
+      </tr>
+    </table>
+
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div class="col-xs-8 right-col">
+    <h1>Cloud assessment report</h1>
+    <p>Here are your assessment results sorted by assessment category. If you need to share these results you can you the
+      Prin report button to print or save a PDF copy.</p>
+    <p>The service your have assessed is Sample Service, which you have indicated is categorised as SaaS and is estimated
+      to be used by 100 users.
+      <p>You have indicated that the main purpose for use of Sample Service is as follows:</p>
+      <ul>
+        <li>To provide our development team with a collaboration tool to communicate on development projects</li>
+        <li>These assessment results were produced on 28/08/2018</li>
+      </ul>
+
+      <!-- VENDOR PANEL -->
+      <div class="panel panel-default">
+        <div class="panel-heading">Vendor
+          <p style="float: right"><span class="red-light">1</span>
+            <span class="orange-light">2</span>
+            <span class="green-light">3</span></p>
+        </div>
+
+        <div class="panel-body panel-green">
+          <h2><span style="color: #21B87D; font-size:1.3em; padding:5px;">&#10004;</span>Business and financial health</h2>
+          <p>You provided a raiting of 4/5</p>
+          <p>You provided the following rationale for the score:
+          </p>
+          <ul>
+            <li>Donec rutrum porttitor ipsum, at euismod libero varius id. Etiam urna felis, blandit id consequat vitae,
+              ullamcorper in dolor. Integer eget ligula tempor, mollis est quis, semper leo</li>
+            <li>Maecenas a diam at augue accumsan finibus. Sed pretium ante ex. Nam tempus feugiat pretium. Ut imperdiet
+              laoreet ipsum sed venenatis. Cras in pretium tellus, vitae luctus neque.</li>
+          </ul>
+        </div>
+
+        <div class="panel-body panel-orange">
+          <h2><span style="color: #FFB951; font-size:1.3em; padding:5px;">&#33;</span> Experience and maturity</h2>
+          <p>You provided a raiting of 3/5</p>
+          <p>You provided the following rationale for the score:
+          </p>
+          <ul>
+            <li>Donec rutrum porttitor ipsum, at euismod libero varius id. Etiam urna felis, blandit id consequat vitae,
+              ullamcorper in dolor. Integer eget ligula tempor, mollis est quis, semper leo</li>
+            <li>Maecenas a diam at augue accumsan finibus. Sed pretium ante ex. Nam tempus feugiat pretium. Ut imperdiet
+              laoreet ipsum sed venenatis. Cras in pretium tellus, vitae luctus neque.</li>
+          </ul>
+        </div>
+        <div class="panel-body panel-red">
+          <h2><span style="color: #FF625C; font-size:1.3em; padding:5px;">&#10005;</span> Reputation</h2>
+          <p>You provided a raiting of 3/5</p>
+          <p>You provided the following rationale for the score:
+          </p>
+          <ul>
+            <li>Donec rutrum porttitor ipsum, at euismod libero varius id. Etiam urna felis, blandit id consequat vitae,
+              ullamcorper in dolor. Integer eget ligula tempor, mollis est quis, semper leo</li>
+            <li>Maecenas a diam at augue accumsan finibus. Sed pretium ante ex. Nam tempus feugiat pretium. Ut imperdiet
+              laoreet ipsum sed venenatis. Cras in pretium tellus, vitae luctus neque.</li>
+          </ul>
+        </div>
+
+      </div>
+      <p class="top">&#10224; <a (click)="backToTop()">Back to top</a></p>
+  </div>
+</div>
+
+<div class="row">
   <pre>{{result|json}}</pre>
+  <a [href]="downloadJsonHref" download="download.json">Download</a>
+  <p class="top">&#10224; <a (click)="backToTop()">Back to top</a></p>
 </div>

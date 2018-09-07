@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CONFIG_DATA } from '../../data/ConfigData';
-import { LocalStorageService } from '../../services/local-storage.service';
-
+import { Config } from '../../data/Config';
 
 @Component({
   selector: 'app-home',
@@ -14,23 +12,16 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private localStorageService: LocalStorageService,
   ) { }
 
   ngOnInit() {
   }
 
-  startAccessment() {
-    const localData = this.localStorageService.get();
-    if (localData === null) {
-      this.router.navigateByUrl(CONFIG_DATA.ROUTE_PATH.ACCESSMENT);
-    } else {
-      // open modal to load data
-      this.router.navigateByUrl(CONFIG_DATA.ROUTE_PATH.ACCESSMENT);
-    }
+  startAssessment() {
+    this.router.navigateByUrl(Config.RoutePath.ASSESSMENT);
   }
 
   learnMore() {
-    this.router.navigateByUrl(CONFIG_DATA.ROUTE_PATH.ABOUT);
+    this.router.navigateByUrl(Config.RoutePath.ABOUT);
   }
 }

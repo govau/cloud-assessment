@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CONFIG_DATA } from '../../data/ConfigData';
+import { Config } from '../../data/Config';
 
 @Component({
   selector: 'app-navi',
@@ -8,7 +8,7 @@ import { CONFIG_DATA } from '../../data/ConfigData';
 })
 export class NaviComponent implements OnInit {
 
-  public routePath = CONFIG_DATA.ROUTE_PATH;
+  public routePath = Config.RoutePath;
 
   constructor() { }
 

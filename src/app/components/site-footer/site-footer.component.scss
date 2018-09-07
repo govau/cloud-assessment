@@ -1,5 +1,36 @@
 @import '../../../styles/global-includes';
 
-a {
-    color: white;
+.au-footer--dark {
+    a:link, a:visited {
+        text-decoration: none;
+        color: #FFFFFF;
+    }
+    a:active {
+        text-decoration: none;
+        color: #FFFFFF;
+    }
+    a:hover {
+        text-decoration: none;
+        border-bottom: 2px #61daff solid;
+        color: #ffffff;
+    }
+    .au-display-lg {
+        font-weight: 400;
+        border-bottom: 4px #61daff solid;
+    }
+    h3 {
+        font-size: 1.1em;
+    }
+    .list-inline{
+        padding-left:0px;
+        width: 100%;
+    }
+    .list-inline-item {
+        padding: 0;
+        display: inline;
+        padding-right: 15px;
+    }
+    a {
+        color: white;
+    }
 }

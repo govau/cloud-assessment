@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
+// model
+import IQuestionItem from '../classes/IQuestionItem';
+// service
+import { Config } from '../data/Config';
 
 @Injectable()
 export class LocalStorageService {
     localStorageKey: string;
 
     constructor() {
-        this.localStorageKey = 'CloudAssessment';
+        this.localStorageKey = Config.LocalStorageKey;
     }
 
     set(data: any): void {
@@ -16,7 +20,7 @@ export class LocalStorageService {
         }
     }
 
-    get() {
+    get(): IQuestionItem[] {
         try {
             return JSON.parse(window.localStorage.getItem(this.localStorageKey));
         } catch (e) {

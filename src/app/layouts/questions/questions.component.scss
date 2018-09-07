@@ -1,3 +1,23 @@
 .controlPadding{
-    padding-top: 50px;
+  padding-top: 50px;
 }   
+
+.errorMessage {
+  margin-top: 30px;
+  border: 2px solid #BC293F;
+  border-radius: 3px;
+  background: #EE324C;
+  padding: 10px;
+  color: #fff;
+}
+
+.au-display-xxxl {
+  font-weight: 400;
+  font-size: 2.7em;
+}
+
+.au-display-lg {
+  color: #185E6F;
+  font-weight: 400;
+  font-size: 2em;
+}

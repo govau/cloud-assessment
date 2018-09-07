@@ -1,0 +1,18 @@
+.progress-outer {
+    width: 96%;
+    margin: 10px 2%;
+    padding: 3px;
+    background-color: #f4f4f4;
+    border: 1px solid #dcdcdc;
+    color: #fff;
+    border-radius: 20px;
+    text-align: center;
+  }
+  
+  .progress-inner {
+    min-width: 7%;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0px;
+    border-radius: 20px;
+  }

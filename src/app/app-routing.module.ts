@@ -1,39 +1,50 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
-import { CONFIG_DATA } from './data/ConfigData';
+import { Config } from './data/Config';
+// guards
+import { AssessmentGuard } from './guards/assessment.guard';
 // pages
 import { HomeComponent } from './layouts/home/home.component';
-import { AccessmentComponent } from './layouts/accessment/accessment.component';
+import { AssessmentComponent } from './layouts/assessment/assessment.component';
 import { AboutComponent } from './layouts/about/about.component';
 import { ContactComponent } from './layouts/contact/contact.component';
 import { QuestionsComponent } from './layouts/questions/questions.component';
 import { ResultComponent } from './layouts/result/result.component';
 
 const routes: Routes = [
-    { path: CONFIG_DATA.ROUTE_PATH.HOME, component: HomeComponent },
-    { path: CONFIG_DATA.ROUTE_PATH.ABOUT, component: AboutComponent },
-    { path: CONFIG_DATA.ROUTE_PATH.CONTACT, component: ContactComponent },
-    { path: CONFIG_DATA.ROUTE_PATH.ACCESSMENT, component: AccessmentComponent },
-    { path: CONFIG_DATA.ROUTE_PATH.QUESTIONS, component: QuestionsComponent },
-    { path: CONFIG_DATA.ROUTE_PATH.RESULT, component: ResultComponent },
+    { path: '', component: HomeComponent },
+    { path: Config.RoutePath.ABOUT, component: AboutComponent },
+    { path: Config.RoutePath.CONTACT, component: ContactComponent },
+    { path: Config.RoutePath.ASSESSMENT, component: AssessmentComponent },
+    { path: Config.RoutePath.QUESTIONS, component: QuestionsComponent, canActivate: [AssessmentGuard] },
+    { path: Config.RoutePath.RESULT, component: ResultComponent },
+    // todo unique url per question
     // {
-    //     path: CONFIG_DATA.ROUTE_PATH.ACCESSMENT,
+    //     path: Config.RoutePath.QUESTIONS,
+    //     canActivate: [AssessmentGuard],
     //     children: [
-    //         // { path: '', component: AccessmentComponent },
     //         // { path: '1', component: QuestionsComponent },
     //         // { path: '2', component: QuestionsComponent },
     //         // { path: '3', component: QuestionsComponent },
     //         // { path: '4', component: QuestionsComponent },
+    //         // { path: '5', component: QuestionsComponent },
+    //         // { path: '6', component: QuestionsComponent },
+    //         // { path: '7', component: QuestionsComponent },
+    //         // { path: '8', component: QuestionsComponent },
+    //         // { path: '9', component: QuestionsComponent },
+    //         // { path: '10', component: QuestionsComponent },
+    //         // { path: '11', component: QuestionsComponent },
+    //         // { path: '12', component: QuestionsComponent },
+    //         // { path: '13', component: QuestionsComponent },
+    //         // { path: '14', component: QuestionsComponent },
+    //         // { path: '15', component: QuestionsComponent },
+    //         // { path: '16', component: QuestionsComponent },
+    //         // { path: '17', component: QuestionsComponent },
     //     ]
     // },
     {
-        path: '',
-        redirectTo: CONFIG_DATA.ROUTE_PATH.HOME,
-        pathMatch: 'full'
-    },
-    {
         path: '**',
-        redirectTo: CONFIG_DATA.ROUTE_PATH.HOME,
+        redirectTo: Config.RoutePath.HOME,
     }
 ];
 
@@ -43,13 +54,15 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule {
+    // todo unique url per question
     // constructor(router: Router) {
     //     const config = router.config;
-    //     const temp = config.find(x => x.path === CONFIG_DATA.ROUTE_PATH.ACCESSMENT);
-    //     temp.children.push({ path: '', component: AccessmentComponent });
-    //     temp.children.push({ path: '1', component: QuestionsComponent });
-    //     temp.children.push({ path: '2', component: QuestionsComponent });
-    //     temp.children.push({ path: '3', component: QuestionsComponent });
+    //     const questions_route = config.find(x => x.path === Config.RoutePath.QUESTIONS);
+
+    //     Config.QuestionData.forEach(q =>
+    //         questions_route.children.push({ path: q.id.toString(), component: QuestionsComponent })
+    //     );
+
     //     router.resetConfig(config);
     // }
 }

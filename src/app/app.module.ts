@@ -1,13 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+// modules
 import { AppRoutingModule } from './app-routing.module';
+import { RecaptchaModule } from 'ng-recaptcha';
+import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 // service
-import { QuestionDataService } from './services/question-data.service';
-// import { RouteDataService } from './services/route-data.service';
-import { LocalStorageService } from './services/local-storage.service';
 import { WorkFlowService } from './services/work-flow.service';
+import { LocalStorageService } from './services/local-storage.service';
 // components
 import { AppComponent } from './app.component';
 import { SiteHeaderComponent } from './components/site-header/site-header.component';
@@ -16,20 +16,16 @@ import { NaviComponent } from './components/navi/navi.component';
 import { QuestionDirectionButtonComponent } from './components/question-direction-button/question-direction-button.component';
 import { HelpSectionComponent } from './components/help-section/help-section.component';
 import { ModalComponent } from './components/modal/modal.component';
-import { ProgressBarModule } from "angular-progress-bar"
-// todo remove
-import { AccordionComponent } from './components/accordion/accordion.component';
-import { FormRadioQuestionComponent } from './components/form-radio-question/form-radio-question.component';
-
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 // pages
 import { HomeComponent } from './layouts/home/home.component';
-import { AccessmentComponent } from './layouts/accessment/accessment.component';
+import { AssessmentComponent } from './layouts/assessment/assessment.component';
 import { AboutComponent } from './layouts/about/about.component';
 import { ContactComponent } from './layouts/contact/contact.component';
 import { QuestionsComponent } from './layouts/questions/questions.component';
 import { ResultComponent } from './layouts/result/result.component';
-
-
+// guards
+import { AssessmentGuard } from './guards/assessment.guard';
 
 @NgModule({
   declarations: [
@@ -40,30 +36,31 @@ import { ResultComponent } from './layouts/result/result.component';
     QuestionDirectionButtonComponent,
     HelpSectionComponent,
     ModalComponent,
-    AccordionComponent,
-    FormRadioQuestionComponent,
+    ProgressBarComponent,
 
     HomeComponent,
-    AccessmentComponent,
+    AssessmentComponent,
     AboutComponent,
     ContactComponent,
     QuestionsComponent,
     ResultComponent,
   ],
-  // entryComponents: [
-  //   AccessmentComponent,
-  //   QuestionsComponent
-  // ],
+  // todo dynamic route
+  entryComponents: [
+    AssessmentComponent,
+    QuestionsComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ProgressBarModule,
+    RecaptchaModule.forRoot(),
+    RecaptchaFormsModule,
   ],
   providers: [
-    LocalStorageService,
+    AssessmentGuard,
     WorkFlowService,
-    QuestionDataService,
+    LocalStorageService,
   ],
   bootstrap: [AppComponent]
 })

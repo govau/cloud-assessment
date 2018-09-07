@@ -1,105 +1,93 @@
-// import { Injectable } from '@angular/core';
-// import { Router, UrlSegment, UrlTree, UrlSegmentGroup, PRIMARY_OUTLET } from '@angular/router';
-// import { ROUTE_PATH } from '../Routes';
-
-// import { LocalStorageService } from './local-storage.service';
-// import { FormDataService } from './formData.service';
-
-// @Injectable()
-// export class WorkFlowService {
-//     private questions: string[];
-//     private startPath: string;
-//     private finishePath: string;
-
-//     constructor(
-//         private router: Router,
-//         private formDataService: FormDataService,
-//         private localStorageService: LocalStorageService,
-//     ) {
-//         // todo move into config file
-//         this.questions = [
-//             ROUTE_PATH.DATA_SECURITY,
-//             ROUTE_PATH.TYPE_OF_CLOUD_SERVICE,
-//             ROUTE_PATH.ABOUT_THE_PRODUCT,
-//         ];
-//         this.startPath = ROUTE_PATH.ACCESSMENT;
-//         this.finishePath = ROUTE_PATH.CLOUD_ASSESMENT_REPORT;
-//     }
-
-//     goPrevious(): void {
-//         const lastSegment = this.getLastSegmentOfURL();
-//         if (lastSegment === this.questions[0]) {
-//             this.router.navigate([this.startPath]);
-//         } else {
-//             const index = this.questions.findIndex(path => path === lastSegment);
-//             this.router.navigate([this.startPath, this.questions[index - 1]]);
-//         }
-//     }
-
-//     goNext(): void {
-//         // todo maybe refactor-> create this.localStorageService.save()
-//         // call this.localStorageService.save() in each component before function goNext();
-//         const lastSegment = this.getLastSegmentOfURL();
-//         if (lastSegment === this.startPath) {
-//             this.localStorageService.clear();
-//             this.router.navigate([this.startPath, this.questions[0]]);
-//         } else {
-//             const index = this.questions.findIndex(path => path === lastSegment);
-//             if (index === this.questions.length - 1) {
-//                 this.localStorageService.clear();
-//                 this.router.navigate([this.startPath, this.finishePath]);
-//             } else {
-//                 this.localStorageService.set(this.formDataService.getFormData());
-//                 this.router.navigate([this.startPath, this.questions[index + 1]]);
-//             }
-//         }
-//     }
-
-//     private getLastSegmentOfURL(): string {
-//         const tree: UrlTree = this.router.parseUrl(this.router.url);
-//         const group: UrlSegmentGroup = tree.root.children[PRIMARY_OUTLET];
-//         const segments: UrlSegment[] = group.segments;
-//         const lastSegment = segments.pop().path;
-//         return lastSegment;
-//     }
-
-// }
-
-
 import { Injectable } from '@angular/core';
-
-import QuestionItem from '../classes/QuestionItem';
-import { QuestionData } from '../data/QuestionData';
-
-// import { LocalStorageService } from './local-storage.service';
-// import { FormDataService } from './formData.service';
+// model
+import IQuestionItem from '../classes/IQuestionItem';
+import { CheckBox } from '../classes/CheckBox';
+// config
+import { Config } from '../data/Config';
 
 @Injectable()
 export class WorkFlowService {
-    private questions: QuestionItem[];
-    private currentIndex: number;
+  private allQuestions: IQuestionItem[];
+  public currentIndex: number;
+  public hasStarted: boolean;
 
-    constructor(
-        // private formDataService: FormDataService,
-        // private localStorageService: LocalStorageService,
-    ) {
-        // todo move into config file
-        this.questions = QuestionData;
-        this.currentIndex = 0;
+  constructor(
+  ) {
+    this.reset();
+    this.hasStarted = false;
+  }
+
+  get result(): IQuestionItem[] {
+    return this.allQuestions;
+  }
+
+  get isFirst(): boolean {
+    return this.currentIndex === 0;
+  }
+
+  get isLast(): boolean {
+    return (this.currentIndex === (this.allQuestions.length - 1));
+  }
+
+  get count(): number {
+    return this.allQuestions.length;
+  }
+
+  get index(): number {
+    return this.currentIndex;
+  }
+
+  public getCurrent(): IQuestionItem {
+    return this.allQuestions[this.currentIndex];
+  }
+
+  public Next(): IQuestionItem {
+    if (!this.isLast) {
+      this.currentIndex++;
+      return this.checkRules() ? this.Next() : this.getCurrent();
+    } else {
+      return null;
+    }
+  }
+
+  public Previous(): IQuestionItem {
+    if (!this.isFirst) {
+      this.currentIndex--;
+      return this.checkRules() ? this.Previous() : this.getCurrent();
+    } else {
+      return null;
+    }
+  }
+
+  public reset() {
+    this.hasStarted = true;
+    this.currentIndex = 0;
+    Config.QuestionData.forEach(q => {
+      if (q.ValueType === 'OR') {
+        q.AssessmentValue = [];
+        q.ValueOptions.split(',').forEach(name =>
+          q.AssessmentValue.push(new CheckBox(name, false))
+        );
+      }
+    });
+    this.allQuestions = Config.QuestionData.map(x => Object.assign({}, x));
+  }
+
+  public restore(data: IQuestionItem[]) {
+    this.allQuestions = data;
+  }
+
+  private checkRules(): boolean {
+    // todo if condition modified -> clear all AssessmentValue after it
+
+    // todo conditional question
+    if (this.getCurrent().Condition.trim()) {
+      if (this.allQuestions[0].AssessmentValue === 'Saas') {
+        const options = [1];
+        return options.indexOf(this.currentIndex) > -1;
+      }
     }
 
-    goPrevious(): QuestionItem {
-        this.currentIndex = this.currentIndex - 1;
-        return this.questions[this.currentIndex];
-    }
-
-    goNext(): QuestionItem {
-        if (this.currentIndex === 0) {
-            this.currentIndex = 1;
-            return this.questions[0];
-        } else {
-            this.currentIndex += 1;
-            return this.questions[this.currentIndex];
-        }
-    }
+    return false;
+  }
 }

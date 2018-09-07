@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import QuestionItem from '../../classes/QuestionItem';
-import { QuestionDataService } from '../../services/question-data.service';
+import { DomSanitizer } from '@angular/platform-browser';
+// model
+import IQuestionItem from '../../classes/IQuestionItem';
+// service
+import { WorkFlowService } from '../../services/work-flow.service';
 
 @Component({
   selector: 'app-result',
@@ -8,14 +11,26 @@ import { QuestionDataService } from '../../services/question-data.service';
   styleUrls: ['./result.component.scss']
 })
 export class ResultComponent implements OnInit {
-  result: QuestionItem[];
+  result: IQuestionItem[];
+  downloadJsonHref: any;
 
   constructor(
-    private questionDataService: QuestionDataService,
+    private workFlowService: WorkFlowService,
+    private sanitizer: DomSanitizer
   ) { }
 
   ngOnInit() {
-    this.result = this.questionDataService.all;
+    this.result = this.workFlowService.result;
+    this.generateDownloadJsonUri();
   }
 
+  generateDownloadJsonUri() {
+    const theJSON = JSON.stringify(this.result);
+    const uri = this.sanitizer.bypassSecurityTrustUrl('data:text/json;charset=UTF-8,' + encodeURIComponent(theJSON));
+    this.downloadJsonHref = uri;
+  }
+
+  backToTop() {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }
 }

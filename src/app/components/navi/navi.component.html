@@ -2,12 +2,12 @@
   <div class="container container-fluid">
     <nav class="navigation navigation--dark">
       <ul class="nav navbar-nav au-link-list au-link-list--inline">
-        <li class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link" [routerLink]="[routePath.HOME]">Home
+        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" [routerLink]="['./']">Home
           </a>
         </li>
         <li class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link" [routerLink]="[routePath.ACCESSMENT]">Assessment
+          <a class="nav-link" [routerLink]="[routePath.ASSESSMENT]">Assessment
           </a>
         </li>
         <li class="nav-item" [routerLinkActive]="['active']">
