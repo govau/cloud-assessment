@@ -14,3 +14,6 @@
 p.cta {
     @include rem(margin-top, 48px);
 }
+  .au-btn:focus, a.au-btn:focus {
+    outline: none;
+}
