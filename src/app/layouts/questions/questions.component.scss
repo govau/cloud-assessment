@@ -36,3 +36,10 @@
 .au-control-input__input:invalid + .au-control-input__text {
   background-color: transparent;
 }
+.form-answer-radio {
+  display: grid;
+  float: left;
+  clear: both;
+  width: 100%;
+  padding: 10px;
+}
