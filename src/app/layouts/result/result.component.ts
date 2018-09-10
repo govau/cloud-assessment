@@ -72,7 +72,13 @@ export class ResultComponent implements OnInit {
         switch (x.ValueType) {
           case Config.QuestionType.Integer:
             if (+x.AssessmentValue < (+x.RequiredValue - 1)) {
-              count++
+              count++;
+            }
+            break;
+          case Config.QuestionType.OR:
+          case Config.QuestionType.XOR:
+            if (x.AssessmentValue !== x.RequiredValue) {
+              count++;
             }
             break;
         }
@@ -88,7 +94,7 @@ export class ResultComponent implements OnInit {
         switch (x.ValueType) {
           case Config.QuestionType.Integer:
             if (+x.AssessmentValue === (+x.RequiredValue - 1)) {
-              count++
+              count++;
             }
             break;
         }
@@ -103,8 +109,14 @@ export class ResultComponent implements OnInit {
       if (x.Category === categoryName) {
         switch (x.ValueType) {
           case Config.QuestionType.Integer:
-            if (+x.AssessmentValue >= (+x.RequiredValue - 1)) {
-              count++
+            if (+x.AssessmentValue > (+x.RequiredValue - 1)) {
+              count++;
+            }
+            break;
+          case Config.QuestionType.OR:
+          case Config.QuestionType.XOR:
+            if (x.AssessmentValue === x.RequiredValue) {
+              count++;
             }
             break;
         }

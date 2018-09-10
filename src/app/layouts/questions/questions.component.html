@@ -6,12 +6,9 @@
     </div>
     <div class="row">
       <div class="col-xs-8">
-        <h2>{{processBar}}</h2>
         <h4 class="au-display-xxxl">{{currentQuestion.Quality}}</h4>
         <h5 class="au-display-lg">{{subTitle}}</h5>
-        <p>
-          {{currentQuestion.Description}}
-        </p>
+        <div [innerHTML]="currentQuestion.Description"></div>
         <!-- question -->
         <div class="controlPadding" [ngSwitch]="currentQuestion.ValueType">
           <div *ngSwitchCase="'Integer'">

@@ -19,7 +19,7 @@
     <h1>Cloud assessment report</h1>
     <p>Here are your assessment results sorted by assessment category. If you need to share these results you can you
       the
-      Prin report button to print or save a PDF copy.</p>
+      Print report button to print or save a PDF copy.</p>
     <!-- <p>The service your have assessed is Sample Service, which you have indicated is categorised as SaaS and is
       estimated
       to be used by 100 users.</p>
@@ -50,7 +50,7 @@
             <span style="color: #FF625C; font-size:1.3em; padding:5px;">&#10005;</span>
             {{question.Quality}}
           </h2>
-          <p *ngIf="question.ValueType==='Integer'">You provided a raiting of {{question.AssessmentValue}}/5</p>
+          <p *ngIf="question.ValueType==='Integer'">You provided a rating of {{question.AssessmentValue}}/5</p>
           <p *ngIf="question.ValueType==='OR'">You answered {{GetXORAssessmentValue(question.AssessmentValue)}}</p>
           <p *ngIf="question.ValueType==='XOR'">You answered {{question.AssessmentValue}}</p>
           <div *ngIf="question.Comments">

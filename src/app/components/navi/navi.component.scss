@@ -17,6 +17,10 @@ ul.navbar-nav {
   padding-left: 0px;
 }
 
+.au-body.au-body--dark a:focus {
+    outline: none;
+}
+
 .navigation {
   .au-link-list--inline {
     @include rem(margin-bottom, 8px);

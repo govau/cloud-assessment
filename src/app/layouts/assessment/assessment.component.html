@@ -51,7 +51,7 @@
     </form>
 </div>
 
-<app-modal [(show)]="showModal" [title]="'Local storage'" [primaryButtonText]="'No'" [secondaryButtonText]="'Yes'" (primaryButtonClick)='no()'
+<app-modal [(show)]="showModal" [title]="'Welcome back'" [primaryButtonText]="'Start again'" [secondaryButtonText]="'Resume'" (primaryButtonClick)='no()'
     (secondaryButtonClick)='yes()'>
-    <div>Do you want to load your local storage data </div>
+    <div>Would you like to resume the questionnaire from where you left off?</div>
 </app-modal>
