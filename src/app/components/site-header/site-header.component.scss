@@ -5,3 +5,9 @@ header {
     border-bottom: solid $cloud-blue;
     @include rem(border-bottom-width, 8px);
 }
+
+h1 { color:#ffffff;}
+
+a:hover{
+    text-decoration: none;
+}
