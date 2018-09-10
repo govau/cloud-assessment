@@ -7,3 +7,6 @@
     border-left: solid $cloud-dark-grey;
     @include rem(border-right-width, 4px);
 }
+p {
+    word-wrap: break-word;
+}
