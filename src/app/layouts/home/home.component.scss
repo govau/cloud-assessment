@@ -14,6 +14,8 @@
 p.cta {
     @include rem(margin-top, 48px);
 }
-  .au-btn:focus, a.au-btn:focus {
-    outline: none;
+.traffic-orange{
+    color: #FFB951; 
+    font-size:1.3em; 
+    padding:5px;
 }

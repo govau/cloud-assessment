@@ -36,3 +36,92 @@
     font-weight: normal;
   }
 }
+
+ /* print styles */
+
+ /* Report styles*/
+
+@media print {
+
+    .panel-green {
+        border-left: 10px!important #21B87D!important solid!important;
+        -webkit-print-color-adjust:exact;
+    }
+    .panel-orange {
+        border-left: 10px!important #FFB951!important solid!important;
+        -webkit-print-color-adjust:exact;
+    }
+    .panel-red {
+        border-left: 10px!important #FF625C!important solid!important;
+        -webkit-print-color-adjust:exact;
+    }
+    
+.traffic-green{
+    color: #21B87D!important; 
+    font-size:1.3em; 
+    padding:5px;
+}
+
+.traffic-orange{
+    color: #FFB951!important ; 
+    font-size:1.3em; 
+    padding:5px;
+}
+
+.traffic-red{
+    color:  #FF625C!important; 
+    font-size:1.3em; 
+    padding:5px;
+}
+
+  
+  .mainmenu .au-body .au-body--dark .au-accordion__body .au-accordion--closed {
+    display:none;
+  }
+  .main .row {
+    margin-top: -50px;
+  }
+  ul.nav.navbar-nav.au-link-list.au-link-list--inline{
+    display:none;
+  }
+  ul.au-link-list.au-link-list--inline.mainmenu-right{
+    display:none;
+  }
+  .au-body .au-btn, .au-body a.au-btn {
+    display:none;
+  }
+  .progress-outer {
+    display: none;
+  }
+  .au-grid .col-xs-8 {
+    width: 100%;
+  }
+  .au-footer__end.row {
+  display:none;
+  padding: 10px 10px;
+  }  
+.au-grid .col-xs-4 {
+  width: 60%;
+}
+
+h1 {
+  padding-top: 10px;
+  color: #185E6F!important;
+  -webkit-print-color-adjust:exact ;
+}
+h5.au-display-lg {
+  color: #185E6F!important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  page-break-after: avoid; // Prevent headings from being printed at the bottom of the page
+}
+
+img, #textarea {
+  page-break-inside: avoid; // Prevent images from being split up
+}
+
+body {
+page-break-before: always;
+}
+}
