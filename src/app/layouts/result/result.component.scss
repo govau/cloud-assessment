@@ -265,6 +265,24 @@ padding: 0px 20px;
         @extend .panel-border;
     }
 
+    .traffic-green{
+        color: $green; 
+        font-size:1.3em; 
+        padding:5px;
+    }
+
+    .traffic-orange{
+        color: $orange; 
+        font-size:1.3em; 
+        padding:5px;
+    }
+
+    .traffic-red{
+        color: $red; 
+        font-size:1.3em; 
+        padding:5px;
+    }
+
     .top {
         float: right;
         a {

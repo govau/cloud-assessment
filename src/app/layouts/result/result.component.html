@@ -39,15 +39,15 @@
       <div *ngFor="let question of GetQuestionsByCategory(item)">
         <div class="panel-body" [ngClass]="{'panel-green':CalculateSymbol(question)==='green', 'panel-orange': CalculateSymbol(question)==='orange', 'panel-red':CalculateSymbol(question)==='red'}">
           <h2 *ngIf="CalculateSymbol(question)==='green'">
-            <span style="color: #21B87D; font-size:1.3em; padding:5px;">&#10004;</span>
+            <span class="traffic-green">&#10004;</span>
             {{question.Quality}}
           </h2>
           <h2 *ngIf="CalculateSymbol(question)==='orange'">
-            <span style="color: #FFB951; font-size:1.3em; padding:5px;">&#33;</span>
+            <span class="traffic-orange">&#33;</span>
             {{question.Quality}}
           </h2>
           <h2 *ngIf="CalculateSymbol(question)==='red'">
-            <span style="color: #FF625C; font-size:1.3em; padding:5px;">&#10005;</span>
+            <span class="traffic-red">&#10005;</span>
             {{question.Quality}}
           </h2>
           <p *ngIf="question.ValueType==='Integer'">You provided a rating of {{question.AssessmentValue}}/5</p>
