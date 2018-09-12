@@ -16,6 +16,7 @@ import { LocalStorageService } from '../../services/local-storage.service';
 })
 export class QuestionsComponent implements OnInit {
   private formSubmitted: boolean;
+  showModal: boolean;
   currentQuestion: IQuestionItem;
   @ViewChild('myform') form: NgForm;
 
@@ -26,6 +27,7 @@ export class QuestionsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.showModal = false;
     this.currentQuestion = this.workFlowService.getCurrent();
     this.formSubmitted = false;
   }
@@ -51,7 +53,8 @@ export class QuestionsComponent implements OnInit {
   }
 
   get showPrevious(): boolean {
-    return !this.workFlowService.isFirst;
+    return true;
+    // return !this.workFlowService.isFirst;
   }
 
   get showError(): boolean {
@@ -67,11 +70,15 @@ export class QuestionsComponent implements OnInit {
     this.formReset();
     // todo unique url per question
     // this.router.navigateByUrl(Config.RoutePath.QUESTIONS + `/${this.workFlowService.currentIndex}`);
-
-    this.currentQuestion = this.workFlowService.Previous();
+    if (this.workFlowService.isFirst) {
+      this.router.navigateByUrl(Config.RoutePath.GENERALQUESTION);
+    } else {
+      this.currentQuestion = this.workFlowService.Previous();
+    }
   }
 
   goNext() {
+    // window.scroll(0, 0);
     if (this.form.valid) {
       this.localStorageService.set(this.workFlowService.result);
       this.currentQuestion = this.workFlowService.Next();
@@ -91,5 +98,19 @@ export class QuestionsComponent implements OnInit {
 
   private formReset() {
     this.formSubmitted = false;
+  }
+
+  saveButtonClick() {
+    this.showModal = true;
+  }
+
+  saveExit() {
+    this.localStorageService.set(this.workFlowService.result);
+    this.showModal = false;
+    window.open("about:blank", "_self").close();
+  }
+
+  saveCancel() {
+    this.showModal = false;
   }
 }

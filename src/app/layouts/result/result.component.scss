@@ -223,6 +223,11 @@ padding: 0px 20px;
         min-height: 45px;
         font-weight: 600;
     }
+    
+    .panel:not(:first-child) { 
+        margin-top: 90px;  
+    }
+
     .panel-body {
         padding: 15px;
         box-sizing: border-box;
@@ -284,6 +289,7 @@ padding: 0px 20px;
     }
 
     .top {
+        cursor: pointer;
         float: right;
         a {
             text-decoration: none;

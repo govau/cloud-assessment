@@ -4,11 +4,11 @@
 -->
 
 <div class="au-grid au-body">
-    <footer class="au-footer au-footer--dark" role="contentinfo">
-      <div class="container">
-        <nav class="au-footer__navigation row">
-          <div class="col-md-3 col-sm-6">
-            <!--h3 class="au-display-lg">Section</h3>
+  <footer class="au-footer au-footer--dark" role="contentinfo">
+    <div class="container">
+      <nav class="au-footer__navigation row">
+        <div class="col-md-3 col-sm-6">
+          <!--h3 class="au-display-lg">Section</h3>
             <ul class="au-link-list">
               <li><a href="#">Link 1</a></li>
               <li><a href="#">Link 2</a></li>
@@ -22,22 +22,25 @@
               <li><a href="#">Link 2</a></li>
               <li><a href="#">Link 3</a></li>
             </ul-->
+        </div>
+      </nav>
+      <section class="au-footer__end row">
+        <div class="col-sm-12">
+          <ul class="list-inline">
+            <li class="list-inline-item"><a target="_blank" href="https://www.dta.gov.au/privacy-statement/">Privacy</a></li>
+            <li class="list-inline-item"><a [routerLink]="['/'+routePath.CONTACT]">Need Help</a></li>
+            <li class="list-inline-item"><a target="_blank" href="https://www.dta.gov.au/accessibility/">Accessibility</a></li>
+            <li class="list-inline-item"><a target="_blank" href="https://www.dta.gov.au/disclaimer/">Disclaimer</a></li>
+          </ul>
+          <div style="clear:both">
+            <p><img class="au-responsive-media-img footer-img" src="/assets/img/header-logo-agov.png" alt="Brand image "></p>
+            <small>&copy; Commonwealth of Australia, <a href="https://github.com/govau/uikit/blob/master/LICENSE.md"
+                rel="external license">MIT
+                licensed
+              </a></small>
           </div>
-        </nav>
-        <section class="au-footer__end row">
-          <div class="col-sm-12">
-            <ul class="list-inline">
-              <li class="list-inline-item"><a href="#">Privacy</a></li>
-              <li class="list-inline-item"><a href="#">Need Help</a></li>
-              <li class="list-inline-item"><a href="#">Accessibility</a></li>
-              <li class="list-inline-item"><a href="#">Disclaimer</a></li>
-            </ul>
-            <div style="clear:both"> <p><img class="au-responsive-media-img footer-img" src="/assets/img/header-logo-agov.png" alt="Brand image "></p>
-           <small>&copy; Commonwealth of Australia, <a href="https://github.com/govau/uikit/blob/master/LICENSE.md" rel="external license">MIT
-                  licensed
-                </a></small></div>
-          </div>
-        </section>
-      </div>
-    </footer>
-  </div>
+        </div>
+      </section>
+    </div>
+  </footer>
+</div>

@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 // config
-import { Config } from "../../data/Config";
+import { Config } from '../../data/Config';
 // model
 import IQuestionItem from '../../classes/IQuestionItem';
-import UIReportItem from "../../classes/UIReportItem";
+import GeneralQuestion from "../../classes/GeneralQuestion";
+import UIReportItem from '../../classes/UIReportItem';
 // service
 import { WorkFlowService } from '../../services/work-flow.service';
-import { ReportService } from "../../services/report.service";
+import { ReportService } from '../../services/report.service';
 // data
-import { ResultData } from "../../data/result-data";
+import { ResultData } from '../../data/result-data';
 
-import { CheckBox } from "../../classes/CheckBox";
+import CheckBox from '../../classes/CheckBox';
 
 @Component({
   selector: 'app-result',
@@ -22,8 +23,10 @@ export class ResultComponent implements OnInit {
   result: IQuestionItem[];
   downloadJsonHref: any;
   // UIReport: ReportService;
+  assessmentDate: number;
 
   private _data: IQuestionItem[];
+  private _generalQuestion: GeneralQuestion;
 
   constructor(
     private workFlowService: WorkFlowService,
@@ -32,12 +35,14 @@ export class ResultComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.result = this.workFlowService.result;
+    this.result = this.workFlowService.result.a;
     this.generateDownloadJsonUri();
-
+    this.assessmentDate = Date.now();
     // todo
     // this._data = ResultData;
-    this._data = this.workFlowService.result;
+    this._data = this.workFlowService.result.a;
+    // this._generalQuestion = this.workFlowService.result.g;
+    this._generalQuestion = Object.assign({}, this.workFlowService.result.g);
   }
 
   generateDownloadJsonUri() {
@@ -58,7 +63,7 @@ export class ResultComponent implements OnInit {
   get Categories(): string[] {
     const categories = [];
     this._data.forEach(x => {
-      if (categories.indexOf(x.Category) === -1 && x.Category != 'General' && x.Category.trim() != '') {
+      if (categories.indexOf(x.Category) === -1 && x.Category !== 'General' && x.Category.trim() !== '') {
         categories.push(x.Category);
       }
     });
@@ -163,7 +168,7 @@ export class ResultComponent implements OnInit {
   }
 
   GetXORAssessmentValue(data: CheckBox[]): string {
-    let result = [];
+    const result = [];
     data.forEach(element => {
       if (element.checked) {
         result.push(element.name);
@@ -171,5 +176,37 @@ export class ResultComponent implements OnInit {
     });
     return result.join(',');
   }
+
+  jumpToPage(data: string) {
+    const x = document.querySelector('#' + data);
+    if (x) {
+      x.scrollIntoView();
+    }
+  }
+
+  get ServiceName(): string {
+    // const temp = this._data.find(d => d.Category === 'General' && d.Quality === 'Service name');
+    // return temp.AssessmentValue;
+    return this._generalQuestion.ServiceName;
+  }
+
+  get NumberOfUsers(): string {
+    // const temp = this._data.find(d => d.Category === 'General' && d.Quality === 'Number of users');
+    // return temp.AssessmentValue;
+    return this._generalQuestion.NumberOfUsers;
+  }
+
+  get CloudModel(): string {
+    const temp = this._data.find(d => d.Category === 'General' && d.Quality === 'Cloud model');
+    return temp.AssessmentValue;
+  }
+
+  get ServicePurpose(): string {
+    // const temp = this._data.find(d => d.Category === 'General' && d.Quality === 'Service purpose');
+    // return temp.AssessmentValue;
+    return this._generalQuestion.ServicePurpose;
+  }
+
+
 
 }

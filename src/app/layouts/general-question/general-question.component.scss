@@ -1,0 +1,24 @@
+.au-text-input{
+    width:100%;
+}
+
+.general-question{
+    margin-top: 30px;
+
+    input,textarea{
+        margin-top: 15px;
+    }
+}
+
+.au-text-input:invalid{
+    border-color: #808080
+}
+
+.errorMessage {
+    margin-top: 30px;
+    border: 2px solid #BC293F;
+    border-radius: 3px;
+    background: #EE324C;
+    padding: 10px;
+    color: #fff;
+  }

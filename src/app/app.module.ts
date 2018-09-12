@@ -25,6 +25,8 @@ import { AboutComponent } from './layouts/about/about.component';
 import { ContactComponent } from './layouts/contact/contact.component';
 import { QuestionsComponent } from './layouts/questions/questions.component';
 import { ResultComponent } from './layouts/result/result.component';
+import { GeneralQuestionComponent } from './layouts/general-question/general-question.component';
+import { HowToPrepareComponent } from './layouts/how-to-prepare/how-to-prepare.component';
 // guards
 import { AssessmentGuard } from './guards/assessment.guard';
 
@@ -45,6 +47,8 @@ import { AssessmentGuard } from './guards/assessment.guard';
     ContactComponent,
     QuestionsComponent,
     ResultComponent,
+    GeneralQuestionComponent,
+    HowToPrepareComponent,
   ],
   // todo dynamic route
   entryComponents: [

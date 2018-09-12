@@ -5,4 +5,6 @@ export const RoutePath = {
     CONTACT: 'contact',
     QUESTIONS: 'questions',
     RESULT: 'result',
+    GENERALQUESTION: 'general-question',
+    HOWTOPREPARE: 'how-to-prepare',
 };

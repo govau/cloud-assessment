@@ -5,10 +5,11 @@
   <div class="intro__text col-sm-12 col-md-5 col-md-pull-6">
     <h2>Start a new assessment
     </h2>
-    <p>To get started, you'll need to know the following:</p>
+    <p>To get started you'll need to do the following:</p>
     <ul>
-      <li>The product or service that you would like to assess</li>
-      <li>The classification requirements for your data</li>
+      <li>Read our <a [routerLink]="['/'+routePath.HOWTOPREPARE]">How to Prepare page</a></li>
+      <li>Ensure you know the service you would like to assess</li>
+      <li>Ensure you know the classification requirements for your data</li>
     </ul>
     <p class="cta">
       <button class="au-btn  au-btn--primary" (click)="startAssessment()">Get started</button>
@@ -18,19 +19,20 @@
 <div class="row">
   <div class="col-md-12">
     <h2>About the framework</h2>
-    <p>Welcome to the Cloud Assessment Framework (CAF), a tool to help government agencies self-assess whether a particular
-      cloud service is suitable for its specific business context, taking into consideration relevant compliance, commercial,
-      operability, support and security requirements. The CAF is not a standardised or objective assessment of a cloud vendor
-      or service, but rather, a guided self-assessment to help agencies understand what qualities are important to its needs.</p>
-    <p>To start a new assessment, simply click Get Started above. You will be asked a series of questions relating to the
-      service you are assessing and the context of how you expect to use the service. Some of the questions may require you
-      to complete further research before answering. Resources and links are provided alongside the questions to help you
-      find the relevant information more quickly.</p>
-    <p>When you submit your responses, you will be provided with a tailored assessment report which highlights where your
-      responses indicate a potential misalignment between the service and your needs. Additional information will be provided
-      to help you understand the results and next steps.</p>
-    <p>Note: The questionnaire does not ask you to provide any personal or identifiable details. Other information in the
-      questionnaire may be used by the DTA to help them improve and evolve this service.</p>
+    <p>Welcome to the Cloud Assessment Framework (CAF), a tool to help government agencies self-assess whether a
+      particular cloud service is suitable for its specific business context, taking into consideration relevant
+      compliance, commercial, operability, support and security requirements. The CAF is not a standardised or
+      objective assessment of a cloud vendor or service, but rather, a guided self-assessment to help agencies
+      understand what qualities are important to its needs.</p>
+    <p>To start a new assessment, simply click Get Started above. You will be asked a series of questions relating to
+      the service you are assessing and the context of how you expect to use the service. Some of the questions may
+      require you to complete further research before answering. Further information and links are provided alongside
+      the questions to help you find the relevant information more quickly.</p>
+    <p>When you submit your responses, you will be provided with a tailored assessment report which highlights where
+      your responses indicate a potential misalignment between the service and your needs. Additional information will
+      be provided to help you understand the results and next steps..</p>
+    <p>Note: The questionnaire does not ask you to provide any personal or identifiable details. Other information in
+      the questionnaire may be used by the DTA to help them improve and evolve this service.</p>
     <p class="cta">
       <button class="au-btn  au-btn--secondary" (click)="learnMore()">Learn more</button></p>
   </div>

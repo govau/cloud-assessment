@@ -1,0 +1,54 @@
+<form #myform="ngForm">
+  <!-- progress bar -->
+  <div class="row">
+    <app-progress-bar [progress]="1" [color]="'#488aff'"></app-progress-bar>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <h4 class="au-display-xxxl">About the cloud service</h4>
+      <div>Please tell us a bit about the cloud service you are about to assess</div>
+
+      <div class="general-question">
+        <h3>What is the name of the service that you would like to assess?</h3>
+        <input class="au-text-input" name="serivceName" id="serivceName" type="text" placeholder="Enter service name here"
+          [(ngModel)]="generalQuestion.ServiceName" required #servicename="ngModel">
+        <div *ngIf="servicename.invalid && formSubmitted" class="errorMessage">
+          Please answer this question before continuing.
+        </div>
+      </div>
+
+      <div class="general-question">
+        <h3>Which version (name or number) of the service are you are assessing?</h3>
+        <input class="au-text-input" name="versionNumber" id="versionNumber" type="text" placeholder="Enter version number here"
+          [(ngModel)]="generalQuestion.VersionNumber" required #versionnumber="ngModel">
+        <div *ngIf="versionnumber.invalid && formSubmitted" class="errorMessage">
+          Please answer this question before continuing.
+        </div>
+      </div>
+
+      <div class="general-question">
+        <h3>How many users are expected to directly use the service?</h3>
+        <input class="au-text-input" name="numberOfUsers" id="numberOfUsers" type="text" placeholder="Enter number of users here"
+          [(ngModel)]="generalQuestion.NumberOfUsers" required #numberofusers="ngModel">
+        <div *ngIf="numberofusers.invalid && formSubmitted" class="errorMessage">
+          Please answer this question before continuing.
+        </div>
+      </div>
+
+      <div class="general-question">
+        <h3>What is your primary purpose for using this service?</h3>
+        <textarea class="au-text-input au-text-input--block" name="servicePurpose" id="servicePurpose" [(ngModel)]="generalQuestion.ServicePurpose"
+          placeholder="Please provide a brief outline about your main purpose for using this product." required
+          #servicepurpose="ngModel"></textarea>
+        <div *ngIf="servicepurpose.invalid && formSubmitted" class="errorMessage">
+          Please answer this question before continuing.
+        </div>
+      </div>
+      <app-question-direction-button (goNextButtonClick)="goNext()"></app-question-direction-button>
+    </div>
+  </div>
+  <!-- todo debug -->
+  <div class="row">
+    <pre>{{generalQuestion|json}}</pre>
+  </div>
+</form>

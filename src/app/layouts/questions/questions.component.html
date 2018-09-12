@@ -12,7 +12,7 @@
         <!-- question -->
         <div class="controlPadding" [ngSwitch]="currentQuestion.ValueType">
           <div *ngSwitchCase="'Integer'">
-            <div class="form-answer-radio">
+            <div>
               <label *ngFor="let option of radioButtonListOptions;" class="au-control-input">
                 <input class="au-control-input__input" type="radio" name="integerOption" [value]="option.value"
                   [(ngModel)]="currentQuestion.AssessmentValue" required>
@@ -36,7 +36,7 @@
             </div>
           </div>
           <div *ngSwitchCase="'OR'">
-            <div>
+            <div class="form-answer-radio">
               <label class="au-control-input" *ngFor="let option of currentQuestion.AssessmentValue">
                 <input class="au-control-input__input" type="checkbox" [name]="option.name" [(ngModel)]="option.checked"
                   [required]="checkValidity">
@@ -61,6 +61,7 @@
       <!-- help section -->
       <div class="col-xs-4">
         <app-help-section [helpText]="currentQuestion.Reference"></app-help-section>
+        <button type="button" class="au-btn" (click)="saveButtonClick()">Save & exit</button>
       </div>
     </div>
     <!-- todo debug -->
@@ -69,3 +70,8 @@
     </div> -->
   </div>
 </form>
+
+<app-modal [(show)]="showModal" [title]="'Save & exit'" [primaryButtonText]="'Exit'" [secondaryButtonText]="'Cancel'"
+    (primaryButtonClick)='saveExit()' (secondaryButtonClick)='saveCancel()'>
+    <div>Your progress has been saved. To resume your assessment at a later time, simply return to http://assess.cloud.gov.au using the same device and browser.  You will then be prompted to pick up from where you left off.</div>
+</app-modal>

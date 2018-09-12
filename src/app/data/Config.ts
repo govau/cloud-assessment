@@ -7,7 +7,7 @@ export const Config = {
     QuestionData: QuestionData,
     reCAPTCHA: {
         enable: false,
-        siteKey: '6LcabG4UAAAAAPaDGp3051vEpTQDqs4hwS5hkx8l'
+        siteKey: '6LdUXm8UAAAAAFjbuj5c2QR38sIUG1PljyA4Yh7u',
     },
     LocalStorageKey: 'CloudAssessment',
     ConditionalQuestions: [
@@ -32,7 +32,7 @@ export const Config = {
     },
     // todo
     RatingOptions: [
-        { text: '0', value: 0 },
+        { text: 'N/A', value: 0 },
         { text: '1', value: 1 },
         { text: '2', value: 2 },
         { text: '3', value: 3 },
