@@ -1,109 +1,110 @@
 import { Injectable } from '@angular/core';
 // model
-import IQuestionItem from '../classes/IQuestionItem';
-import GeneralQuestion from "../classes/GeneralQuestion";
+import AppDataModel from '../classes/AppDataModel';
+import QuestionItem from '../classes/QuestionItem';
+import GeneralQuestion from '../classes/GeneralQuestion';
 // config
 import { Config } from '../data/Config';
-import QuestionItem from '../classes/QuestionItem';
+// service
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable()
 export class WorkFlowService {
-  private allQuestions: IQuestionItem[];
-  public currentIndex: number;
-  public hasStarted: boolean;
-
-  private generalQuestion: GeneralQuestion;
+  private appDataModel: AppDataModel;
+  private hasStarted: boolean;
+  private currentAssessmentIndex: number;
 
   constructor(
-  ) {
+    private localStorageService: LocalStorageService
+  ) { }
+
+  reset() {
+    this.currentAssessmentIndex = 0;
+    this.appDataModel = new AppDataModel();
+    // this.appDataModel.GeneralQuestion = undefined;
+    this.appDataModel.GeneralQuestion = new GeneralQuestion();
+    this.appDataModel.AssessmentQuestion = Config.QuestionData.map<QuestionItem>(x => Object.assign({}, new QuestionItem(x)));
+  }
+
+  start() {
+    this.hasStarted = true;
     this.reset();
+  }
+
+  stop() {
     this.hasStarted = false;
-    this.generalQuestion = new GeneralQuestion();
   }
 
-  get GetGeneralQuestion(): GeneralQuestion {
-    return this.generalQuestion;
+  get status(): boolean {
+    return this.hasStarted;
   }
 
-  get result(): any {
-    return {
-      g: this.generalQuestion,
-      a: this.allQuestions
-    };
+  get appData(): AppDataModel {
+    return this.appDataModel;
   }
 
-  // get result(): IQuestionItem[] {
-  //   return this.allQuestions;
-  // }
-
+  /**
+   * assessment questions method
+   */
   get isFirst(): boolean {
-    return this.currentIndex === 0;
+    return this.currentAssessmentIndex === 0;
   }
 
   get isLast(): boolean {
-    return (this.currentIndex === (this.allQuestions.length - 1));
+    return this.currentAssessmentIndex === (this.appDataModel.AssessmentQuestion.length - 1);
   }
 
   get count(): number {
-    return this.allQuestions.length;
+    return this.appDataModel.AssessmentQuestion.length;
   }
 
   get index(): number {
-    return this.currentIndex;
+    return this.currentAssessmentIndex;
   }
 
-  public getCurrent(): IQuestionItem {
-    return this.allQuestions[this.currentIndex];
+  setIndex(data: number) {
+    this.currentAssessmentIndex = data;
   }
 
-  public Next(): IQuestionItem {
+  current(): QuestionItem {
+    return this.appDataModel.AssessmentQuestion[this.currentAssessmentIndex];
+  }
+
+  Next(): QuestionItem {
     if (!this.isLast) {
-      this.currentIndex++;
-      return this.checkRules() ? this.Next() : this.getCurrent();
+      this.currentAssessmentIndex++;
+      return this.checkRules() ? this.Next() : this.current();
     } else {
-      return null;
+      return undefined;
     }
   }
 
-  public Previous(): IQuestionItem {
+  Previous(): QuestionItem {
     if (!this.isFirst) {
-      this.currentIndex--;
-      return this.checkRules() ? this.Previous() : this.getCurrent();
+      this.currentAssessmentIndex--;
+      return this.checkRules() ? this.Previous() : this.current();
     } else {
-      return null;
+      return undefined;
     }
   }
 
-  public reset() {
-    this.hasStarted = true;
-    this.currentIndex = 0;
-    // Config.QuestionData.forEach(q => {
-    //   if (q.ValueType === 'OR') {
-    //     q.AssessmentValue = [];
-    //     q.ValueOptions.split(',').forEach(name =>
-    //       q.AssessmentValue.push(new CheckBox(name, false))
-    //     );
-    //   }
-    // });
-    // this.allQuestions = Config.QuestionData.map(x => Object.assign({}, x));
-    this.allQuestions = Config.QuestionData.map<QuestionItem>(x => Object.assign({}, new QuestionItem(x)));
-    this.generalQuestion = new GeneralQuestion();
+  /**
+   * local storage method
+   */
+  get localStorageExist(): boolean {
+    return this.localStorageService.get() != null;
   }
 
-  public restore(data: any) {
-    this.generalQuestion = data.g;
-    this.allQuestions = data.a;
-    // todo resume index from local storage
-    // let resumeIndex = 0;
-    // data.forEach(d => {
-    //   console.log(d);
-    //   if (d.AssessmentValue === "") { return; }
-    //   else {
-    //     resumeIndex++;
-    //   }
-    // });
-    // console.log(resumeIndex);
-    // this.currentIndex = 7;
+  localStorageSave() {
+    this.localStorageService.set(this.appData);
+  }
+
+  localStorageClear() {
+    this.localStorageService.clear();
+  }
+
+  localStorageRestore() {
+    this.appDataModel = <AppDataModel>this.localStorageService.get();
   }
 
   private checkRules(): boolean {

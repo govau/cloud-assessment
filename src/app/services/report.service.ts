@@ -1,9 +1,9 @@
 import { Injectable, OnInit } from '@angular/core';
 // model
-import IQuestionItem from '../classes/IQuestionItem';
+import QuestionItem from '../classes/QuestionItem';
 // service
 // import { WorkFlowService } from "./work-flow.service";
-import { ResultData } from "../data/result-data";
+import { ResultData } from '../data/result-data';
 
 // {
 //   "Category": "",
@@ -16,7 +16,7 @@ import { ResultData } from "../data/result-data";
 
 @Injectable()
 export class ReportService {
-  private _data: IQuestionItem[];
+  private _data: QuestionItem[];
 
   constructor(
   ) {
@@ -27,7 +27,7 @@ export class ReportService {
   get Categories(): string[] {
     const categories = [];
     this._data.forEach(x => {
-      if (categories.indexOf(x.Category) === -1 && x.Category != 'General' && x.Category.trim() != '') {
+      if (categories.indexOf(x.Category) === -1 && x.Category !== 'General' && x.Category.trim() !== '') {
         categories.push(x.Category);
       }
     });

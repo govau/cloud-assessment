@@ -27,12 +27,12 @@ export class ModalComponent implements OnInit {
 
   public primaryClicked() {
     this.primaryButtonClick.emit();
-    // this.closeModal();
+    this.closeModal();
   }
 
   public secondaryClicked() {
     this.secondaryButtonClick.emit();
-    // this.closeModal();
+    this.closeModal();
   }
 
 }

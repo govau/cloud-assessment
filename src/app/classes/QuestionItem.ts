@@ -1,8 +1,7 @@
-import IQuestionItem from './IQuestionItem';
-import ICSVItem from "./ICSVItem";
+import ICSVItem from './ICSVItem';
 import CheckBox from './CheckBox';
 
-export default class QuestionItem implements IQuestionItem {
+export default class QuestionItem {
     Category: string;
     SubCategory: string;
     Quality: string;

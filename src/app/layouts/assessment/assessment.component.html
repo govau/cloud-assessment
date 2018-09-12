@@ -18,18 +18,18 @@
         your assessment at a later time, simply return to <a href="http://assess.cloud.gov.au">http://assess.cloud.gov.au</a>
         using the same device and browser.
         You will then be prompted to pick up from where you left off.</p>
+
+    <div style="margin-top:30px;">
+        <form #declarativeForm="ngForm">
+            <script *ngIf="reCAPTCHAConfig.enable" src='https://www.google.com/recaptcha/api.js'></script>
+            <re-captcha *ngIf="reCAPTCHAConfig.enable" [siteKey]="reCAPTCHAConfig.siteKey" [(ngModel)]="declarativeFormCaptchaValue"
+                name="captcha" required></re-captcha>
+            <button class="au-btn  au-btn--primary" type="button" (click)="startAssessment()" [disabled]="!declarativeForm.valid && reCAPTCHAConfig.enable">Start</button>
+        </form>
+    </div>
 </div>
 
-<div class="row">
-    <form #declarativeForm="ngForm">
-        <script *ngIf="reCAPTCHAConfig.enable" src='https://www.google.com/recaptcha/api.js'></script>
-        <re-captcha *ngIf="reCAPTCHAConfig.enable" [siteKey]="reCAPTCHAConfig.siteKey" [(ngModel)]="declarativeFormCaptchaValue"
-            name="captcha" required></re-captcha>
-        <button class="au-btn  au-btn--primary" type="button" (click)="startAssessment()" [disabled]="!declarativeForm.valid && reCAPTCHAConfig.enable">Start</button>
-    </form>
-</div>
-
-<app-modal [(show)]="showModal" [title]="'Welcome back'" [primaryButtonText]="'Start again'" [secondaryButtonText]="'Resume'"
-    (primaryButtonClick)='no()' (secondaryButtonClick)='yes()'>
+<app-modal [show]="showModal" [title]="'Welcome back'" [primaryButtonText]="'Start again'" [secondaryButtonText]="'Resume'"
+    (primaryButtonClick)='startAgain()' (secondaryButtonClick)='resume()' (close)='close()'>
     <div>Would you like to resume the questionnaire from where you left off?</div>
 </app-modal>

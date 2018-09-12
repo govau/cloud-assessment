@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-// model
-import IQuestionItem from '../classes/IQuestionItem';
 // service
 import { Config } from '../data/Config';
 
@@ -20,7 +18,7 @@ export class LocalStorageService {
         }
     }
 
-    get(): IQuestionItem[] {
+    get(): any {
         try {
             return JSON.parse(window.localStorage.getItem(this.localStorageKey));
         } catch (e) {

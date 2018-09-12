@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+// model
+// import AppDataModel from '../../classes/AppDataModel';
 // config
 import { Config } from '../../data/Config';
 // service
 import { WorkFlowService } from '../../services/work-flow.service';
-import { LocalStorageService } from '../../services/local-storage.service';
+// import { LocalStorageService } from '../../services/local-storage.service';
+import CheckBox from '../../classes/CheckBox';
 
 @Component({
     selector: 'app-assessment',
@@ -13,54 +16,74 @@ import { LocalStorageService } from '../../services/local-storage.service';
 })
 export class AssessmentComponent implements OnInit {
     showModal: boolean;
-    declarativeFormCaptchaValue: string;
+    // declarativeFormCaptchaValue: string;
     reCAPTCHAConfig: any;
-    public routePath = Config.RoutePath;
+    routePath: any;
 
     constructor(
         private router: Router,
         private workFlowService: WorkFlowService,
-        private localStorageService: LocalStorageService,
+        // private localStorageService: LocalStorageService,
     ) { }
 
     ngOnInit() {
         this.showModal = false;
         this.reCAPTCHAConfig = Config.reCAPTCHA;
+        this.routePath = Config.RoutePath;
     }
 
     startAssessment() {
-        this.showModal = true;
-        console.log(this.showModal);
-        if (this.localStorageService.exist()) {
+        this.workFlowService.start();
+        if (this.workFlowService.localStorageExist) {
             this.showModal = true;
         } else {
-            this.workFlowService.reset();
-            this.router.navigateByUrl(Config.RoutePath.GENERALQUESTION);
-            //this.router.navigateByUrl(Config.RoutePath.QUESTIONS);
-            // todo unique url per question
-            // this.router.navigateByUrl(Config.RoutePath.QUESTIONS + '/1');
+            this.close();
         }
     }
 
-    yes() {
-        this.showModal = false;
-        this.workFlowService.reset();
-        this.workFlowService.restore(this.localStorageService.get());
-        this.router.navigateByUrl(Config.RoutePath.GENERALQUESTION);
-
-        // todo Go to last open question when local storage is loaded
-
-        // todo unique url per question
-        // this.router.navigateByUrl(Config.RoutePath.QUESTIONS + '/1');
+    resume() {
+        this.workFlowService.localStorageRestore();
+        // Go to last open question when local storage is loaded
     }
 
-    no() {
-        this.showModal = false;
-        this.workFlowService.reset();
-        this.localStorageService.clear();
-        this.router.navigateByUrl(Config.RoutePath.GENERALQUESTION);
+    startAgain() {
+        this.workFlowService.localStorageClear();
+    }
 
-        // todo unique url per question
-        // this.router.navigateByUrl(Config.RoutePath.QUESTIONS + '/1');
+    close() {
+        if (this.workFlowService.appData.GeneralQuestion.ServiceName !== undefined
+            && this.workFlowService.appData.GeneralQuestion.ServiceName !== ''
+            && this.workFlowService.appData.GeneralQuestion.VersionNumber !== undefined
+            && this.workFlowService.appData.GeneralQuestion.VersionNumber !== ''
+            && this.workFlowService.appData.GeneralQuestion.NumberOfUsers !== undefined
+            && this.workFlowService.appData.GeneralQuestion.NumberOfUsers !== ''
+            && this.workFlowService.appData.GeneralQuestion.ServicePurpose !== undefined
+            && this.workFlowService.appData.GeneralQuestion.ServicePurpose !== '') {
+            const savedIndex = this.workFlowService.appData.AssessmentQuestion.findIndex(x => {
+                let result = false;
+                switch (x.ValueType) {
+                    case Config.QuestionType.Integer:
+                    case Config.QuestionType.XOR:
+                        result = x.AssessmentValue === '';
+                        break;
+                    case Config.QuestionType.OR:
+                        result = (<CheckBox[]>x.AssessmentValue).findIndex(element => {
+                            return element.checked;
+                        }) === -1;
+                        break;
+                }
+                return result;
+            });
+            if (savedIndex === 0) {
+                this.router.navigateByUrl(Config.RoutePath.GENERALQUESTION);
+            } else {
+                this.workFlowService.setIndex(savedIndex - 1);
+                this.router.navigateByUrl(Config.RoutePath.QUESTIONS);
+                // todo unique url per question
+                // this.router.navigateByUrl(Config.RoutePath.QUESTIONS + '/1');
+            }
+        } else {
+            this.router.navigateByUrl(Config.RoutePath.GENERALQUESTION);
+        }
     }
 }

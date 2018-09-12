@@ -23,7 +23,7 @@
       is estimated to be used by {{NumberOfUsers}} users.</p>
     <p>You have indicated that the main purpose for use of {{ServiceName}} is as follows:</p>
     <p>{{ServicePurpose}}</p>
-    <p>These assessment results were produced on {{assessmentDate | date: 'dd/MM/yyyy'}}</p>
+    <p>These assessment results were produced on {{ assessmentDate | date: 'dd/MM/yyyy' }}</p>
 
     <div class="panel panel-default" *ngFor="let item of Categories">
       <div class="panel-heading" [id]="item">{{item}}
@@ -53,73 +53,21 @@
             <p>You provided the following rationale for the score:
             </p>
             <p *ngIf="question.Comments">{{question.Comments}}</p>
-            <p *ngIf="CalculateSymbol(question)==='green'">You have provided a rating that indicates the service is acceptable for this measure.</p>
-            <p *ngIf="CalculateSymbol(question)==='orange'">You provided a rating for this measure that may indicate shortcomings in this area.></p>
-            <p *ngIf="CalculateSymbol(question)==='red'">You provided a rating for this measure that indicates issues in this area.></p>
+            <p *ngIf="CalculateSymbol(question)==='green'">You have provided a rating that indicates the service is
+              acceptable for this measure.</p>
+            <p *ngIf="CalculateSymbol(question)==='orange'">You provided a rating for this measure that may indicate
+              shortcomings in this area.</p>
+            <p *ngIf="CalculateSymbol(question)==='red'">You provided a rating for this measure that indicates issues
+              in this area.</p>
           </div>
         </div>
       </div>
       <p class="top">&#10224; <a (click)="backToTop()">Back to top</a></p>
     </div>
-
-    <!-- VENDOR PANEL -->
-    <!-- <div class="panel panel-default">
-        <div class="panel-heading">Vendor
-          <p style="float: right"><span class="red-light">1</span>
-            <span class="orange-light">2</span>
-            <span class="green-light">3</span></p>
-        </div>
-
-        <div class="panel-body panel-green">
-          <h2><span style="color: #21B87D; font-size:1.3em; padding:5px;">&#10004;</span>Business and financial health</h2>
-          <p>You provided a raiting of 4/5</p>
-          <p>You provided the following rationale for the score:
-          </p>
-          <ul>
-            <li>Donec rutrum porttitor ipsum, at euismod libero varius id. Etiam urna felis, blandit id consequat
-              vitae,
-              ullamcorper in dolor. Integer eget ligula tempor, mollis est quis, semper leo</li>
-            <li>Maecenas a diam at augue accumsan finibus. Sed pretium ante ex. Nam tempus feugiat pretium. Ut
-              imperdiet
-              laoreet ipsum sed venenatis. Cras in pretium tellus, vitae luctus neque.</li>
-          </ul>
-        </div>
-
-        <div class="panel-body panel-orange">
-          <h2><span style="color: #FFB951; font-size:1.3em; padding:5px;">&#33;</span> Experience and maturity</h2>
-          <p>You provided a raiting of 3/5</p>
-          <p>You provided the following rationale for the score:
-          </p>
-          <ul>
-            <li>Donec rutrum porttitor ipsum, at euismod libero varius id. Etiam urna felis, blandit id consequat
-              vitae,
-              ullamcorper in dolor. Integer eget ligula tempor, mollis est quis, semper leo</li>
-            <li>Maecenas a diam at augue accumsan finibus. Sed pretium ante ex. Nam tempus feugiat pretium. Ut
-              imperdiet
-              laoreet ipsum sed venenatis. Cras in pretium tellus, vitae luctus neque.</li>
-          </ul>
-        </div>
-        <div class="panel-body panel-red">
-          <h2><span style="color: #FF625C; font-size:1.3em; padding:5px;">&#10005;</span> Reputation</h2>
-          <p>You provided a raiting of 3/5</p>
-          <p>You provided the following rationale for the score:
-          </p>
-          <ul>
-            <li>Donec rutrum porttitor ipsum, at euismod libero varius id. Etiam urna felis, blandit id consequat
-              vitae,
-              ullamcorper in dolor. Integer eget ligula tempor, mollis est quis, semper leo</li>
-            <li>Maecenas a diam at augue accumsan finibus. Sed pretium ante ex. Nam tempus feugiat pretium. Ut
-              imperdiet
-              laoreet ipsum sed venenatis. Cras in pretium tellus, vitae luctus neque.</li>
-          </ul>
-        </div>
-
-      </div> -->
   </div>
 </div>
 
-<!-- <div class="row">
-  <pre>{{result|json}}</pre>
-  <a [href]="downloadJsonHref" download="download.json">Download</a>
-  <p class="top">&#10224; <a (click)="backToTop()">Back to top</a></p>
-</div> -->
+<div class="row">
+  <pre>{{assessmentQuestion|json}}</pre>
+  <a [href]="downloadUri" download="download.json">Download</a>
+</div>

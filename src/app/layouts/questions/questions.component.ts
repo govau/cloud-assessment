@@ -4,10 +4,10 @@ import { Router } from '@angular/router';
 // config
 import { Config } from '../../data/Config';
 // model
-import IQuestionItem from '../../classes/IQuestionItem';
+import QuestionItem from '../../classes/QuestionItem';
 // service
 import { WorkFlowService } from '../../services/work-flow.service';
-import { LocalStorageService } from '../../services/local-storage.service';
+// import { LocalStorageService } from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-questions',
@@ -17,18 +17,18 @@ import { LocalStorageService } from '../../services/local-storage.service';
 export class QuestionsComponent implements OnInit {
   private formSubmitted: boolean;
   showModal: boolean;
-  currentQuestion: IQuestionItem;
+  currentQuestion: QuestionItem;
   @ViewChild('myform') form: NgForm;
 
   constructor(
     private router: Router,
     private workFlowService: WorkFlowService,
-    private localStorageService: LocalStorageService,
+    // private localStorageService: LocalStorageService,
   ) { }
 
   ngOnInit() {
     this.showModal = false;
-    this.currentQuestion = this.workFlowService.getCurrent();
+    this.currentQuestion = this.workFlowService.current();
     this.formSubmitted = false;
   }
 
@@ -78,13 +78,14 @@ export class QuestionsComponent implements OnInit {
   }
 
   goNext() {
-    // window.scroll(0, 0);
     if (this.form.valid) {
-      this.localStorageService.set(this.workFlowService.result);
+      window.scroll(0, 0);
+      // this.localStorageService.set(this.workFlowService.appData);
+      this.workFlowService.localStorageSave();
       this.currentQuestion = this.workFlowService.Next();
       if (this.currentQuestion == null) {
-        this.localStorageService.clear();
-        // this.workFlowService.reset();
+        // this.localStorageService.clear();
+        this.workFlowService.localStorageClear();
         this.router.navigateByUrl(Config.RoutePath.RESULT);
       } else {
         this.formReset();
@@ -105,9 +106,10 @@ export class QuestionsComponent implements OnInit {
   }
 
   saveExit() {
-    this.localStorageService.set(this.workFlowService.result);
+    // this.localStorageService.set(this.workFlowService.appData);
+    this.workFlowService.localStorageSave();
     this.showModal = false;
-    window.open("about:blank", "_self").close();
+    window.open('about:blank', '_self').close();
   }
 
   saveCancel() {

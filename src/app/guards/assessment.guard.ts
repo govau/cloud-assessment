@@ -16,7 +16,7 @@ export class AssessmentGuard implements CanActivate {
     state: RouterStateSnapshot
   ): Promise<boolean> | boolean {
     return new Promise((resolve, reject) => {
-      if (!this.workFlowService.hasStarted) {
+      if (!this.workFlowService.status) {
         this.router.navigate([Config.RoutePath.HOME]);
         resolve(false);
       } else {

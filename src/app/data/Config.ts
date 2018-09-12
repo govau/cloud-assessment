@@ -1,12 +1,13 @@
 import { RoutePath } from './route-path';
 import { QuestionData } from './question-data';
 import { QuestionDataDev } from './question-data-dev';
+import { environment } from '../../environments/environment';
 
 export const Config = {
     RoutePath: RoutePath,
-    QuestionData: QuestionData,
+    QuestionData: environment.production ? QuestionData : QuestionDataDev,
     reCAPTCHA: {
-        enable: false,
+        enable: true,
         siteKey: '6LdUXm8UAAAAAFjbuj5c2QR38sIUG1PljyA4Yh7u',
     },
     LocalStorageKey: 'CloudAssessment',

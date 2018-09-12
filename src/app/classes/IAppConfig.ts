@@ -1,7 +1,7 @@
-import IQuestionItem from './IQuestionItem';
+import QuestionItem from './QuestionItem';
 
 export interface IAppConfig {
     data: {
-        questions: IQuestionItem[];
+        questions: QuestionItem[];
     };
 }

@@ -1,18 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 // config
 import { Config } from '../../data/Config';
 // model
-import IQuestionItem from '../../classes/IQuestionItem';
-import GeneralQuestion from "../../classes/GeneralQuestion";
-import UIReportItem from '../../classes/UIReportItem';
+import QuestionItem from '../../classes/QuestionItem';
+import GeneralQuestion from '../../classes/GeneralQuestion';
+import CheckBox from '../../classes/CheckBox';
 // service
 import { WorkFlowService } from '../../services/work-flow.service';
-import { ReportService } from '../../services/report.service';
-// data
-import { ResultData } from '../../data/result-data';
-
-import CheckBox from '../../classes/CheckBox';
+// import { ReportService } from '../../services/report.service';
 
 @Component({
   selector: 'app-result',
@@ -20,39 +16,54 @@ import CheckBox from '../../classes/CheckBox';
   styleUrls: ['./result.component.scss']
 })
 export class ResultComponent implements OnInit {
-  result: IQuestionItem[];
+  assessmentDate: number = Date.now();
   downloadJsonHref: any;
-  // UIReport: ReportService;
-  assessmentDate: number;
-
-  private _data: IQuestionItem[];
-  private _generalQuestion: GeneralQuestion;
+  assessmentQuestion: QuestionItem[];
+  generalQuestion: GeneralQuestion;
 
   constructor(
     private workFlowService: WorkFlowService,
-    private reportService: ReportService,
+    // private reportService: ReportService,
     private sanitizer: DomSanitizer
   ) { }
 
   ngOnInit() {
-    this.result = this.workFlowService.result.a;
-    this.generateDownloadJsonUri();
-    this.assessmentDate = Date.now();
-    // todo
-    // this._data = ResultData;
-    this._data = this.workFlowService.result.a;
-    // this._generalQuestion = this.workFlowService.result.g;
-    this._generalQuestion = Object.assign({}, this.workFlowService.result.g);
+    this.assessmentQuestion = this.workFlowService.appData.AssessmentQuestion;
+    this.generalQuestion = this.workFlowService.appData.GeneralQuestion;
   }
 
-  generateDownloadJsonUri() {
-    const theJSON = JSON.stringify(this.result);
+  get ServiceName(): string {
+    return this.generalQuestion.ServiceName;
+  }
+
+  get NumberOfUsers(): string {
+    return this.generalQuestion.NumberOfUsers;
+  }
+
+  get CloudModel(): string {
+    const temp = this.assessmentQuestion.find(d => d.Category === 'General' && d.Quality === 'Cloud model');
+    return temp.AssessmentValue;
+  }
+
+  get ServicePurpose(): string {
+    return this.generalQuestion.ServicePurpose;
+  }
+
+  get downloadUri(): SafeUrl {
+    const theJSON = JSON.stringify(this.assessmentQuestion);
     const uri = this.sanitizer.bypassSecurityTrustUrl('data:text/json;charset=UTF-8,' + encodeURIComponent(theJSON));
-    this.downloadJsonHref = uri;
+    return uri;
   }
 
   backToTop() {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }
+
+  jumpToPage(data: string) {
+    const x = document.querySelector('#' + data);
+    if (x) {
+      x.scrollIntoView();
+    }
   }
 
   printReport() {
@@ -61,18 +72,20 @@ export class ResultComponent implements OnInit {
 
   // todo refractoring
   get Categories(): string[] {
-    const categories = [];
-    this._data.forEach(x => {
-      if (categories.indexOf(x.Category) === -1 && x.Category !== 'General' && x.Category.trim() !== '') {
-        categories.push(x.Category);
-      }
-    });
-    return categories;
+    return this.assessmentQuestion.map(x => x.Category).filter((value, index, self) => value !== 'General' && self.indexOf(value) === index);
+  }
+
+  GetXORAssessmentValue(data: CheckBox[]): string {
+    return data.filter(x => x.checked).map(x => x.name).join(',');
+  }
+
+  GetQuestionsByCategory(categoryName: string) {
+    return this.assessmentQuestion.filter(x => x.Category === categoryName);
   }
 
   CountRedByCategory(categoryName: string): number {
     let count = 0;
-    this._data.forEach(x => {
+    this.assessmentQuestion.forEach(x => {
       if (x.Category === categoryName) {
         switch (x.ValueType) {
           case Config.QuestionType.Integer:
@@ -94,7 +107,7 @@ export class ResultComponent implements OnInit {
 
   CountOrangeByCategory(categoryName: string): number {
     let count = 0;
-    this._data.forEach(x => {
+    this.assessmentQuestion.forEach(x => {
       if (x.Category === categoryName) {
         switch (x.ValueType) {
           case Config.QuestionType.Integer:
@@ -110,7 +123,7 @@ export class ResultComponent implements OnInit {
 
   CountGreenByCategory(categoryName: string): number {
     let count = 0;
-    this._data.forEach(x => {
+    this.assessmentQuestion.forEach(x => {
       if (x.Category === categoryName) {
         switch (x.ValueType) {
           case Config.QuestionType.Integer:
@@ -130,17 +143,7 @@ export class ResultComponent implements OnInit {
     return count;
   }
 
-  GetQuestionsByCategory(categoryName: string) {
-    const questions = [];
-    this._data.forEach(x => {
-      if (x.Category === categoryName) {
-        questions.push(x);
-      }
-    });
-    return questions;
-  }
-
-  private CalculateSymbol(question: IQuestionItem): string {
+  private CalculateSymbol(question: QuestionItem): string {
     let symbol;
     switch (question.ValueType) {
       case Config.QuestionType.Integer:
@@ -166,47 +169,4 @@ export class ResultComponent implements OnInit {
     }
     return symbol;
   }
-
-  GetXORAssessmentValue(data: CheckBox[]): string {
-    const result = [];
-    data.forEach(element => {
-      if (element.checked) {
-        result.push(element.name);
-      }
-    });
-    return result.join(',');
-  }
-
-  jumpToPage(data: string) {
-    const x = document.querySelector('#' + data);
-    if (x) {
-      x.scrollIntoView();
-    }
-  }
-
-  get ServiceName(): string {
-    // const temp = this._data.find(d => d.Category === 'General' && d.Quality === 'Service name');
-    // return temp.AssessmentValue;
-    return this._generalQuestion.ServiceName;
-  }
-
-  get NumberOfUsers(): string {
-    // const temp = this._data.find(d => d.Category === 'General' && d.Quality === 'Number of users');
-    // return temp.AssessmentValue;
-    return this._generalQuestion.NumberOfUsers;
-  }
-
-  get CloudModel(): string {
-    const temp = this._data.find(d => d.Category === 'General' && d.Quality === 'Cloud model');
-    return temp.AssessmentValue;
-  }
-
-  get ServicePurpose(): string {
-    // const temp = this._data.find(d => d.Category === 'General' && d.Quality === 'Service purpose');
-    // return temp.AssessmentValue;
-    return this._generalQuestion.ServicePurpose;
-  }
-
-
-
 }
