@@ -56,7 +56,15 @@ border: 2px solid gray;
   float: left;
   clear: both;
   width: 100%;
-  padding: 10px;
+  padding: 10px 10px 10px 0px;
+}
+
+.au-control-input__text {
+  padding-bottom: 15px;
+}
+
+button.au-btn {
+  margin-top: 20px;
 }
 
 @media only screen and (max-width: 600px) {
