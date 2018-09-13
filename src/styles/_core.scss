@@ -6,8 +6,8 @@
 
 .banner {
   width:100%;
-  height: 30px;
-  padding-top:10px;
+  min-height: 30px;
+  padding:10px 0 5px 0;
   background: rgb(30, 56, 63);
   color: #fff;
   a {

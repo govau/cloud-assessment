@@ -10,7 +10,7 @@
         <h3>{{subTitle}}</h3>
         <div [innerHTML]="currentQuestion.Description"></div>
         <!-- question -->
-        <div [ngSwitch]="currentQuestion.ValueType">
+        <div class="controlPadding" [ngSwitch]="currentQuestion.ValueType">
           <div *ngSwitchCase="'Integer'">
             <div>
               <label *ngFor="let option of currentQuestion.ValueOptions.split(',');" class="au-control-input">
