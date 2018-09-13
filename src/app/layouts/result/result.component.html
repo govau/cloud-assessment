@@ -46,7 +46,10 @@
             <span class="traffic-red">&#10005;</span>
             {{question.Quality}}
           </h2>
-          <p *ngIf="question.ValueType==='Integer'">You provided a rating of {{question.AssessmentValue}}/5</p>
+          <p *ngIf="question.ValueType==='Integer'&&(question.AssessmentValue==='Not applicable'||question.AssessmentValue==='Unsure')">You
+            provided a rating of {{question.AssessmentValue}}</p>
+          <p *ngIf="question.ValueType==='Integer'&&(question.AssessmentValue!=='Not applicable'&&question.AssessmentValue!=='Unsure')">You
+            provided a rating of {{question.AssessmentValue}}/5</p>
           <p *ngIf="question.ValueType==='OR'">You answered {{GetXORAssessmentValue(question.AssessmentValue)}}</p>
           <p *ngIf="question.ValueType==='XOR'">You answered {{question.AssessmentValue}}</p>
           <div>
@@ -67,7 +70,7 @@
   </div>
 </div>
 
-<div class="row">
+<!-- <div class="row">
   <pre>{{assessmentQuestion|json}}</pre>
   <a [href]="downloadUri" download="download.json">Download</a>
-</div>
+</div> -->

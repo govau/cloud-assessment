@@ -82,63 +82,24 @@ export class ResultComponent implements OnInit {
   }
 
   CountRedByCategory(categoryName: string): number {
-    let count = 0;
-    this.assessmentQuestion.forEach(x => {
-      if (x.Category === categoryName) {
-        switch (x.ValueType) {
-          case Config.QuestionType.Integer:
-            if (+x.AssessmentValue < (+x.RequiredValue - 1)) {
-              count++;
-            }
-            break;
-          case Config.QuestionType.OR:
-          case Config.QuestionType.XOR:
-            if (x.AssessmentValue !== x.RequiredValue) {
-              count++;
-            }
-            break;
-        }
-      }
-    });
-    return count;
+    return this.assessmentQuestion
+      .filter(x => x.Category === categoryName
+        && this.CalculateSymbol(x) === Config.QuestionResultSymbol.Red)
+      .length;
   }
 
   CountOrangeByCategory(categoryName: string): number {
-    let count = 0;
-    this.assessmentQuestion.forEach(x => {
-      if (x.Category === categoryName) {
-        switch (x.ValueType) {
-          case Config.QuestionType.Integer:
-            if (+x.AssessmentValue === (+x.RequiredValue - 1)) {
-              count++;
-            }
-            break;
-        }
-      }
-    });
-    return count;
+    return this.assessmentQuestion
+      .filter(x => x.Category === categoryName
+        && this.CalculateSymbol(x) === Config.QuestionResultSymbol.Orange)
+      .length;
   }
 
   CountGreenByCategory(categoryName: string): number {
-    let count = 0;
-    this.assessmentQuestion.forEach(x => {
-      if (x.Category === categoryName) {
-        switch (x.ValueType) {
-          case Config.QuestionType.Integer:
-            if (+x.AssessmentValue > (+x.RequiredValue - 1)) {
-              count++;
-            }
-            break;
-          case Config.QuestionType.OR:
-          case Config.QuestionType.XOR:
-            if (x.AssessmentValue === x.RequiredValue) {
-              count++;
-            }
-            break;
-        }
-      }
-    });
-    return count;
+    return this.assessmentQuestion
+      .filter(x => x.Category === categoryName
+        && this.CalculateSymbol(x) === Config.QuestionResultSymbol.Green)
+      .length;
   }
 
   private CalculateSymbol(question: QuestionItem): string {
