@@ -7,6 +7,12 @@
   margin: 25px 30px;
 }
 
+//.errorMessage {
+  //border-left: 3px solid #cc0200;
+//  color:#cc0200;
+//  transition: all .3s linear;
+//  }
+
 .errorMessage {
   margin-top: 30px;
   border: 2px solid #BC293F;
@@ -19,6 +25,10 @@
 .au-display-xxxl {
   font-weight: 400;
   font-size: 2.7em;
+}
+
+.au-text-input {
+border: 2px solid gray;
 }
 
 .au-display-lg {
