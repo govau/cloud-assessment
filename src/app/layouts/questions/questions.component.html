@@ -6,8 +6,8 @@
     </div>
     <div class="row">
       <div class="col-xs-8">
-        <h4 class="au-display-xxxl">{{currentQuestion.Quality}}</h4>
-        <h5 class="au-display-lg">{{subTitle}}</h5>
+        <h2>{{currentQuestion.Quality}}</h2>
+        <h3>{{subTitle}}</h3>
         <div [innerHTML]="currentQuestion.Description"></div>
         <!-- question -->
         <div class="controlPadding" [ngSwitch]="currentQuestion.ValueType">
