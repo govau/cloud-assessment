@@ -48,9 +48,9 @@ export class QuestionsComponent implements OnInit {
     return Math.floor((this.workFlowService.index + 1) / this.workFlowService.count * 100);
   }
 
-  get radioButtonListOptions(): any {
-    return Config.RatingOptions;
-  }
+  // get radioButtonListOptions(): any {
+  //   return Config.RatingOptions;
+  // }
 
   get showPrevious(): boolean {
     return true;

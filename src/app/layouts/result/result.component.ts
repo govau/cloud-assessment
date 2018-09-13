@@ -8,7 +8,6 @@ import GeneralQuestion from '../../classes/GeneralQuestion';
 import CheckBox from '../../classes/CheckBox';
 // service
 import { WorkFlowService } from '../../services/work-flow.service';
-// import { ReportService } from '../../services/report.service';
 
 @Component({
   selector: 'app-result',
@@ -23,7 +22,6 @@ export class ResultComponent implements OnInit {
 
   constructor(
     private workFlowService: WorkFlowService,
-    // private reportService: ReportService,
     private sanitizer: DomSanitizer
   ) { }
 
@@ -144,29 +142,66 @@ export class ResultComponent implements OnInit {
   }
 
   private CalculateSymbol(question: QuestionItem): string {
-    let symbol;
     switch (question.ValueType) {
       case Config.QuestionType.Integer:
-        if (+question.AssessmentValue < (+question.RequiredValue - 1)) {
-          symbol = Config.QuestionResultSymbol.Red;
-        } else if (+question.AssessmentValue === (+question.RequiredValue - 1)) {
-          symbol = Config.QuestionResultSymbol.Orange;
-        } else {
-          symbol = Config.QuestionResultSymbol.Green;
+        if (question.AssessmentValue === Config.QuestionExtraOptions.NA) {
+          return Config.QuestionResultSymbol.Green;
         }
-        break;
-      case Config.QuestionType.OR:
-        // If required_value = “Unsure” OR assessed_value then green else red
-        if (question.AssessmentValue === 'Unsure') {
 
-        } else {
-          symbol = Config.QuestionResultSymbol.Red;
+        if (question.AssessmentValue === Config.QuestionExtraOptions.Unsure) {
+          return Config.QuestionResultSymbol.Orange;
         }
-        break;
+
+        if (+question.AssessmentValue >= +question.RequiredValue) {
+          return Config.QuestionResultSymbol.Green;
+        } else if (+question.AssessmentValue === +question.RequiredValue - 1) {
+          return Config.QuestionResultSymbol.Orange;
+        } else if (+question.AssessmentValue < +question.RequiredValue - 1) {
+          return Config.QuestionResultSymbol.Red;
+        } else {
+          return Config.QuestionResultSymbol.Red;
+        }
       case Config.QuestionType.XOR:
-        symbol = Config.QuestionResultSymbol.Red;
-        break;
+        if (question.AssessmentValue === Config.QuestionExtraOptions.NA) {
+          return Config.QuestionResultSymbol.Green;
+        }
+
+        if (question.AssessmentValue === Config.QuestionExtraOptions.Unsure) {
+          return Config.QuestionResultSymbol.Orange;
+        }
+
+        if (question.RequiredValue === '') {
+          return Config.QuestionResultSymbol.Green;
+        } else {
+          const requiredValues = question.RequiredValue.split(',');
+          const assessmentValues = question.AssessmentValue.split(',');
+          if (assessmentValues.filter(element => requiredValues.indexOf(element) !== -1).length > 0) {
+            return Config.QuestionResultSymbol.Green;
+          } else {
+            return Config.QuestionResultSymbol.Red;
+          }
+        }
+      case Config.QuestionType.OR:
+        const requiredValuesofOR = question.RequiredValue.split(',');
+        const selectedOptions = (<Array<CheckBox>>question.AssessmentValue).filter(x => x.checked).map(x => x.name);
+        if (selectedOptions.filter(element => element === Config.QuestionExtraOptions.NA).length > 0) {
+          return Config.QuestionResultSymbol.Green;
+        }
+
+        if (selectedOptions.filter(element => element === Config.QuestionExtraOptions.Unsure).length > 0) {
+          return Config.QuestionResultSymbol.Orange;
+        }
+
+        if (question.RequiredValue === '') {
+          return Config.QuestionResultSymbol.Green;
+        }
+
+        if (selectedOptions.filter(element => requiredValuesofOR.indexOf(element) !== -1).length > 0) {
+          return Config.QuestionResultSymbol.Green;
+        }
+        return Config.QuestionResultSymbol.Red;
+      default:
+        return Config.QuestionResultSymbol.Red;
     }
-    return symbol;
   }
 }

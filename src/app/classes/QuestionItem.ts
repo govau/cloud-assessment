@@ -1,5 +1,6 @@
 import ICSVItem from './ICSVItem';
 import CheckBox from './CheckBox';
+import { Config } from '../data/Config';
 
 export default class QuestionItem {
     Category: string;
@@ -31,9 +32,11 @@ export default class QuestionItem {
         this.RequiredValue = data.Required_or_default_value;
         this.RequiredValueRationale = data.Required_value_rationale;
 
+        this.ValueOptions = Config.QuestionExtraOptions.NA + ',' + data.Value_options + ',' + Config.QuestionExtraOptions.Unsure;
+
         if (data.Value_type === 'OR') {
             this.AssessmentValue = [];
-            data.Value_options.split(',').forEach(name =>
+            this.ValueOptions.split(',').forEach(name =>
                 this.AssessmentValue.push(new CheckBox(name, false))
             );
         } else {

@@ -53,8 +53,8 @@ export class AssessmentComponent implements OnInit {
     close() {
         if (this.workFlowService.appData.GeneralQuestion.ServiceName !== undefined
             && this.workFlowService.appData.GeneralQuestion.ServiceName !== ''
-            && this.workFlowService.appData.GeneralQuestion.VersionNumber !== undefined
-            && this.workFlowService.appData.GeneralQuestion.VersionNumber !== ''
+            // && this.workFlowService.appData.GeneralQuestion.VersionNumber !== undefined
+            // && this.workFlowService.appData.GeneralQuestion.VersionNumber !== ''
             && this.workFlowService.appData.GeneralQuestion.NumberOfUsers !== undefined
             && this.workFlowService.appData.GeneralQuestion.NumberOfUsers !== ''
             && this.workFlowService.appData.GeneralQuestion.ServicePurpose !== undefined

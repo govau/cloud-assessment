@@ -10,7 +10,7 @@ import { Config } from '../../data/Config';
 export class HomeComponent implements OnInit {
   title = 'Cloud Assessment';
   public routePath = Config.RoutePath;
-  
+
   constructor(
     private router: Router,
   ) { }
@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
   }
 
   learnMore() {
+    window.scroll(0, 0);
     this.router.navigateByUrl(Config.RoutePath.ABOUT);
   }
 }

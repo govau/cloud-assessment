@@ -1,22 +1,22 @@
 import ICSVItem from '../classes/ICSVItem';
 
 export const QuestionDataDev: ICSVItem[] = [
-  {
-    'Category': 'General_1',
-    'Sub_category': '',
-    'Quality': 'Data classification',
-    'Description': '<p>As part of the Australian Government Protective Security Policy Framework, non-corporate Commonwealth entities (agencies) are required to appropriately safeguard all official information to ensure its confidentiality, integrity, and availability by applying safeguards.</p>\n\n<p><b>From the list below, please select the minimum level of protection your data requires.</b></p>',
-    'Reference': '<p>Learn more about the Australian Government security classification system at\n<a href="https://www.protectivesecurity.gov.au/informationsecurity/Documents/AustralianGovernmentclassificationsystem.pdf" target="_blank">https://www.protectivesecurity.gov.au/informationsecurity/Documents/AustralianGovernmentclassificationsystem.pdf </a></p>',
-    'Condition': '',
-    'Relationship': '',
-    'Value_type': 'XOR',
-    'Value_options': 'Unclassified:DLM, Protected, Confidential, Secret, Top secret',
-    'Required_or_default_value': '',
-    'Required_value_rationale': '',
-    'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
-  },
+  // {
+  //   'Category': 'General',
+  //   'Sub_category': '',
+  //   'Quality': 'Data classification',
+  //   'Description': '<p>As part of the Australian Government Protective Security Policy Framework, non-corporate Commonwealth entities (agencies) are required to appropriately safeguard all official information to ensure its confidentiality, integrity, and availability by applying safeguards.</p>\n\n<p><b>From the list below, please select the minimum level of protection your data requires.</b></p>',
+  //   'Reference': '<p>Learn more about the Australian Government security classification system at\n<a href="https://www.protectivesecurity.gov.au/informationsecurity/Documents/AustralianGovernmentclassificationsystem.pdf" target="_blank">https://www.protectivesecurity.gov.au/informationsecurity/Documents/AustralianGovernmentclassificationsystem.pdf </a></p>',
+  //   'Condition': '',
+  //   'Relationship': '',
+  //   'Value_type': 'XOR',
+  //   'Value_options': 'Unclassified:DLM, Protected, Confidential, Secret, Top secret',
+  //   'Required_or_default_value': '',
+  //   'Required_value_rationale': '',
+  //   'Assessment_value': '',
+  //   'Assessment_value_rationale': '',
+  //   'Jess\' notes': ''
+  // },
   {
     'Category': 'General',
     'Sub_category': '',
@@ -34,7 +34,7 @@ export const QuestionDataDev: ICSVItem[] = [
     'Jess\' notes': ''
   },
   {
-    'Category': 'Vendor_3',
+    'Category': 'Vendor',
     'Sub_category': '',
     'Quality': 'Viability',
     'Description': '<p>It may be important that the vendor providing the cloud service is in a viable financial situation. This may be assessed by determining if the vendor has a track record of stability and is in a healthy financial position with sufficient capital to operate successfully over the long term.</p>\n\n<p><b>Using the scale below, rate the degree to which you believe the vendor is in a healthy business and financial situation.</b></p>',
@@ -97,22 +97,22 @@ export const QuestionDataDev: ICSVItem[] = [
   //   'Assessment_value_rationale': '',
   //   'Jess\' notes': ''
   // },
-  // {
-  //   'Category': 'Commercials_7',
-  //   'Sub_category': '',
-  //   'Quality': 'Price model',
-  //   'Description': '<p>When assessing a cloud service, the pricing model may influence the tracking of budget via CapEx or OpEx.</p>\n\n<p>Cloud services generally fit within three primary types of pricing models - Consumption based, Subscription based or Market based. </p>\n\n<p><b>From the list below, please select the type of pricing model for the service you are assessing.</b><p>',
-  //   'Reference': '<p>Learn more about each pricing model at <a href="https://www.finance.gov.au/files/2011/11/Cloud-Financial-Draft-Better-Practice-Guide-AGIMO-Blog.pdf" target="_blank">https://www.finance.gov.au/files/2011/11/Cloud-Financial-Draft-Better-Practice-Guide-AGIMO-Blog.pdf</a></p>',
-  //   'Condition': '',
-  //   'Relationship': '',
-  //   'Value_type': 'OR',
-  //   'Value_options': 'Consumption based, Subscription based, Market-based',
-  //   'Required_or_default_value': '',
-  //   'Required_value_rationale': '',
-  //   'Assessment_value': '',
-  //   'Assessment_value_rationale': '',
-  //   'Jess\' notes': ''
-  // },
+  {
+    'Category': 'Commercials_7',
+    'Sub_category': '',
+    'Quality': 'Price model',
+    'Description': '<p>When assessing a cloud service, the pricing model may influence the tracking of budget via CapEx or OpEx.</p>\n\n<p>Cloud services generally fit within three primary types of pricing models - Consumption based, Subscription based or Market based. </p>\n\n<p><b>From the list below, please select the type of pricing model for the service you are assessing.</b><p>',
+    'Reference': '<p>Learn more about each pricing model at <a href="https://www.finance.gov.au/files/2011/11/Cloud-Financial-Draft-Better-Practice-Guide-AGIMO-Blog.pdf" target="_blank">https://www.finance.gov.au/files/2011/11/Cloud-Financial-Draft-Better-Practice-Guide-AGIMO-Blog.pdf</a></p>',
+    'Condition': '',
+    'Relationship': '',
+    'Value_type': 'OR',
+    'Value_options': 'Consumption based, Subscription based, Market-based',
+    'Required_or_default_value': '',
+    'Required_value_rationale': '',
+    'Assessment_value': '',
+    'Assessment_value_rationale': '',
+    'Jess\' notes': ''
+  },
   // {
   //   'Category': 'Commercials_8',
   //   'Sub_category': '',
