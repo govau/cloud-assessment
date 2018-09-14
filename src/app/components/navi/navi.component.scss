@@ -47,7 +47,7 @@ body {
 
 .nav {
   z-index:1000;
-  height: 50px;
+  //height: 50px;
   position: relative;
 }
 
@@ -89,7 +89,9 @@ body {
 @media (max-width:600px) {
   .nav > .nav-btn {
     display: inline-block;
-    position: absolute;
+    position: inherit;
+    margin-top: -20px;
+    float: right;
     right: 0px;
     top: 0px;
   }
@@ -97,10 +99,28 @@ body {
     display: block
   }
 
+  .au-body.au-body--dark a:focus {
+    outline: none;
+}
+
+  li.nav-item {
+    padding-top: 10px;
+    display: block;
+    /* width: 200px; */
+    padding-bottom: 5px;
+}
+
+  #mainmenu .container {
+   padding: 0px 20px 0 20px!important; 
+}
+
   .navigation .au-link-list--inline > li.active a {
     width: 150px;
     clear: both;
     display: block;
+    padding:0px 0px 0px 15px;
+    text-decoration: underline;
+    border-bottom: none;
 
   }
   .nav > .nav-btn > label {
@@ -126,7 +146,7 @@ body {
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
-    top: 50px;
+    top: 44px;
     left: 0px;
   }
   .nav > .nav-links > a {
