@@ -36,6 +36,10 @@ ul.navbar-nav {
   }
 }
 
+.au-body.au-body--dark a:focus {
+  outline: none;
+}
+
 * {
   box-sizing: border-box;
 }
