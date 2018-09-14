@@ -106,10 +106,10 @@ export class QuestionsComponent implements OnInit {
   }
 
   saveExit() {
-    // this.localStorageService.set(this.workFlowService.appData);
     this.workFlowService.localStorageSave();
     this.showModal = false;
-    window.open('about:blank', '_self').close();
+    this.router.navigateByUrl(Config.RoutePath.HOME);
+    // window.open('about:blank', '_self').close();
   }
 
   saveCancel() {
