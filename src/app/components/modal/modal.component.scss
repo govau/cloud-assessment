@@ -4,6 +4,16 @@ $mobile-padding-px: 20px;
 $desktop-padding-px: 40px;
 $cross-size: 14px;
 
+@media (max-width:600px) {
+  .dialog-box {
+    width:18em!important;
+    }
+    button.uikit-btn.uikit-btn--tertiary.first.ci--secondaryButton {
+      margin-bottom: 10px;
+      vertical-align: center;
+    }
+  }
+
 @mixin cross($cross-size: 14px, $bar-width: 2px) {
   &:before, &:after {
     content: "";
@@ -148,3 +158,4 @@ $cross-size: 14px;
     }
   }
 }
+
