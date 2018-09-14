@@ -18,11 +18,6 @@
                   required>
                 <span class="au-control-input__text">{{ option }}</span>
               </label>
-              <!-- <label *ngFor="let option of radioButtonListOptions;" class="au-control-input">
-                <input class="au-control-input__input" type="radio" name="integerOption" [value]="option.value"
-                  [(ngModel)]="currentQuestion.AssessmentValue" required>
-                <span class="au-control-input__text">{{ option.text }}</span>
-              </label> -->
               <div *ngIf="showError" class="errorMessage">
                 Please make a selection above before continuing.
               </div>

@@ -3,7 +3,7 @@ export default interface ICSVItem {
     Sub_category: string;
     Quality: string;
     Description: string;
-    Reference: string;
+    // Reference: string;
     Condition: string;
     Relationship: string;
     Value_type: string;

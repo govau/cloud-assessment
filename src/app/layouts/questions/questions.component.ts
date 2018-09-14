@@ -7,7 +7,6 @@ import { Config } from '../../data/Config';
 import QuestionItem from '../../classes/QuestionItem';
 // service
 import { WorkFlowService } from '../../services/work-flow.service';
-// import { LocalStorageService } from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-questions',
@@ -23,7 +22,6 @@ export class QuestionsComponent implements OnInit {
   constructor(
     private router: Router,
     private workFlowService: WorkFlowService,
-    // private localStorageService: LocalStorageService,
   ) { }
 
   ngOnInit() {
@@ -47,10 +45,6 @@ export class QuestionsComponent implements OnInit {
   get processBarProgress(): number {
     return Math.floor((this.workFlowService.index + 1) / this.workFlowService.count * 100);
   }
-
-  // get radioButtonListOptions(): any {
-  //   return Config.RatingOptions;
-  // }
 
   get showPrevious(): boolean {
     return true;
@@ -109,7 +103,6 @@ export class QuestionsComponent implements OnInit {
     this.workFlowService.localStorageSave();
     this.showModal = false;
     this.router.navigateByUrl(Config.RoutePath.HOME);
-    // window.open('about:blank', '_self').close();
   }
 
   saveCancel() {

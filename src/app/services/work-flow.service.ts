@@ -108,15 +108,54 @@ export class WorkFlowService {
   }
 
   private checkRules(): boolean {
-    // todo if condition modified -> clear all AssessmentValue after it
+    const asd_certified_index = 17;
+    if (this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue) {
+      if (this.index === 18 &&
+        this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === 'Not certified') {
+        return true;
+      }
 
-    // todo conditional question
-    // if (this.getCurrent().Condition.trim()) {
-    //   if (this.allQuestions[0].AssessmentValue === 'Saas') {
-    //     const options = [1];
-    //     return options.indexOf(this.currentIndex) > -1;
-    //   }
-    // }
+      if (this.index === 19 &&
+        this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === 'Not certified') {
+        return true;
+      }
+    }
+
+    const cloud_model_index = 1;
+    if (this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue) {
+      if (this.index === 20 &&
+        this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() === 'Saas') {
+        return true;
+      }
+
+      if (this.index === 21 &&
+        this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() === 'Saas') {
+        return true;
+      }
+
+      if (this.index === 25 &&
+        (this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() === 'IaaS' ||
+          this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() === 'PaaS')) {
+        return true;
+      }
+
+      if (this.index === 26 &&
+        (this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() === 'IaaS' ||
+          this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() === 'PaaS')) {
+        return true;
+      }
+
+      if (this.index === 27 &&
+        this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() === 'IaaS') {
+        return true;
+      }
+
+      if (this.index === 39 &&
+        (this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() === 'IaaS' ||
+          this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() === 'PaaS')) {
+        return true;
+      }
+    }
 
     return false;
   }

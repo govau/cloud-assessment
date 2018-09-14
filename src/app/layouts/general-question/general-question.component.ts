@@ -28,11 +28,6 @@ export class GeneralQuestionComponent implements OnInit {
   ngOnInit() {
     this.formSubmitted = false;
     this.generalQuestion = this.workFlowService.appData.GeneralQuestion;
-    // if (this.workFlowService.appData.GeneralQuestion === undefined) {
-    //   this.generalQuestion = new GeneralQuestion();
-    // } else {
-    //   this.generalQuestion = this.workFlowService.appData.GeneralQuestion;
-    // }
   }
 
   goNext() {
