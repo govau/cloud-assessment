@@ -7,7 +7,7 @@ export default class QuestionItem {
     SubCategory: string;
     Quality: string;
     Description: string;
-    // Reference: string;
+    Reference: string;
     Condition: string;
     Relationship: string;
     ValueType: string;
@@ -24,7 +24,7 @@ export default class QuestionItem {
         this.SubCategory = data.Sub_category;
         this.Quality = data.Quality;
         this.Description = data.Description;
-        // this.Reference = data.Reference;
+        this.Reference = data.Reference;
         this.Condition = data.Condition;
         this.Relationship = data.Relationship;
         this.ValueType = data.Value_type;
