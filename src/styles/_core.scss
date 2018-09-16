@@ -17,6 +17,33 @@
      color: #fff;
   }
 }
+
+.au-body * + p {
+  margin-top: .5rem;
+  margin-bottom: 1rem;
+}
+
+.au-body * + ul, li {
+  margin-top: 0!important;
+  margin-bottom: 0!important;
+}
+
+.au-text-input {
+  border: 2px solid gray;
+}
+
+.au-text-input:focus, .au-btn:focus, a.au-btn:focus {
+  outline: none;
+}
+
+.errorMessage {
+  margin-top: 30px;
+  border-left: 5px solid $error;
+  background: #F3E2E2;
+  padding: 10px;
+  color: $error;
+}
+
 .icon-star{
   height: 1.25rem!important;
   margin-right: .5rem;
@@ -56,11 +83,6 @@
   transform: translate(-50%, -50%);
 }
 
-.errorMessage {
-  border-left: 3px solid #cc0200;
-  color:#cc0200;
-  }
-
 .main {
   .row {
     @include rem(padding, 50px);
@@ -70,9 +92,7 @@
   }
 }
 
-
  /* print styles */
-
  /* Report styles*/
 
 @media print {
