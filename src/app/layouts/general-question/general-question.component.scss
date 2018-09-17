@@ -1,3 +1,4 @@
+@import '../../../styles/global-includes';
 .au-text-input{
     width:100%;
 }
@@ -14,17 +15,18 @@
     border-color: #808080
 }
 
+ .row {
+        padding-top: 20px!important;
+    }
+
 //.errorMessage {
 //border-left: 3px solid #cc0200;
 //color:#cc0200;
 //transition: all .3s linear;
 //}
 
-.errorMessage {
-    margin-top: 30px;
-    border: 2px solid #BC293F;
-    border-radius: 3px;
-    background: #EE324C;
-    padding: 10px;
-    color: #fff;
-  }
+  @media only screen and (max-width: 600px) {
+    .au-grid .col-xs-8 {
+        width: 100%;
+    }
+}

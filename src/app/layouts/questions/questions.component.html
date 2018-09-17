@@ -21,7 +21,7 @@
               <label>Least</label>
               <label>Most</label>
               <div *ngIf="showError" class="errorMessage">
-                Please make a selection above before continuing.
+                  <span class="error">!</span>Please make a selection above before continuing.
               </div>
             </div>
           </div>
@@ -33,7 +33,7 @@
                 <span class="au-control-input__text">{{ option }}</span>
               </label>
               <div *ngIf="showError" class="errorMessage">
-                Please make a selection above before continuing.
+                  <span class="error">!</span>Please make a selection above before continuing.
               </div>
             </div>
           </div>
@@ -45,15 +45,16 @@
                 <span class="au-control-input__text">{{option.name}}</span>
               </label>
               <div *ngIf="showError && checkValidity" class="errorMessage">
-                Please make a selection above before continuing.
+                <span class="error">!</span>Please make a selection above before continuing.
               </div>
             </div>
           </div>
         </div>
         <!-- comment -->
         <div class="controlPadding">
-          <label for="textarea">Rationale</label>
-          <textarea class="au-text-input au-text-input--block" name="textarea" id="textarea" [(ngModel)]="currentQuestion.Comments"></textarea>
+          <label for="textarea" class="rationale">Rationale (optional):</label>
+          <textarea class="au-text-input au-text-input--block" name="textarea" id="textarea" [(ngModel)]="currentQuestion.Comments">
+            Please provide your rationale and any comments that support your answer.</textarea>
         </div>
         <!-- button -->
         <app-question-direction-button (goNextButtonClick)="goNext()" (goPreviousButtonClick)="goPrevious()"

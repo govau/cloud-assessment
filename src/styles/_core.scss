@@ -4,10 +4,9 @@
 //   @include rem(margin, 50px 0px);
 // }
 
-.banner {
+.banner{
   width:100%;
   min-height: 30px;
-  padding:10px 0 5px 0;
   background: rgb(30, 56, 63);
   color: #fff;
   a {
@@ -16,7 +15,57 @@
     a:hover{
      color: #fff;
   }
+  a.headergovau{
+    float: right;
+  }
+  .headergovau__title{
+    font-size: .9em;
+    font-weight: 600;
+  }
+  .banner-bk {
+    padding:5px 0 5px 0;
+  }
 }
+
+.rationale {
+  font-weight: 700;
+}
+
+.au-body * + p {
+  margin-top: 1.5rem;
+}
+
+.au-body * + ul, li {
+  margin-top: 0!important;
+  margin-bottom: 0!important;
+}
+
+.au-text-input {
+  border: 2px solid gray;
+}
+
+.au-text-input:focus, .au-btn:focus, a.au-btn:focus {
+  outline: none;
+}
+
+.errorMessage {
+  margin-top: 10px;
+  border-left: 5px solid $error;
+  background: #F3E2E2;
+  padding: 10px;
+  color: $error;
+}
+
+.error {
+  font-size: 1.2em;
+  font-weight: 800;
+  padding: 5px 10px 5px;
+}
+
+.au-btn.au-btn--primary {
+  margin-top: 10px;
+}
+
 .icon-star{
   height: 1.25rem!important;
   margin-right: .5rem;
@@ -43,6 +92,11 @@
   z-index: 100;
 }
 
+.content {
+  padding: 10px!important;
+  margin-left: 25px;
+}
+
 .mask {
   width: 100%;
   height: 100%;
@@ -56,11 +110,6 @@
   transform: translate(-50%, -50%);
 }
 
-.errorMessage {
-  border-left: 3px solid #cc0200;
-  color:#cc0200;
-  }
-
 .main {
   .row {
     @include rem(padding, 50px);
@@ -70,9 +119,7 @@
   }
 }
 
-
  /* print styles */
-
  /* Report styles*/
 
 @media print {
@@ -120,7 +167,6 @@
     padding:5px;
 }
 
-  
   .mainmenu .au-body .au-body--dark .au-accordion__body .au-accordion--closed {
     display:none;
   }

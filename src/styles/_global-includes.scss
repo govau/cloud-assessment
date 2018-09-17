@@ -1,6 +1,7 @@
 @import 'colors';
 @import 'breakpoints';
 @import 'mixins';
+@import 'typography';
 
 // uikit stuff needs the other vars defined first, otherwise it will use the uikit defaults
 @import "../../node_modules/sass-versioning/dist/_index.scss";
