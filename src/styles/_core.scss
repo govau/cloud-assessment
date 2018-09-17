@@ -54,7 +54,7 @@
 }
 
 .errorMessage {
-  margin-top: 10px;
+  margin: 10px 0 20px 0;
   border-left: 5px solid $error;
   background: #F3E2E2;
   padding: 10px;
@@ -129,23 +129,23 @@
 
 @media print {
 
-    .panel-green {
-        border-color: #21B87D!important;
-        -webkit-print-color-adjust:exact;
+.panel-green {
+  border-color: #21B87D!important;
+  -webkit-print-color-adjust:exact;
     }
-    .panel-orange {
-        border-left: 10px!important #FFB951!important solid!important;
-        -webkit-print-color-adjust:exact;
-    }
-    .panel-red {
-        border-left: 10px!important #FF625C!important solid!important;
-        -webkit-print-color-adjust:exact;
-    }
+.panel-orange {
+  border-left: 10px!important #FFB951!important solid!important;
+  -webkit-print-color-adjust:exact;
+}
+.panel-red {
+  border-left: 10px!important #FF625C!important solid!important;
+  -webkit-print-color-adjust:exact;
+}
     
 .traffic-green{
-    color: #21B87D!important; 
-    font-size:1.3em; 
-    padding:5px;
+  color: #21B87D!important; 
+  font-size:1.3em; 
+  padding:5px;
 }
 
 .green-light{
@@ -161,39 +161,39 @@
 }
 
 .traffic-orange{
-    color: #FFB951!important ; 
-    font-size:1.3em; 
-    padding:5px;
+  color: #FFB951!important ; 
+  font-size:1.3em; 
+  padding:5px;
 }
 
 .traffic-red{
-    color:  #FF625C!important; 
-    font-size:1.3em; 
-    padding:5px;
+  color:  #FF625C!important; 
+  font-size:1.3em; 
+  padding:5px;
 }
 
-  .mainmenu .au-body .au-body--dark .au-accordion__body .au-accordion--closed {
-    display:none;
+.mainmenu .au-body .au-body--dark .au-accordion__body .au-accordion--closed {
+  display:none;
+}
+.main .row {
+  margin-top: -50px;
+}
+ul.nav.navbar-nav.au-link-list.au-link-list--inline{
+  display:none;
+}
+ul.au-link-list.au-link-list--inline.mainmenu-right{
+  display:none;
+}
+.au-body .au-btn, .au-body a.au-btn {
+  display:none;
+  margin-top:10px;
   }
-  .main .row {
-    margin-top: -50px;
-  }
-  ul.nav.navbar-nav.au-link-list.au-link-list--inline{
-    display:none;
-  }
-  ul.au-link-list.au-link-list--inline.mainmenu-right{
-    display:none;
-  }
-  .au-body .au-btn, .au-body a.au-btn {
-    display:none;
-    margin-top:10px;
-  }
-  .progress-outer {
-    display: none;
-  }
-  .au-grid .col-xs-8 {
-    width: 100%;
-  }
+.progress-outer {
+  display: none;
+}
+.au-grid .col-xs-8 {
+  width: 100%;
+}
   .au-footer__end.row {
   display:none;
   padding: 10px 10px;
