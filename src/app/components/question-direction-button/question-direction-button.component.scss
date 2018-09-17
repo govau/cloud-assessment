@@ -11,18 +11,27 @@
     }
     .au-direction-link {
         font-size: 1.25rem;
-        @include rem(padding-top, 16px);
+        border-radius: 4px;
+        color:#ffffff;
+        padding:10px;
+        min-width: 150px;
+        background-color: #00698f;
+        border: 3px solid #00698f;
+        cursor: pointer;
+        text-decoration: none;
         float:right;
         &.au-direction-link--left {
             float: left;
         }
-    }
+      }
+
+    .au-direction-link:hover {
+        text-decoration: underline;
+        background-color: #313131;
+         border: 3px solid #313131;
+        }
 }
 
-button.au-direction-link:focus {
-    outline: none!important;
-  }
-  
-  .au-direction-link:focus {
+.au-direction-link:focus {
     outline: none!important;
   }

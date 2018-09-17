@@ -19,7 +19,7 @@
                 <span class="au-control-input__text">{{ option }}</span>
               </label>
               <div *ngIf="showError" class="errorMessage">
-                  ! Please make a selection above before continuing.
+                  <span class="error">!</span>Please make a selection above before continuing.
               </div>
             </div>
           </div>
@@ -31,7 +31,7 @@
                 <span class="au-control-input__text">{{ option }}</span>
               </label>
               <div *ngIf="showError" class="errorMessage">
-                  ! Please make a selection above before continuing.
+                  <span class="error">!</span>Please make a selection above before continuing.
               </div>
             </div>
           </div>
@@ -43,7 +43,7 @@
                 <span class="au-control-input__text">{{option.name}}</span>
               </label>
               <div *ngIf="showError && checkValidity" class="errorMessage">
-                ! Please make a selection above before continuing.
+                <span class="error">!</span>Please make a selection above before continuing.
               </div>
             </div>
           </div>
