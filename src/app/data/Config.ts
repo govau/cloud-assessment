@@ -7,7 +7,7 @@ export const Config = {
     RoutePath: RoutePath,
     QuestionData: environment.production ? QuestionData : QuestionDataDev,
     reCAPTCHA: {
-        enable: true,
+        enable: false,
         siteKey: '6LdUXm8UAAAAAFjbuj5c2QR38sIUG1PljyA4Yh7u',
     },
     LocalStorageKey: 'CloudAssessment',

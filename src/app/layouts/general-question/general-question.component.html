@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col-xs-8">
       <h2>About the cloud service</h2>
-      <div>Please tell us a bit about the cloud service you are about to assess</div>
+      <div>Please tell us a bit about the cloud service you are about to assess.</div>
 
       <div class="general-question">
         <h3>What is the name of the service that you would like to assess?</h3>
@@ -16,15 +16,6 @@
           Please answer this question before continuing.
         </div>
       </div>
-
-      <!-- <div class="general-question">
-        <h3>Which version (name or number) of the service are you are assessing?</h3>
-        <input class="au-text-input" name="versionNumber" id="versionNumber" type="text" [(ngModel)]="generalQuestion.VersionNumber"
-          required #versionnumber="ngModel">
-        <div *ngIf="versionnumber.invalid && formSubmitted" class="errorMessage">
-          Please answer this question before continuing.
-        </div>
-      </div> -->
 
       <div class="general-question">
         <h3>How many users are expected to directly use the service?</h3>
@@ -45,9 +36,9 @@
       </div>
       <app-question-direction-button (goNextButtonClick)="goNext()"></app-question-direction-button>
     </div>
+
+    <div class="col-xs-4">
+      <app-help-section [helpTitle]="'Why are we asking?'" [helpText]="'This information will feed into your output report. It will also help us understand how people are using this framework so that we can continue to improve it.'"></app-help-section>
+    </div>
   </div>
-  <!-- todo debug -->
-  <!-- <div class="row">
-    <pre>{{generalQuestion|json}}</pre>
-  </div> -->
 </form>

@@ -1,60 +1,71 @@
 <div class="row">
-  <h2>
-    About the framework
-  </h2>
+  <div class="col-xs-8">
+    <h2>
+      About the framework
+    </h2>
 
-  <h3>What is the Common Cloud Assessment Framework (CCAF)?</h3>
-  <p>The Common Cloud Assessment Framework (CCAF) is a tool to help government agencies determine if a particular cloud
-    service
-    is suitable for its business needs and operational context. It will ask you a series of questions to help you
-    identify requirements around compliance, commercial considerations, operability, support and security. Additional
-    information and resources are provided throughout the questionnaire to help you understand these requirements and
-    make informed decisions about which cloud services may be suitable for your needs.</p>
+    <h3>What is the Common Cloud Assessment Framework (CCAF)?</h3>
+    <p>The Common Cloud Assessment Framework (CCAF) is a tool to help government agencies determine if a particular
+      cloud
+      service
+      is suitable for its business needs and operational context. It will ask you a series of questions to help you
+      identify requirements around compliance, commercial considerations, operability, support and security. Additional
+      information and resources are provided throughout the questionnaire to help you understand these requirements and
+      make informed decisions about which cloud services may be suitable for your needs.</p>
 
-  <h4>What is it NOT?</h4>
-  <p>The CCAF is not a standardised or objective assessment of a cloud vendor or service. As such, you should not use
-    the output of the assessment as a definitive indicator (yes or no) of whether you should use the assessed service.
-    Rather, it is designed as a tool to help guide you in your decision making on whether a particular service is fit
-    for your purposes.</p>
+    <h4>What is it NOT?</h4>
+    <p>The CCAF is not a standardised or objective assessment of a cloud vendor or service. As such, you should not use
+      the output of the assessment as a definitive indicator (yes or no) of whether you should use the assessed
+      service.
+      Rather, it is designed as a tool to help guide you in your decision making on whether a particular service is fit
+      for your purposes.</p>
 
-  <h4>Who is the CCAF for?</h4>
-  <p>The CCAF is designed for use by any commonwealth agency persons who are considering the implementation of a
-    cloud-based IT service within their organisation.</p>
+    <h4>Who is the CCAF for?</h4>
+    <p>The CCAF is designed for use by any commonwealth agency persons who are considering the implementation of a
+      cloud-based IT service within their organisation.</p>
 
-  <h4>How long will it take?</h4>
-  <p>How long the assessment will take to complete depends on a few factors, including the nature of the service that
-    you
-    are considering and how much of the requested information you have at hand.</p>
+    <h4>How long will it take?</h4>
+    <p>How long the assessment will take to complete depends on a few factors, including the nature of the service that
+      you
+      are considering and how much of the requested information you have at hand.</p>
 
-  <p>The progress bar at the top of each screen indicates how far along you are in the assessment. The number of
-    questions
-    may change as you progress through the questionnaire depending on your answers.</p>
+    <p>The progress bar at the top of each screen indicates how far along you are in the assessment. The number of
+      questions
+      may change as you progress through the questionnaire depending on your answers.</p>
 
-  <p>It you need to exit the assessment at any time, you can do so by clicking the Save & Exit button. To resume your
-    assessment at a later time, simply return to <a href="https://assess.cloud.gov.au">https://assess.cloud.gov.au</a>
-    using the same device and browser.  You will
-    then be prompted to pick up from where you left off.</p>
+    <p>It you need to exit the assessment at any time, you can do so by clicking the Save & Exit button. To resume your
+      assessment at a later time, simply return to <a href="https://assess.cloud.gov.au">https://assess.cloud.gov.au</a>
+      using the same device and browser.  You will
+      then be prompted to pick up from where you left off.</p>
 
-  <p>For more information on how to prepare for the assessment, please review the <a [routerLink]="['/'+routePath.HOWTOPREPARE]">Prepare
-      page</a>.</p>
+    <p>For more information on how to prepare for the assessment, please review the <a [routerLink]="['/'+routePath.HOWTOPREPARE]">Prepare
+        page</a>.</p>
 
-  <h4>What will the assessment tell me?</h4>
-  <p>When you submit your responses, you will be provided with a tailored assessment report which highlights where your
-    responses indicate a potential misalignment between the service and your needs. Additional information will be
-    provided to help you understand the results and next steps. The assessment should not be interpreted as a judgement
-    of the cloud service or vendor, but rather, an indicative guide as to whether the service is suitable for your
-    stated needs and any relevant compliance obligations.</p>
+    <h4>What will the assessment tell me?</h4>
+    <p>When you submit your responses, you will be provided with a tailored assessment report which highlights where
+      your
+      responses indicate a potential misalignment between the service and your needs. Additional information will be
+      provided to help you understand the results and next steps. The assessment should not be interpreted as a
+      judgement
+      of the cloud service or vendor, but rather, an indicative guide as to whether the service is suitable for your
+      stated needs and any relevant compliance obligations.</p>
 
-  <h4>What happens if I need input from my colleagues?</h4>
-  <p>Some of the questions may require you to seek additional information from others within your organisation. In
-    these cases, you can leave your partially completed questionnaire open in your browser while you contact your
-    colleagues for more information, then return and complete the assessment at a later time. At this stage, the CCAF
-    does not support multiple users completing a single assessment, though this may be considered for future
-    enhancements.</p>
+    <h4>What happens if I need input from my colleagues?</h4>
+    <p>Some of the questions may require you to seek additional information from others within your organisation. In
+      these cases, you can leave your partially completed questionnaire open in your browser while you contact your
+      colleagues for more information, then return and complete the assessment at a later time. At this stage, the CCAF
+      does not support multiple users completing a single assessment, though this may be considered for future
+      enhancements.</p>
 
-  <h4>What will the DTA do with the information I provide?</h4>
-  <p>The questionnaire does not ask you to provide any personal or identifiable details. Information that relates to
-    the assessment of the service and its vendor will be captured by the DTA to share with other Government Agencies.
-    In future versions of this framework, these assessments may be published on this website. Other information in the
-    questionnaire may be used by the DTA to help them improve and evolve this service.</p>
+    <h4>What will the DTA do with the information I provide?</h4>
+    <p>The questionnaire does not ask you to provide any personal or identifiable details. Information that relates to
+      the assessment of the service and its vendor will be captured by the DTA to share with other Government Agencies.
+      In future versions of this framework, these assessments may be published on this website. Other information in
+      the
+      questionnaire may be used by the DTA to help them improve and evolve this service.</p>
+  </div>
+
+  <div class="col-xs-4">
+    <app-help-section [helpTitle]="'Why are we asking?'" [helpText]="'This information will feed into your output report. It will also help us understand how people are using this framework so that we can continue to improve it.'"></app-help-section>
+  </div>
 </div>
