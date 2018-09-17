@@ -4,10 +4,9 @@
 //   @include rem(margin, 50px 0px);
 // }
 
-.banner {
+.banner{
   width:100%;
   min-height: 30px;
-  padding:10px 0 5px 0;
   background: rgb(30, 56, 63);
   color: #fff;
   a {
@@ -16,11 +15,20 @@
     a:hover{
      color: #fff;
   }
+  a.headergovau{
+    float: right;
+  }
+  .headergovau__title{
+    font-size: .9em;
+    font-weight: 600;
+  }
+  .banner-bk {
+    padding:5px 0 5px 0;
+  }
 }
 
 .au-body * + p {
-  margin-top: .5rem;
-  margin-bottom: 1rem;
+  margin-top: 1.5rem;
 }
 
 .au-body * + ul, li {
@@ -37,11 +45,15 @@
 }
 
 .errorMessage {
-  margin-top: 30px;
+  margin-top: 10px;
   border-left: 5px solid $error;
   background: #F3E2E2;
   padding: 10px;
   color: $error;
+}
+
+.au-btn.au-btn--primary {
+  margin-top: 10px;
 }
 
 .icon-star{
@@ -68,6 +80,11 @@
   top: 0;
   left: 0;
   z-index: 100;
+}
+
+.content {
+  padding: 10px!important;
+  margin-left: 25px;
 }
 
 .mask {
@@ -140,7 +157,6 @@
     padding:5px;
 }
 
-  
   .mainmenu .au-body .au-body--dark .au-accordion__body .au-accordion--closed {
     display:none;
   }

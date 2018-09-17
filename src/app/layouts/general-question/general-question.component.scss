@@ -1,3 +1,4 @@
+@import '../../../styles/global-includes';
 .au-text-input{
     width:100%;
 }
@@ -14,6 +15,12 @@
     border-color: #808080
 }
 
+main {
+    .row {
+        padding-top: 20px!important;
+        }
+    }
+
 //.errorMessage {
 //border-left: 3px solid #cc0200;
 //color:#cc0200;
@@ -24,9 +31,4 @@
     .au-grid .col-xs-8 {
         width: 100%;
     }
-
-    .main .row {
-        padding: 30px!important;
-    }
-
 }
