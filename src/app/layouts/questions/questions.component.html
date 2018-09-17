@@ -18,8 +18,10 @@
                   required>
                 <span class="au-control-input__text">{{ option }}</span>
               </label>
-              <label>Least</label>
-              <label>Most</label>
+             <div class="question-bar">
+               <label>Least</label>
+                <label style="float:right;">Most</label>
+              </div>
               <div *ngIf="showError" class="errorMessage">
                   <span class="error">!</span>Please make a selection above before continuing.
               </div>
@@ -63,7 +65,7 @@
       <!-- help section -->
       <div class="col-xs-4">
         <app-help-section [helpText]="currentQuestion.Reference"></app-help-section>
-        <button type="button" class="au-btn" (click)="saveButtonClick()">Save & exit</button>
+        <button type="button" class="au-btn au-btn--secondary" (click)="saveButtonClick()">Save & exit</button>
       </div>
     </div>
     <!-- todo debug -->

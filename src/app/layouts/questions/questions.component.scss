@@ -27,6 +27,22 @@
 border: 2px solid gray;
 }
 
+a.au-btn, .au-btn--secondary{
+  background-color: transparent;
+  border-color: #00698f;
+  color: #00698f;
+}
+
+.question-bar {
+  width: 88%;
+  border: 1px solid #000;
+  padding: 0 10px 0 10px;
+  min-height: 20px;
+  font-size: .8em;
+  border-radius: 2px;
+  margin: 10px 0px 10px 0px;
+}
+
 .au-display-lg {
   color: #185E6F;
   font-weight: 400;
