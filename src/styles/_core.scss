@@ -27,8 +27,13 @@
   }
 }
 
-.rationale {
+.rationaleLabel {
   font-weight: 700;
+  clear: both;
+}
+
+.rationaleText{
+  font-size: .8em;
 }
 
 .au-body * + p {

@@ -54,9 +54,9 @@
         </div>
         <!-- comment -->
         <div class="controlPadding">
-          <label for="textarea" class="rationale">Rationale (optional):</label>
-          <textarea class="au-text-input au-text-input--block" name="textarea" id="textarea" [(ngModel)]="currentQuestion.Comments">
-            Please provide your rationale and any comments that support your answer.</textarea>
+          <label for="textarea" class="rationaleLabel">Rationale (optional):</label>
+          <div class="rationaleText">Please provide your rationale and any comments that support your answer.</div>
+          <textarea class="au-text-input au-text-input--block" name="textarea" id="textarea" [(ngModel)]="currentQuestion.Comments"></textarea>
         </div>
         <!-- button -->
         <app-question-direction-button (goNextButtonClick)="goNext()" (goPreviousButtonClick)="goPrevious()"
