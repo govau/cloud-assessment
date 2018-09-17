@@ -103,6 +103,14 @@ body {
     display: block
   }
 
+  #mainmenu{
+    padding-top: 10px;
+}
+  .mainmenu-right {
+    float: left;
+    margin-top:-15px!important;
+}
+
   .au-body.au-body--dark a:focus {
     outline: none;
 }

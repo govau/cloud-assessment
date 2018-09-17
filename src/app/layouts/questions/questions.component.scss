@@ -1,6 +1,6 @@
 @import '../../../styles/global-includes';
 .controlPadding{
-  padding-top: 5px;
+  padding-top: 10px;
 }  
 
 .row-progress {
@@ -20,11 +20,9 @@
   font-size: 2.7em;
 }
 
-
-  .row {
-      padding-top: 20px!important;
-      }
-
+.row {
+  padding-top: 20px!important;
+  }
 
 .au-text-input {
 border: 2px solid gray;
