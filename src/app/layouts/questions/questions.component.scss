@@ -35,12 +35,13 @@ a.au-btn, .au-btn--secondary{
 
 .question-bar {
   width: 88%;
-  border: 1px solid #000;
+  background: rgb(103,218,253);
+  background: linear-gradient(90deg, rgba(103,218,253,1) 0%, rgba(19,94,112,1) 35%, rgba(15,40,45,1) 100%);
   padding: 0 10px 0 10px;
   min-height: 20px;
   font-size: .8em;
   border-radius: 2px;
-  margin: 10px 0px 10px 0px;
+  margin: 10px 0px 20px 0px;
 }
 
 .au-display-lg {
