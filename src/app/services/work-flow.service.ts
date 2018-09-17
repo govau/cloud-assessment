@@ -117,11 +117,15 @@ export class WorkFlowService {
     switch (rowIndex) {
       case (20 - 2):
         result = this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue &&
-          this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === 'Not certified';
+          (this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === 'Not certified' ||
+            this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === Config.QuestionExtraOptions.NA ||
+            this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === Config.QuestionExtraOptions.Unsure);
         break;
       case (21 - 2):
         result = this.appDataModel.AssessmentQuestion[IRAP_assessment_index].AssessmentValue &&
-          this.appDataModel.AssessmentQuestion[IRAP_assessment_index].AssessmentValue.trim() === 'No';
+          (this.appDataModel.AssessmentQuestion[IRAP_assessment_index].AssessmentValue.trim() === 'No' ||
+            this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === Config.QuestionExtraOptions.NA ||
+            this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === Config.QuestionExtraOptions.Unsure);
         break;
       case (22 - 2):
         result = this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue &&
