@@ -26,7 +26,7 @@ export class ResultComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.assessmentQuestion = this.workFlowService.appData.AssessmentQuestion;
+    this.assessmentQuestion = this.workFlowService.appData.AssessmentQuestion.filter(x => x.AssessmentValue);
     this.generalQuestion = this.workFlowService.appData.GeneralQuestion;
   }
 

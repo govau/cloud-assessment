@@ -74,10 +74,36 @@ export class QuestionsComponent implements OnInit {
   goNext() {
     if (this.form.valid) {
       window.scroll(0, 0);
+
+      // reset  conditional value is condition changed
+      if (this.form.dirty) {
+        const asd_certified_index = (19 - 2);
+        const IRAP_assessment_index = (20 - 2);
+        const cloud_model_index = (3 - 2);
+
+        switch (this.workFlowService.index) {
+          case asd_certified_index:
+            this.workFlowService.appData.AssessmentQuestion[(20 - 2)].AssessmentValue = '';
+            this.workFlowService.appData.AssessmentQuestion[(21 - 2)].AssessmentValue = '';
+            break;
+          case IRAP_assessment_index:
+            this.workFlowService.appData.AssessmentQuestion[(21 - 2)].AssessmentValue = '';
+            break;
+          case cloud_model_index:
+            this.workFlowService.appData.AssessmentQuestion[(22 - 2)].AssessmentValue = '';
+            this.workFlowService.appData.AssessmentQuestion[(23 - 2)].AssessmentValue = '';
+            this.workFlowService.appData.AssessmentQuestion[(27 - 2)].AssessmentValue = '';
+            this.workFlowService.appData.AssessmentQuestion[(28 - 2)].AssessmentValue = '';
+            this.workFlowService.appData.AssessmentQuestion[(29 - 2)].AssessmentValue = '';
+            this.workFlowService.appData.AssessmentQuestion[(41 - 2)].AssessmentValue = '';
+            break;
+        }
+      }
+
       // this.localStorageService.set(this.workFlowService.appData);
       this.workFlowService.localStorageSave();
       this.currentQuestion = this.workFlowService.Next();
-      if (this.currentQuestion == null) {
+      if (this.currentQuestion === undefined) {
         // this.localStorageService.clear();
         this.workFlowService.localStorageClear();
         this.router.navigateByUrl(Config.RoutePath.RESULT);
