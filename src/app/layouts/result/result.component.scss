@@ -79,7 +79,6 @@ padding: 0px 20px;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
         font-size: 1.1em;
-        min-height: 45px;
         font-weight: 600;
         clear: both;
     }
@@ -116,6 +115,10 @@ padding: 0px 20px;
       border-bottom: 3px solid #929597;
       margin-bottom: 5px;
   }
+
+  .au-body p {
+    max-width: 100%;
+}
 
     .panel-green {
         border-left: 10px $green solid;

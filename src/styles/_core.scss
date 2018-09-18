@@ -132,52 +132,54 @@
 .panel-green {
   border-color: #21B87D!important;
   -webkit-print-color-adjust:exact;
-    }
+  }
+
 .panel-orange {
-  border-left: 10px!important #FFB951!important solid!important;
+  border-left: #FFB951!important ;
   -webkit-print-color-adjust:exact;
-}
+  }
+
 .panel-red {
-  border-left: 10px!important #FF625C!important solid!important;
+  border-left: #FF625C!important;
   -webkit-print-color-adjust:exact;
-}
+  }
     
 .traffic-green{
-  color: #21B87D!important; 
-  font-size:1.3em; 
-  padding:5px;
-}
-
-.green-light{
-  color: #008A0B!important; 
-}
-
-.green-orange{
-  color: #D05513!important; 
-}
-
-.green-red{
-  color: #D0020A!important; 
-}
+  color: #21B87D!important;
+  -webkit-print-color-adjust:exact;
+  }
 
 .traffic-orange{
-  color: #FFB951!important ; 
-  font-size:1.3em; 
-  padding:5px;
-}
+  color: #FFB951!important ;
+  -webkit-print-color-adjust:exact;
+  }
 
 .traffic-red{
-  color:  #FF625C!important; 
-  font-size:1.3em; 
-  padding:5px;
-}
+  color:#FF625C!important;
+  -webkit-print-color-adjust:exact;
+  }
+
+.green-light{
+  color: #008A0B!important;
+  -webkit-print-color-adjust:exact;
+  }
+
+.green-orange{
+  color: #D05513!important;
+  -webkit-print-color-adjust:exact;
+  }
+
+.green-red{
+  color: #D0020A!important;
+  -webkit-print-color-adjust:exact;
+  }
 
 .mainmenu .au-body .au-body--dark .au-accordion__body .au-accordion--closed {
   display:none;
-}
+  }
 .main .row {
   margin-top: -50px;
-}
+  }
 ul.nav.navbar-nav.au-link-list.au-link-list--inline{
   display:none;
 }
@@ -217,6 +219,10 @@ h1, h2, h3, h4, h5, h6 {
 
 img, #textarea {
   page-break-inside: avoid; // Prevent images from being split up
+}
+
+.top{
+  display: none;
 }
 
 body {

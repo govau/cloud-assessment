@@ -14,7 +14,6 @@
     <button class="au-btn" type="button" (click)="printReport()">Print Report</button>
   </div-->
 
-  <!-- RIGHT COLUMN -->
   <div class="col-xs-12 right-col">
     <h2>Cloud assessment report</h2>
     <p>Here are your assessment results sorted by assessment category. If you need to share these results you can use
@@ -24,6 +23,7 @@
     <p>You have indicated that the main purpose for use of {{ServiceName}} is as follows:</p>
     <p>{{ServicePurpose}}</p>
     <p>These assessment results were produced on {{ assessmentDate | date: 'dd/MM/yyyy' }}</p>
+    <button class="au-btn" style="margin-top:20px;" type="button" (click)="printReport()">Print Report</button>
     <div class="panel panel-default" *ngFor="let item of Categories">
       <div class="panel-heading" [id]="item">{{item}}</div>
          <div class="traffic-lights">Risk rating: 
