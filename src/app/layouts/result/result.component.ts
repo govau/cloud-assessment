@@ -8,6 +8,7 @@ import GeneralQuestion from '../../classes/GeneralQuestion';
 import CheckBox from '../../classes/CheckBox';
 // service
 import { WorkFlowService } from '../../services/work-flow.service';
+import { SubmitServiceService } from '../../services/submit-service.service';
 
 @Component({
   selector: 'app-result',
@@ -22,12 +23,26 @@ export class ResultComponent implements OnInit {
 
   constructor(
     private workFlowService: WorkFlowService,
+    private submitServiceService: SubmitServiceService,
     private sanitizer: DomSanitizer
   ) { }
 
   ngOnInit() {
     this.assessmentQuestion = this.workFlowService.appData.AssessmentQuestion.filter(x => x.AssessmentValue);
     this.generalQuestion = this.workFlowService.appData.GeneralQuestion;
+
+    const acc = document.getElementsByClassName('accordion');
+    for (let i = 0; i < acc.length; i++) {
+      acc[i].addEventListener('click', function () {
+        this.classList.toggle('active');
+        const panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    }
   }
 
   get ServiceName(): string {
@@ -66,6 +81,15 @@ export class ResultComponent implements OnInit {
 
   printReport() {
     window.print();
+  }
+
+  saveReport() {
+    console.log('save button clicked');
+    // this.submitServiceService.getHelloWorldRespose()
+    //   .subscribe(data => console.log(data));
+
+    this.submitServiceService.submitReport()
+      .subscribe(data => console.log(data));
   }
 
   // todo refractoring
