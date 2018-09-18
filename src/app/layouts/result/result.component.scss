@@ -5,13 +5,13 @@ $red: #FF625C;
 $orange: #FFB951;
 
 .traffic-light {  
-    height: 35px;
-    width: 35px;
+    height: 25px;
+    width: 25px;
     border-radius: 50%;
     display: inline-block;
     text-align: center;
-    padding: 5px;
-    margin: 5px;
+    padding: 6px;
+    margin: 10px;
     border: none;
 }
 .red-light {
@@ -165,7 +165,6 @@ padding: 0px 20px;
 .traffic-lights {
         background-color: #F5F5F5;
         display: block;
-        width: 100%;
         min-height: 60px;
         padding: 25px 20px 20px 20px;
     }
