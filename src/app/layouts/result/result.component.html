@@ -1,6 +1,6 @@
 <div class="row">
   <!-- LEFT COLUMN -->
-  <div class="col-xs-4 left-col">
+  <!--div class="col-xs-4 left-col">
     <h2>Assessment Categories</h2>
     <table>
       <tr *ngFor="let item of Categories">
@@ -12,11 +12,11 @@
       </tr>
     </table>
     <button class="au-btn" type="button" (click)="printReport()">Print Report</button>
-  </div>
+  </div-->
 
   <!-- RIGHT COLUMN -->
-  <div class="col-xs-8 right-col">
-    <h1>Cloud assessment report</h1>
+  <div class="col-xs-12 right-col">
+    <h2>Cloud assessment report</h2>
     <p>Here are your assessment results sorted by assessment category. If you need to share these results you can use
       the Print report button to print or save a PDF copy.</p>
     <p>The service your have assessed is {{ServiceName}}, which you have categorised as {{CloudModel}} and
@@ -24,13 +24,13 @@
     <p>You have indicated that the main purpose for use of {{ServiceName}} is as follows:</p>
     <p>{{ServicePurpose}}</p>
     <p>These assessment results were produced on {{ assessmentDate | date: 'dd/MM/yyyy' }}</p>
-
     <div class="panel panel-default" *ngFor="let item of Categories">
-      <div class="panel-heading" [id]="item">{{item}}
-        <p style="float: right"><span class="red-light">{{CountRedByCategory(item)}}</span>
-          <span class="orange-light">{{CountOrangeByCategory(item)}}</span>
-          <span class="green-light">{{CountGreenByCategory(item)}}</span></p>
-      </div>
+      <div class="panel-heading" [id]="item">{{item}}</div>
+         <div class="traffic-lights">Risk rating: 
+          <span class="red-light">{{CountRedByCategory(item)}}</span>High
+          <span class="orange-light">{{CountOrangeByCategory(item)}}</span>Medium
+          <span class="green-light">{{CountGreenByCategory(item)}}</span>Low
+  </div>
 
       <div *ngFor="let question of GetQuestionsByCategory(item)">
         <div class="panel-body" [ngClass]="{'panel-green':CalculateSymbol(question)==='green', 'panel-orange': CalculateSymbol(question)==='orange', 'panel-red':CalculateSymbol(question)==='red'}">
