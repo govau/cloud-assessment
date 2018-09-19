@@ -7,6 +7,7 @@ import { Config } from '../../data/Config';
 import QuestionItem from '../../classes/QuestionItem';
 // service
 import { WorkFlowService } from '../../services/work-flow.service';
+import { SubmitServiceService } from '../../services/submit-service.service';
 
 @Component({
   selector: 'app-questions',
@@ -22,6 +23,7 @@ export class QuestionsComponent implements OnInit {
   constructor(
     private router: Router,
     private workFlowService: WorkFlowService,
+    private submitServiceService: SubmitServiceService
   ) { }
 
   ngOnInit() {
@@ -83,19 +85,25 @@ export class QuestionsComponent implements OnInit {
 
         switch (this.workFlowService.index) {
           case asd_certified_index:
-            this.workFlowService.appData.AssessmentQuestion[(20 - 2)].AssessmentValue = '';
-            this.workFlowService.appData.AssessmentQuestion[(21 - 2)].AssessmentValue = '';
+            if (this.workFlowService.appData.AssessmentQuestion[(20 - 2)]) {
+              this.workFlowService.appData.AssessmentQuestion[(20 - 2)].AssessmentValue = '';
+              this.workFlowService.appData.AssessmentQuestion[(21 - 2)].AssessmentValue = '';
+            }
             break;
           case IRAP_assessment_index:
-            this.workFlowService.appData.AssessmentQuestion[(21 - 2)].AssessmentValue = '';
+            if (this.workFlowService.appData.AssessmentQuestion[(21 - 2)]) {
+              this.workFlowService.appData.AssessmentQuestion[(21 - 2)].AssessmentValue = '';
+            }
             break;
           case cloud_model_index:
-            this.workFlowService.appData.AssessmentQuestion[(22 - 2)].AssessmentValue = '';
-            this.workFlowService.appData.AssessmentQuestion[(23 - 2)].AssessmentValue = '';
-            this.workFlowService.appData.AssessmentQuestion[(27 - 2)].AssessmentValue = '';
-            this.workFlowService.appData.AssessmentQuestion[(28 - 2)].AssessmentValue = '';
-            this.workFlowService.appData.AssessmentQuestion[(29 - 2)].AssessmentValue = '';
-            this.workFlowService.appData.AssessmentQuestion[(41 - 2)].AssessmentValue = '';
+            if (this.workFlowService.appData.AssessmentQuestion[(22 - 2)]) {
+              this.workFlowService.appData.AssessmentQuestion[(22 - 2)].AssessmentValue = '';
+              this.workFlowService.appData.AssessmentQuestion[(23 - 2)].AssessmentValue = '';
+              this.workFlowService.appData.AssessmentQuestion[(27 - 2)].AssessmentValue = '';
+              this.workFlowService.appData.AssessmentQuestion[(28 - 2)].AssessmentValue = '';
+              this.workFlowService.appData.AssessmentQuestion[(29 - 2)].AssessmentValue = '';
+              this.workFlowService.appData.AssessmentQuestion[(41 - 2)].AssessmentValue = '';
+            }
             break;
         }
       }
@@ -105,6 +113,7 @@ export class QuestionsComponent implements OnInit {
       this.currentQuestion = this.workFlowService.Next();
       if (this.currentQuestion === undefined) {
         // this.localStorageService.clear();
+        this.saveReport();
         this.workFlowService.localStorageClear();
         this.router.navigateByUrl(Config.RoutePath.RESULT);
       } else {
@@ -133,5 +142,11 @@ export class QuestionsComponent implements OnInit {
 
   saveCancel() {
     this.showModal = false;
+  }
+
+  saveReport() {
+    // todo remove console
+    this.submitServiceService.submitReport()
+      .subscribe(data => console.log(data));
   }
 }

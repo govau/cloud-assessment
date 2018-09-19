@@ -6,7 +6,6 @@ import { Router } from '@angular/router';
 import { Config } from '../../data/Config';
 // service
 import { WorkFlowService } from '../../services/work-flow.service';
-// import { LocalStorageService } from '../../services/local-storage.service';
 import CheckBox from '../../classes/CheckBox';
 
 @Component({
@@ -16,13 +15,13 @@ import CheckBox from '../../classes/CheckBox';
 })
 export class AssessmentComponent implements OnInit {
     showModal: boolean;
-    // declarativeFormCaptchaValue: string;
+    declarativeFormCaptchaValue: string;
     reCAPTCHAConfig: any;
     routePath: any;
 
     constructor(
         private router: Router,
-        private workFlowService: WorkFlowService,
+        private workFlowService: WorkFlowService
         // private localStorageService: LocalStorageService,
     ) { }
 
@@ -86,4 +85,9 @@ export class AssessmentComponent implements OnInit {
             this.router.navigateByUrl(Config.RoutePath.GENERALQUESTION);
         }
     }
+
+    resolved(captchaResponse: string) {
+        this.workFlowService.captchaResponse = captchaResponse;
+    }
+
 }

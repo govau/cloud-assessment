@@ -13,6 +13,7 @@ export class WorkFlowService {
   private appDataModel: AppDataModel;
   private hasStarted: boolean;
   private currentAssessmentIndex: number;
+  captchaResponse: string;
 
   constructor(
     private localStorageService: LocalStorageService

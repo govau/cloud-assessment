@@ -50,7 +50,8 @@
         </div>
         <!-- comment -->
         <div class="controlPadding">
-          <label for="textarea" class="rationaleLabel">Please provide a rationale and any comments that support your answer (optional):</label>
+          <label for="textarea" class="rationaleLabel">Please provide a rationale and any comments that support your
+            answer (optional):</label>
           <textarea class="au-text-input au-text-input--block" name="textarea" id="textarea" [(ngModel)]="currentQuestion.Comments"></textarea>
         </div>
         <!-- button -->
@@ -73,6 +74,7 @@
 <app-modal [(show)]="showModal" [title]="'Save & exit'" [primaryButtonText]="'Exit'" [secondaryButtonText]="'Cancel'"
   (primaryButtonClick)='saveExit()' (secondaryButtonClick)='saveCancel()'>
   <div>Your progress has been saved. To resume your assessment at a later time, simply return to
-    https://assess.cloud.gov.au using the same device and browser.  You will then be prompted to pick up from where you
+    <a href="https://assess.cloud.gov.au">https://assess.cloud.gov.au</a> using the same device and browser.  You will
+    then be prompted to pick up from where you
     left off.</div>
 </app-modal>

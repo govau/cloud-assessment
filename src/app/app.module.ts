@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 // modules
 import { AppRoutingModule } from './app-routing.module';
 import { RecaptchaModule } from 'ng-recaptcha';
@@ -8,7 +9,8 @@ import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 // service
 import { WorkFlowService } from './services/work-flow.service';
 import { LocalStorageService } from './services/local-storage.service';
-import { ReportService } from "./services/report.service";
+import { ReportService } from './services/report.service';
+import { SubmitServiceService } from './services/submit-service.service';
 // components
 import { AppComponent } from './app.component';
 import { SiteHeaderComponent } from './components/site-header/site-header.component';
@@ -61,12 +63,14 @@ import { AssessmentGuard } from './guards/assessment.guard';
     AppRoutingModule,
     RecaptchaModule.forRoot(),
     RecaptchaFormsModule,
+    HttpClientModule
   ],
   providers: [
     AssessmentGuard,
     WorkFlowService,
     LocalStorageService,
     ReportService,
+    SubmitServiceService,
   ],
   bootstrap: [AppComponent]
 })

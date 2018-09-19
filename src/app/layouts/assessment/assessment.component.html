@@ -19,9 +19,9 @@
 
     <div style="margin-top:30px;">
         <form #declarativeForm="ngForm">
-            <!--script *ngIf="reCAPTCHAConfig.enable" src='https://www.google.com/recaptcha/api.js'></script>
-            <re-captcha *ngIf="reCAPTCHAConfig.enable" [siteKey]="reCAPTCHAConfig.siteKey" [(ngModel)]="declarativeFormCaptchaValue"
-                name="captcha" required></re-captcha-->
+            <script *ngIf="reCAPTCHAConfig.enable" src='https://www.google.com/recaptcha/api.js'></script>
+            <re-captcha *ngIf="reCAPTCHAConfig.enable" (resolved)="resolved($event)" [siteKey]="reCAPTCHAConfig.siteKey"
+                [(ngModel)]="declarativeFormCaptchaValue" name="captcha" required></re-captcha>
             <button class="au-btn  au-btn--primary" type="button" (click)="startAssessment()" [disabled]="!declarativeForm.valid && reCAPTCHAConfig.enable">Start
                 cloud assessment</button>
         </form>

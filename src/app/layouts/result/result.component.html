@@ -24,7 +24,6 @@
     <p>{{ServicePurpose}}</p>
     <p>These assessment results were produced on {{ assessmentDate | date: 'dd/MM/yyyy' }}</p>
     <button class="au-btn" style="margin-top:20px;" type="button" (click)="printReport()">Print Report</button>
-
     <div class="panel panel-default" *ngFor="let item of Categories">
       <div class="panel-heading" [id]="item">{{item}}</div>
       <div class="traffic-lights">Risk rating:
@@ -68,40 +67,6 @@
       </div>
       <p class="top">&#10224; <a (click)="backToTop()">Back to top</a></p>
     </div>
-
-    <div class="test">
-      <h2>Accordion with symbols</h2>
-      <p>In this example we have added a "plus" sign to each button. When the user clicks on the button, the "plus"
-        sign is
-        replaced with a "minus" sign.</p>
-      <button class="accordion">Section 1</button>
-      <div class="panel">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo
-          consequat.</p>
-      </div>
-
-      <button class="accordion">Section 2</button>
-      <div class="panel">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo
-          consequat.</p>
-      </div>
-
-      <button class="accordion">Section 3</button>
-      <div class="panel">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo
-          consequat.</p>
-      </div>
-    </div>
-
   </div>
 </div>
 
