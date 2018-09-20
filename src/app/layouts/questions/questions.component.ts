@@ -118,6 +118,7 @@ export class QuestionsComponent implements OnInit {
         this.router.navigateByUrl(Config.RoutePath.RESULT);
       } else {
         this.formReset();
+        this.jumpToPage('progressbar');
         // todo unique url per question
         // this.router.navigateByUrl(Config.RoutePath.QUESTIONS + `/${this.workFlowService.currentIndex + 1}`);
       }
@@ -148,5 +149,12 @@ export class QuestionsComponent implements OnInit {
     // todo remove console
     this.submitServiceService.submitReport()
       .subscribe(data => console.log(data));
+  }
+
+  jumpToPage(data: string) {
+    const x = document.querySelector('#' + data);
+    if (x) {
+      x.scrollIntoView();
+    }
   }
 }

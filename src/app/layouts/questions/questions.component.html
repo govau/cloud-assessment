@@ -1,7 +1,7 @@
 <form #myform="ngForm">
   <div *ngIf="currentQuestion">
     <!-- progress bar -->
-    <div class="row-progress">
+    <div class="row-progress" id="progressbar">
       <app-progress-bar [progress]="processBarProgress" [progressText]="processBar" [color]="'#488aff'"></app-progress-bar>
     </div>
     <div class="row">
