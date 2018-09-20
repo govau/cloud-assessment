@@ -12,6 +12,7 @@ import { QuestionsComponent } from './layouts/questions/questions.component';
 import { ResultComponent } from './layouts/result/result.component';
 import { GeneralQuestionComponent } from './layouts/general-question/general-question.component';
 import { HowToPrepareComponent } from './layouts/how-to-prepare/how-to-prepare.component';
+import { PageNotFoundComponent } from './layouts/page-not-found/page-not-found.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
     { path: Config.RoutePath.GENERALQUESTION, component: GeneralQuestionComponent, canActivate: [AssessmentGuard] },
     { path: Config.RoutePath.QUESTIONS, component: QuestionsComponent, canActivate: [AssessmentGuard] },
     { path: Config.RoutePath.RESULT, component: ResultComponent, canActivate: [AssessmentGuard] },
+    { path: Config.RoutePath.PAGENOTFOUND, component: PageNotFoundComponent },
 
     // todo unique url per question
     // {
@@ -49,7 +51,7 @@ const routes: Routes = [
     // },
     {
         path: '**',
-        redirectTo: Config.RoutePath.HOME,
+        redirectTo: Config.RoutePath.PAGENOTFOUND,
     }
 ];
 

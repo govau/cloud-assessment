@@ -29,8 +29,10 @@ import { QuestionsComponent } from './layouts/questions/questions.component';
 import { ResultComponent } from './layouts/result/result.component';
 import { GeneralQuestionComponent } from './layouts/general-question/general-question.component';
 import { HowToPrepareComponent } from './layouts/how-to-prepare/how-to-prepare.component';
+import { PageNotFoundComponent } from './layouts/page-not-found/page-not-found.component';
 // guards
 import { AssessmentGuard } from './guards/assessment.guard';
+
 
 @NgModule({
   declarations: [
@@ -51,6 +53,7 @@ import { AssessmentGuard } from './guards/assessment.guard';
     ResultComponent,
     GeneralQuestionComponent,
     HowToPrepareComponent,
+    PageNotFoundComponent,
   ],
   // todo dynamic route
   entryComponents: [
