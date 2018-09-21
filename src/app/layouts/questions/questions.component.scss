@@ -49,13 +49,13 @@ a.au-btn, .au-btn--secondary{
   font-weight: 400;
   font-size: 2em;
 }
-.au-text-input:focus, .au-body.au-body--dark a:focus {
-  outline: none;
-}
+// .au-text-input:focus, .au-body.au-body--dark a:focus {
+//   outline: none;
+// }
 
-.au-control-input__input:focus + .au-control-input__text:before, .au-control-input__input:focus + .au-control-input__text:after {
-  outline: none;
-}
+// .au-control-input__input:focus + .au-control-input__text:before, .au-control-input__input:focus + .au-control-input__text:after {
+//   outline: none;
+// }
 
 .au-control-input__input:invalid + .au-control-input__text:after {
   border-color: transparent;
