@@ -40,4 +40,8 @@ export class GeneralQuestionComponent implements OnInit {
       this.formSubmitted = true;
     }
   }
+
+  get processBar(): string {
+    return (1) + ' of ' + (this.workFlowService.count + 1);
+  }
 }

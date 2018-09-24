@@ -41,7 +41,7 @@ export class QuestionsComponent implements OnInit {
   }
 
   get processBar(): string {
-    return (this.workFlowService.index + 1) + ' of ' + this.workFlowService.count;
+    return (this.workFlowService.index + 2) + ' of ' + (this.workFlowService.count + 1);
   }
 
   get processBarProgress(): number {
