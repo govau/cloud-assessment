@@ -12,7 +12,7 @@
         <!-- question -->
         <div class="controlPadding" [ngSwitch]="currentQuestion.ValueType">
           <div *ngSwitchCase="'Integer'">
-            <div>
+            <div class="form-answer-scale">
               <label *ngFor="let option of currentQuestion.ValueOptions.split(',');" class="au-control-input">
                 <input class="au-control-input__input" type="radio" name="integerOption" [value]="option" [(ngModel)]="currentQuestion.AssessmentValue"
                   required>

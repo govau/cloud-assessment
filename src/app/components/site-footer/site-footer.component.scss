@@ -39,3 +39,11 @@
         
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .list-inline-item {
+        float: left;
+        clear: left;
+        padding: 10px!important;
+    }
+}

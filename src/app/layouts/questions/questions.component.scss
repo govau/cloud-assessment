@@ -74,6 +74,7 @@ a.au-btn, .au-btn--secondary{
 
 .au-control-input__text {
   padding-bottom: 15px;
+  margin-right:20px;
 }
 
 button.au-btn {
@@ -92,4 +93,14 @@ button.au-btn {
     min-width: 7%;
     max-width: 95.8% !important;
   }
+
+  .form-answer-scale {
+    display: grid;
+    float: left;
+    clear: both;
+    width: 100%;
+    padding: 10px 10px 10px 0px;
+  }
 }
+
+
