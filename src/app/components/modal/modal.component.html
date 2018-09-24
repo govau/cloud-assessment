@@ -1,4 +1,5 @@
-<div *ngIf="show" class='modal'>
+<!-- <div *ngIf="show" class='modal'> -->
+<div class='modal' [(hidden)]='!show'>
   <div class='mask'></div>
   <div class='dialog-box'>
     <div class='header'>
@@ -8,10 +9,9 @@
       <ng-content></ng-content>
     </div>
     <div class='buttonBar'>
-      <button *ngIf='secondaryButtonText !== undefined' class='uikit-btn uikit-btn--tertiary first ci--secondaryButton'
-        (click)="secondaryClicked()">
+      <button *ngIf='secondaryButtonText !== undefined' class='au-btn au-btn--block au-btn--secondary' (click)="secondaryClicked()">
         {{ secondaryButtonText }}</button>
-      <button *ngIf='primaryButtonText !== undefined' class='uikit-btn ci--primaryButton' (click)="primaryClicked()">
+      <button *ngIf='primaryButtonText !== undefined' class='au-btn au-btn--block au-btn-modal' (click)="primaryClicked()">
         {{ primaryButtonText }}
       </button>
     </div>
