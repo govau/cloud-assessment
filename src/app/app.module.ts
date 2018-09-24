@@ -20,6 +20,7 @@ import { QuestionDirectionButtonComponent } from './components/question-directio
 import { HelpSectionComponent } from './components/help-section/help-section.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
+import { ReportAccordionItemComponent } from './components/report-accordion-item/report-accordion-item.component';
 // pages
 import { HomeComponent } from './layouts/home/home.component';
 import { AssessmentComponent } from './layouts/assessment/assessment.component';
@@ -44,6 +45,7 @@ import { AssessmentGuard } from './guards/assessment.guard';
     HelpSectionComponent,
     ModalComponent,
     ProgressBarComponent,
+    ReportAccordionItemComponent,
 
     HomeComponent,
     AssessmentComponent,

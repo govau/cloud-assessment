@@ -1,0 +1,45 @@
+<div class="panel panel-default">
+  <button class="panel-heading au-accordion__title" (click)="panelClicked()" [ngClass]="{'au-accordion--open': !panelExpanded, 'au-accordion--closed': !panelExpanded}"
+    [id]="categoryName">{{categoryName}}</button>
+  <div class="traffic-lights">Risk rating:
+    <span class="red-light">{{redCount}}</span>High
+    <span class="orange-light">{{orangeCount}}</span>Medium
+    <span class="green-light">{{greenCount}}</span>Low
+  </div>
+  <div *ngIf="panelExpanded">
+    <div *ngFor="let question of questions">
+      <div class="panel-body" [ngClass]="{'panel-green':CalculateSymbol(question)==='green', 'panel-orange': CalculateSymbol(question)==='orange', 'panel-red':CalculateSymbol(question)==='red'}">
+        <h2 *ngIf="CalculateSymbol(question)==='green'">
+          <span class="traffic-green">&#10004;</span>
+          {{question.Quality}}
+        </h2>
+        <h2 *ngIf="CalculateSymbol(question)==='orange'">
+          <span class="traffic-orange">&#33;</span>
+          {{question.Quality}}
+        </h2>
+        <h2 *ngIf="CalculateSymbol(question)==='red'">
+          <span class="traffic-red">&#10005;</span>
+          {{question.Quality}}
+        </h2>
+        <p *ngIf="question.ValueType==='Integer'&&(question.AssessmentValue==='Not applicable'||question.AssessmentValue==='Unsure')">You
+          provided a rating of {{question.AssessmentValue}}</p>
+        <p *ngIf="question.ValueType==='Integer'&&(question.AssessmentValue!=='Not applicable'&&question.AssessmentValue!=='Unsure')">You
+          provided a rating of {{question.AssessmentValue}}/5</p>
+        <p *ngIf="question.ValueType==='OR'">You answered {{GetXORAssessmentValue(question.AssessmentValue)}}</p>
+        <p *ngIf="question.ValueType==='XOR'">You answered {{question.AssessmentValue}}</p>
+        <div>
+          <p>You provided the following rationale for the score:
+          </p>
+          <p *ngIf="question.Comments">{{question.Comments}}</p>
+          <p *ngIf="CalculateSymbol(question)==='green'">You have provided a rating that indicates the service is
+            acceptable for this measure.</p>
+          <p *ngIf="CalculateSymbol(question)==='orange'">You provided a rating for this measure that may indicate
+            shortcomings in this area.</p>
+          <p *ngIf="CalculateSymbol(question)==='red'">You provided a rating for this measure that indicates issues
+            in this area.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="top">&#10224; <a (click)="backToTop()">Back to top</a></p>
+</div>

@@ -24,7 +24,8 @@
     <p>{{ServicePurpose}}</p>
     <p>These assessment results were produced on {{ assessmentDate | date: 'dd/MM/yyyy' }}</p>
     <button class="au-btn" style="margin-top:20px;" type="button" (click)="printReport()">Print Report</button>
-    <div class="panel panel-default" *ngFor="let item of Categories">
+    <!-- for print only -->
+    <div class="panel panel-default print-only" *ngFor="let item of Categories">
       <div class="panel-heading" [id]="item">{{item}}</div>
       <div class="traffic-lights">Risk rating:
         <span class="red-light">{{CountRedByCategory(item)}}</span>High
@@ -66,6 +67,11 @@
         </div>
       </div>
       <p class="top">&#10224; <a (click)="backToTop()">Back to top</a></p>
+    </div>
+    <!-- for display only -->
+    <div class="panel panel-default no-print" *ngFor="let item of Categories">
+      <app-report-accordion-item [categoryName]="item" [redCount]="CountRedByCategory(item)" [orangeCount]="CountOrangeByCategory(item)"
+        [greenCount]="CountGreenByCategory(item)" [questions]="GetQuestionsByCategory(item)"></app-report-accordion-item>
     </div>
   </div>
 </div>

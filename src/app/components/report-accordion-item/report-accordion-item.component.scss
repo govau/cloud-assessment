@@ -68,7 +68,7 @@ padding: 0px 20px;
     }
 
     .panel-default>.panel-heading {
-        color: #333;
+        // color: #333;
         background-color: #EBEBEB;
         border-color: #ffffff;
     }
@@ -154,9 +154,9 @@ padding: 0px 20px;
     .top {
         cursor: pointer;
         float: right;
-        // a {
-        //     text-decoration: none;
-        // }
+        a {
+            text-decoration: none;
+        }
         a:hover {
             border-bottom: 1px #000 solid;
         }
@@ -172,16 +172,10 @@ padding: 0px 20px;
         padding: 25px 20px 20px 20px;
     }
 
-    .print-only{
-        display: none;
-    }
-
-    @media print {
-        .no-print {
-            display: none;
-        }
-
-        .print-only{
-            display: block;
-        }
+button.au-accordion__title{
+    text-align: left;
+    border-style: none;
+    color: #00698f;
+    text-decoration: underline;
+    font-weight: bold;
 }
