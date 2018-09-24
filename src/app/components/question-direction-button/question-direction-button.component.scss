@@ -19,6 +19,8 @@
         float:right;
         &.au-direction-link--left {
             float: left;
+            background-color: transparent;
+            color: #00698f;
         }
       }
 
@@ -27,6 +29,10 @@
         background-color: #313131;
          border: 3px solid #313131;
         }
+    .au-direction-link--left:hover{
+        background-color: transparent;
+        color:#313131;
+    }
 }
 
 // .au-direction-link:focus {
