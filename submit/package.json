@@ -1,0 +1,31 @@
+{
+  "name": "submit",
+  "main": "./server",
+  "description": "CloudFoundry API server in node",
+  "author": "Oakton",
+  "version": "0.1.0",
+  "homepage": "https://github.com/oaktondigital/dta-cloud-assessment-api",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/oaktondigital/dta-cloud-assessment-api"
+  },
+  "scripts": {
+    "build": "npm run clean && tsc && npm run copy",
+    "start": "npm run build && node dist/index",
+    "clean": "rimraf dist",
+    "copy": "copyfiles manifest.yml Procfile config.json package.json package-lock.json dist"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.315.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.0",
+    "copyfiles": "^2.1.0",
+    "rimraf": "^2.6.2",
+    "typescript": "^3.0.3"
+  }
+}
