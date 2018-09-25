@@ -50,10 +50,6 @@ export class ModalComponent implements OnInit, AfterViewInit {
     firstItem.focus();
   }
 
-  private trapTabKey(e) {
-    console.log(e.keyCode);
-  }
-
   public closeModal() {
     this.show = false;
     this.close.emit();

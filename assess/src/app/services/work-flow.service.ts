@@ -22,7 +22,6 @@ export class WorkFlowService {
   reset() {
     this.currentAssessmentIndex = 0;
     this.appDataModel = new AppDataModel();
-    // this.appDataModel.GeneralQuestion = undefined;
     this.appDataModel.GeneralQuestion = new GeneralQuestion();
     this.appDataModel.AssessmentQuestion = Config.QuestionData.map<QuestionItem>(x => Object.assign({}, new QuestionItem(x)));
   }
@@ -111,50 +110,44 @@ export class WorkFlowService {
   private checkRules(rowIndex: number): boolean {
 
     let result = true;
-    const asd_certified_index = (19 - 2);
-    const IRAP_assessment_index = (20 - 2);
+    const asd_certified_index = (18 - 2);
+    const IRAP_assessment_index = (19 - 2);
     const cloud_model_index = (3 - 2);
 
     switch (rowIndex) {
-      case (20 - 2):
+      case (19 - 2):
         result = this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue &&
           (this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === 'Not certified' ||
             this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === Config.QuestionExtraOptions.NA ||
             this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === Config.QuestionExtraOptions.Unsure);
         break;
-      case (21 - 2):
+      case (20 - 2):
         result = this.appDataModel.AssessmentQuestion[IRAP_assessment_index].AssessmentValue &&
           (this.appDataModel.AssessmentQuestion[IRAP_assessment_index].AssessmentValue.trim() === 'No' ||
             this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === Config.QuestionExtraOptions.NA ||
             this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === Config.QuestionExtraOptions.Unsure);
         break;
+      case (21 - 2):
+        result = this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue &&
+          this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() !== 'Software as a Service (Saas)';
+        break;
       case (22 - 2):
         result = this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue &&
-          this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() === 'Software as a Service (Saas)';
+          this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() !== 'Software as a Service (Saas)';
         break;
-      case (23 - 2):
-        result = this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue &&
-          this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() === 'Software as a Service (Saas)';
+      case (25 - 2):
+        result = this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue && (
+          this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() !== 'Software as a Service (Saas)');
+        break;
+      case (26 - 2):
+        result = this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue && (
+          this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() !== 'Software as a Service (Saas)');
         break;
       case (27 - 2):
-        result = this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue && (
-          this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() === 'Infrastructure as a Service (IaaS)' ||
-          this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() === 'Platform as a Service (PaaS)');
-        break;
-      case (28 - 2):
-        result = this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue && (
-          this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() === 'Infrastructure as a Service (IaaS)' ||
-          this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() === 'Platform as a Service (PaaS)');
-        break;
-      case (29 - 2):
         result = this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue &&
-          this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() === 'Infrastructure as a Service (IaaS)';
-        break;
-      case (41 - 2):
-        result = this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue && (
-          this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() === 'Infrastructure as a Service (IaaS)' ||
-          this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() === 'Platform as a Service (PaaS)'
-        );
+          (this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() === 'Infrastructure as a Service (IaaS)' ||
+            this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === Config.QuestionExtraOptions.NA ||
+            this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === Config.QuestionExtraOptions.Unsure);
         break;
     }
 

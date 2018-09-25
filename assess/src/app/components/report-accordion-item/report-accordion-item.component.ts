@@ -22,7 +22,6 @@ export class ReportAccordionItemComponent implements OnInit {
   }
 
   panelClicked() {
-    console.log('panelClicked');
     this.panelExpanded = !this.panelExpanded;
   }
 

@@ -1,19 +1,4 @@
 <div class="row">
-  <!-- LEFT COLUMN -->
-  <!--div class="col-xs-4 left-col">
-    <h2>Assessment Categories</h2>
-    <table>
-      <tr *ngFor="let item of Categories">
-        <td style='width: 200px;cursor: pointer;'><a (click)="jumpToPage(item)">{{item}}</a></td>
-        <td style="display:inline-flex; float: right">
-          <span class="red-light">{{CountRedByCategory(item)}}</span>
-          <span class="orange-light">{{CountOrangeByCategory(item)}}</span>
-          <span class="green-light">{{CountGreenByCategory(item)}}</span></td>
-      </tr>
-    </table>
-    <button class="au-btn" type="button" (click)="printReport()">Print Report</button>
-  </div-->
-
   <div class="col-xs-12 right-col">
     <h2>Cloud assessment report</h2>
     <p>Here are your assessment results sorted by assessment category. If you need to share these results you can use
@@ -75,8 +60,3 @@
     </div>
   </div>
 </div>
-
-<!-- <div class="row">
-  <pre>{{assessmentQuestion|json}}</pre>
-  <a [href]="downloadUri" download="download.json">Download</a>
-</div> -->

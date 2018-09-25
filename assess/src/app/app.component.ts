@@ -16,13 +16,4 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  readLocalStoage() {
-    console.log(this.localStorageService.get());
-  }
-
-  clearLocalStoage() {
-    console.log('clearLocalStoage');
-    this.localStorageService.clear();
-  }
 }

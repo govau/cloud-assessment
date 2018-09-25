@@ -33,7 +33,6 @@ export class GeneralQuestionComponent implements OnInit {
   goNext() {
     if (this.form.valid) {
       window.scroll(0, 0);
-      // this.workFlowService.appData.GeneralQuestion = this.generalQuestion;
       this.localStorageService.set(this.workFlowService.appData);
       this.router.navigateByUrl(Config.RoutePath.QUESTIONS);
     } else {

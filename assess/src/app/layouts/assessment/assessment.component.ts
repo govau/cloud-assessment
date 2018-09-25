@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-// model
-// import AppDataModel from '../../classes/AppDataModel';
 // config
 import { Config } from '../../data/Config';
 // service
@@ -22,7 +20,6 @@ export class AssessmentComponent implements OnInit {
     constructor(
         private router: Router,
         private workFlowService: WorkFlowService
-        // private localStorageService: LocalStorageService,
     ) { }
 
     ngOnInit() {
@@ -52,8 +49,6 @@ export class AssessmentComponent implements OnInit {
     close() {
         if (this.workFlowService.appData.GeneralQuestion.ServiceName !== undefined
             && this.workFlowService.appData.GeneralQuestion.ServiceName !== ''
-            // && this.workFlowService.appData.GeneralQuestion.VersionNumber !== undefined
-            // && this.workFlowService.appData.GeneralQuestion.VersionNumber !== ''
             && this.workFlowService.appData.GeneralQuestion.NumberOfUsers !== undefined
             && this.workFlowService.appData.GeneralQuestion.NumberOfUsers !== ''
             && this.workFlowService.appData.GeneralQuestion.ServicePurpose !== undefined
@@ -78,8 +73,6 @@ export class AssessmentComponent implements OnInit {
             } else {
                 this.workFlowService.setIndex(savedIndex - 1);
                 this.router.navigateByUrl(Config.RoutePath.QUESTIONS);
-                // todo unique url per question
-                // this.router.navigateByUrl(Config.RoutePath.QUESTIONS + '/1');
             }
         } else {
             this.router.navigateByUrl(Config.RoutePath.GENERALQUESTION);

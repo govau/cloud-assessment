@@ -9,7 +9,6 @@ import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 // service
 import { WorkFlowService } from './services/work-flow.service';
 import { LocalStorageService } from './services/local-storage.service';
-import { ReportService } from './services/report.service';
 import { SubmitServiceService } from './services/submit-service.service';
 // components
 import { AppComponent } from './app.component';
@@ -74,7 +73,6 @@ import { AssessmentGuard } from './guards/assessment.guard';
     AssessmentGuard,
     WorkFlowService,
     LocalStorageService,
-    ReportService,
     SubmitServiceService,
   ],
   bootstrap: [AppComponent]
