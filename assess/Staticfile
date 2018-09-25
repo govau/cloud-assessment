@@ -1,0 +1,2 @@
+status_codes:
+  404: src/app/layouts/page-not-found/page-not-found.component.html 
