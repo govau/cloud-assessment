@@ -19,13 +19,13 @@ app.use(cors());
 const port = process.env.PORT || 3000
 // For POST-Support
 app.use(bodyParser.urlencoded({
-    limit: '1mb',
     extended: true
 }));
-app.use(bodyParser.json());
+app.use(bodyParser.json({
+    limit: '1000kb'
+}));
 
-app.post('/submit', function (req, res) {
-
+app.post('/submit', function(req, res) {
     if (isEmpty(req.body)) {
         return res.status(403).json({ "success": false, "message": "input invalid" });
     }
@@ -40,7 +40,7 @@ app.post('/submit', function (req, res) {
     const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" + config.Google.reCaptcha_secretKey
         + "&response=" + captchaResponse + "&remoteip=" + req.connection.remoteAddress;
 
-    request(verificationURL, function (error, response, body) {
+    request(verificationURL, function(error, response, body) {
         body = JSON.parse(body);
 
         if (body.success !== undefined && !body.success) {
@@ -49,7 +49,7 @@ app.post('/submit', function (req, res) {
 
         var uploadParams = { Bucket: config.AWS.bucket.name, Key: `DTA_Cloud_Assessment_${+Date.now()}`, Body: JSON.stringify(req.body) };
         // call S3 to retrieve upload file to specified bucket
-        s3.upload(uploadParams, function (err, data) {
+        s3.upload(uploadParams, function(err, data) {
             if (err) {
                 return res.status(403).json({ "success": false, "message": "report save failed" });
             }
