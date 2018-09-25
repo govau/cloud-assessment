@@ -133,7 +133,7 @@ export class QuestionsComponent implements OnInit {
   }
 
   saveReport() {
-    this.submitServiceService.submitReport();
+    this.submitServiceService.submitReport().subscribe();
   }
 
   jumpToPage(data: string) {

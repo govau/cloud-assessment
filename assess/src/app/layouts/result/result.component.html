@@ -51,12 +51,13 @@
           </div>
         </div>
       </div>
-      <p class="top">&#10224; <a (click)="backToTop()">Back to top</a></p>
+      <p class="top">&#10224; <button (click)="backToTop()">Back to top</button></p>
     </div>
     <!-- for display only -->
     <div class="panel panel-default no-print" *ngFor="let item of Categories">
       <app-report-accordion-item [categoryName]="item" [redCount]="CountRedByCategory(item)" [orangeCount]="CountOrangeByCategory(item)"
         [greenCount]="CountGreenByCategory(item)" [questions]="GetQuestionsByCategory(item)"></app-report-accordion-item>
     </div>
+    <p class="top">&#10224; <button class="au-direction-link au-direction-link--up" (click)="backToTop()">Back to top</button></p>
   </div>
 </div>
