@@ -1,12 +1,12 @@
-export interface Config {
+export const config = {
     AWS: {
         bucket: {
-            name: string,
-            accessKeyId: string,
-            secretAccessKey: string
+            name: "S3BucketName",
+            accessKeyId: "accessKeyId",
+            secretAccessKey: "secretAccessKey"
         }
     },
     Google: {
-        reCaptcha_secretKey: string
+        reCaptcha_secretKey: "reCaptcha_secretKey"
     }
 }

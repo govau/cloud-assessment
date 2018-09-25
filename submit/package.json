@@ -11,12 +11,12 @@
   },
   "scripts": {
     "build": "npm run clean && tsc && npm run copy",
-    "start": "npm run build && node dist/index",
+    "start": "npm run build && node ./dist/server.js",
     "clean": "rimraf dist",
-    "copy": "copyfiles manifest.yml Procfile config.json package.json package-lock.json dist"
+    "copy": "copyfiles manifest.yml Procfile config.json package.json package-lock.json ./dist"
   },
   "dependencies": {
-    "aws-sdk": "^2.315.0",
+    "aws-sdk": "^2.321.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "express": "^4.16.3",
