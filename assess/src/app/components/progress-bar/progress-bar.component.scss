@@ -22,3 +22,9 @@
     background-image: linear-gradient(to right,#125E6F, #1CA1C0);
     color: #ffffff;
   }
+
+  @media only screen and (max-width: 600px) {
+    .progress-inner {
+      min-width: 17%;
+    }
+  }
