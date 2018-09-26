@@ -1,11 +1,5 @@
-#--------------------------------------
-# change the `host` property to a
-# unique hostname on the domain you
-# are deploying to.
-#--------------------------------------
-
 applications:
 - name:    submit 
-  host:    submit
   memory:  64M
+  disk_quota: 1024M
   command: node server.js
