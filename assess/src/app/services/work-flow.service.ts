@@ -128,20 +128,11 @@ export class WorkFlowService {
             this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === Config.QuestionExtraOptions.Unsure);
         break;
       case (21 - 2):
-        result = this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue &&
-          this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() !== 'Software as a Service (Saas)';
-        break;
       case (22 - 2):
+      case (25 - 2):
+      case (26 - 2):
         result = this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue &&
           this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() !== 'Software as a Service (Saas)';
-        break;
-      case (25 - 2):
-        result = this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue && (
-          this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() !== 'Software as a Service (Saas)');
-        break;
-      case (26 - 2):
-        result = this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue && (
-          this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() !== 'Software as a Service (Saas)');
         break;
       case (27 - 2):
         result = this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue &&
