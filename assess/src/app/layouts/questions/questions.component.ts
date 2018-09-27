@@ -93,9 +93,9 @@ export class QuestionsComponent implements OnInit {
           case cloud_model_index:
             this.workFlowService.appData.AssessmentQuestion[(21 - 2)].AssessmentValue = '';
             this.workFlowService.appData.AssessmentQuestion[(22 - 2)].AssessmentValue = '';
-            this.workFlowService.appData.AssessmentQuestion[(25 - 2)].AssessmentValue = '';
-            this.workFlowService.appData.AssessmentQuestion[(26 - 2)].AssessmentValue = '';
-            this.workFlowService.appData.AssessmentQuestion[(27 - 2)].AssessmentValue = '';
+            // this.workFlowService.appData.AssessmentQuestion[(25 - 2)].AssessmentValue = '';
+            // this.workFlowService.appData.AssessmentQuestion[(26 - 2)].AssessmentValue = '';
+            // this.workFlowService.appData.AssessmentQuestion[(27 - 2)].AssessmentValue = '';
             break;
         }
       }

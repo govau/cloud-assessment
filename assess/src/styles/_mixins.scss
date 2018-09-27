@@ -213,23 +213,23 @@ $browser-context: 16;
   }
 }
 
-@mixin accordion-group() {
-  moa-accordion {
-    &:first-of-type .root{
-      border-radius: 3px 3px 0 0;
-      border-bottom: none;
-      margin-bottom: 0;
-    }
+// @mixin accordion-group() {
+//   moa-accordion {
+//     &:first-of-type .root{
+//       border-radius: 3px 3px 0 0;
+//       border-bottom: none;
+//       margin-bottom: 0;
+//     }
 
-    &:last-of-type .root{
-      border-radius: 0 0 3px 3px;
-      margin-bottom: 0;
-    }
+//     &:last-of-type .root{
+//       border-radius: 0 0 3px 3px;
+//       margin-bottom: 0;
+//     }
 
-    &:not(:first-of-type):not(:last-of-type) .root{
-      border-radius: 0;
-      border-bottom: none;
-      margin-bottom: 0;
-    }
-  }
-}
+//     &:not(:first-of-type):not(:last-of-type) .root{
+//       border-radius: 0;
+//       border-bottom: none;
+//       margin-bottom: 0;
+//     }
+//   }
+// }

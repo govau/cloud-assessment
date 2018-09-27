@@ -129,17 +129,17 @@ export class WorkFlowService {
         break;
       case (21 - 2):
       case (22 - 2):
-      case (25 - 2):
-      case (26 - 2):
+        // case (25 - 2):
+        // case (26 - 2):
         result = this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue &&
           this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() !== 'Software as a Service (Saas)';
         break;
-      case (27 - 2):
-        result = this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue &&
-          (this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() === 'Infrastructure as a Service (IaaS)' ||
-            this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === Config.QuestionExtraOptions.NA ||
-            this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === Config.QuestionExtraOptions.Unsure);
-        break;
+      // case (27 - 2):
+      //   result = this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue &&
+      //     (this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() === 'Infrastructure as a Service (IaaS)' ||
+      //       this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === Config.QuestionExtraOptions.NA ||
+      //       this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === Config.QuestionExtraOptions.Unsure);
+      //   break;
     }
 
     return result;

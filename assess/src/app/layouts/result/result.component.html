@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-xs-12 right-col">
+  <div class="col-xs-10">
     <h2>Cloud assessment report</h2>
     <p>Here are your assessment results sorted by assessment category. If you need to share these results you can use
       the Print report button to print or save a PDF copy.</p>
@@ -8,10 +8,30 @@
     <p>You have indicated that the main purpose for use of {{ServiceName}} is as follows:</p>
     <p>{{ServicePurpose}}</p>
     <p>These assessment results were produced on {{ assessmentDate | date: 'dd/MM/yyyy' }}</p>
+    <!-- Categories -->
+    <div style="margin-top: 24px;">
+      <h3>Assessment summary</h3>
+      <table>
+        <tr *ngFor="let item of Categories">
+          <td style='width: 200px;cursor: pointer;'><a (click)="jumpToPage(item)">{{item}}</a></td>
+          <td style="display:inline-flex; float: right">
+            <span class="red-light">{{CountRedByCategory(item)}}</span>
+            <span class="orange-light">{{CountOrangeByCategory(item)}}</span>
+            <span class="green-light">{{CountGreenByCategory(item)}}</span></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="col-xs-2">
     <button class="au-btn" style="margin-top:20px;" type="button" (click)="printReport()">Print Report</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 right-col">
     <!-- for print only -->
+    <h3 class="print-only">Assessment details</h3>
     <div class="panel panel-default print-only" *ngFor="let item of Categories">
-      <div class="panel-heading" [id]="item">{{item}}</div>
+      <div class="panel-heading">{{item}}</div>
       <div class="traffic-lights">Risk rating:
         <span class="red-light">{{CountRedByCategory(item)}}</span>High
         <span class="orange-light">{{CountOrangeByCategory(item)}}</span>Medium
@@ -54,9 +74,12 @@
       <p class="top">&#10224; <button (click)="backToTop()">Back to top</button></p>
     </div>
     <!-- for display only -->
+    <h3>Assessment details</h3>
     <div class="panel panel-default no-print" *ngFor="let item of Categories">
-      <app-report-accordion-item [categoryName]="item" [redCount]="CountRedByCategory(item)" [orangeCount]="CountOrangeByCategory(item)"
-        [greenCount]="CountGreenByCategory(item)" [questions]="GetQuestionsByCategory(item)"></app-report-accordion-item>
+      <div [id]="item">
+        <app-report-accordion-item [categoryName]="item" [redCount]="CountRedByCategory(item)" [orangeCount]="CountOrangeByCategory(item)"
+          [greenCount]="CountGreenByCategory(item)" [questions]="GetQuestionsByCategory(item)"></app-report-accordion-item>
+      </div>
     </div>
     <p class="top">&#10224; <button class="au-direction-link au-direction-link--up" (click)="backToTop()">Back to top</button></p>
   </div>

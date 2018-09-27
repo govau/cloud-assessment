@@ -1,12 +1,11 @@
 <div class="panel panel-default">
-  <button class="panel-heading au-accordion__title" (click)="panelClicked()" [ngClass]="{'au-accordion--open': !panelExpanded, 'au-accordion--closed': !panelExpanded}"
-    [id]="categoryName">{{categoryName}}</button>
+  <button class="panel-heading au-accordion__title" (click)="panelClicked()" [ngClass]="{'au-accordion--open': !panelExpanded, 'au-accordion--closed': !panelExpanded}">{{categoryName}}</button>
   <div class="traffic-lights">Risk rating:
     <span class="red-light">{{redCount}}</span>High
     <span class="orange-light">{{orangeCount}}</span>Medium
     <span class="green-light">{{greenCount}}</span>Low
   </div>
-  <div *ngIf="panelExpanded">
+  <div *ngIf="!panelExpanded">
     <div *ngFor="let question of questions">
       <div class="panel-body" [ngClass]="{'panel-green':CalculateSymbol(question)==='green', 'panel-orange': CalculateSymbol(question)==='orange', 'panel-red':CalculateSymbol(question)==='red'}">
         <h2 *ngIf="CalculateSymbol(question)==='green'">
