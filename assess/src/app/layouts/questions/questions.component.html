@@ -13,10 +13,12 @@
         <div class="controlPadding" [ngSwitch]="currentQuestion.ValueType">
           <div *ngSwitchCase="'Integer'">
             <div class="form-answer-scale">
-              <label *ngFor="let option of currentQuestion.ValueOptions.split(',');" class="au-control-input">
+              <label *ngFor="let option of currentQuestion.ValueOptions.split(',');index as i" class="au-control-input">
                 <input class="au-control-input__input" type="radio" name="integerOption" [value]="option" [(ngModel)]="currentQuestion.AssessmentValue"
                   required>
                 <span class="au-control-input__text">{{ option }}</span>
+                <span *ngIf="i===0">Low</span>
+                <span *ngIf="i===4">High</span>
               </label>
               <div *ngIf="showError" role="alert" class="au-body au-page-alerts au-page-alerts--error">
                 <p>Please answer this question before continuing.</p>

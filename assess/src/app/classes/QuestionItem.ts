@@ -32,7 +32,7 @@ export default class QuestionItem {
         this.RequiredValue = data.Required_or_default_value;
         this.RequiredValueRationale = data.Required_value_rationale;
 
-        this.ValueOptions = Config.QuestionExtraOptions.NA + ',' + data.Value_options + ',' + Config.QuestionExtraOptions.Unsure;
+        this.ValueOptions = data.Value_options + ',' + Config.QuestionExtraOptions.Unsure + ',' + Config.QuestionExtraOptions.NA;
 
         if (data.Value_type === 'OR') {
             this.AssessmentValue = [];
