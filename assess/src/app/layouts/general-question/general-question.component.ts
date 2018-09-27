@@ -32,15 +32,23 @@ export class GeneralQuestionComponent implements OnInit {
 
   goNext() {
     if (this.form.valid) {
-      window.scroll(0, 0);
+      // window.scroll(0, 0);
       this.localStorageService.set(this.workFlowService.appData);
       this.router.navigateByUrl(Config.RoutePath.QUESTIONS);
     } else {
       this.formSubmitted = true;
     }
+    this.jumpToPage('progressbar');
   }
 
   get processBar(): string {
     return (1) + ' of ' + (this.workFlowService.count + 1);
+  }
+
+  jumpToPage(data: string) {
+    const x = document.querySelector('#' + data);
+    if (x) {
+      x.scrollIntoView();
+    }
   }
 }

@@ -69,11 +69,12 @@ export class QuestionsComponent implements OnInit {
     } else {
       this.currentQuestion = this.workFlowService.Previous();
     }
+    this.jumpToPage('progressbar');
   }
 
   goNext() {
     if (this.form.valid) {
-      window.scroll(0, 0);
+      // window.scroll(0, 0);
 
       // reset  conditional value if condition changed
       if (this.form.dirty) {
