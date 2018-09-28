@@ -181,14 +181,38 @@ padding: 0px 20px;
         display: none;
     }
 
-    @media print {
-        .no-print {
-            display: none;
-        }
+@media print {
+    .no-print {
+        display: none;
+    }
 
-        .print-only{
-            display: block;
-        }
+    .print-only{
+        display: block;
+    }
+
+    .panel-red {
+        border-left: 10px #FF625C solid !important;
+    }
+
+    .panel-orange {
+        border-left: 10px #FFB951 solid !important;
+    }
+
+    .red-light {
+        background-color: #FF625C !important;
+        -webkit-print-color-adjust: exact !important;
+    }
+
+    .orange-light {
+        background-color: #FFB951 !important;
+        -webkit-print-color-adjust: exact !important;
+    }
+
+    .green-light {
+        color: #313131 !important;
+        background-color: #21B87D !important;
+        -webkit-print-color-adjust: exact !important;
+    }
 }
 
 table{
@@ -196,6 +220,11 @@ table{
     border-collapse: collapse; 
 }
 
+tr{
+    border-bottom: 1px solid white;
+}
+
 td{
     padding-left: 15px;
+    padding-right:15px;
 }

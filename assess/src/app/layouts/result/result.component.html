@@ -12,21 +12,31 @@
     <div style="margin-top: 24px;">
       <h3>Assessment summary</h3>
       <table>
+        <tr>
+          <th style="text-align:start;padding-left:15px;">
+            Category
+          </th>
+          <th>
+            Risk rating
+          </th>
+        </tr>
         <tr *ngFor="let item of Categories">
-          <td style='width: 200px;cursor: pointer;'><a (click)="jumpToPage(item)">{{item}}</a></td>
-          <td style="display:inline-flex; float: right">
-            <span class="red-light">{{CountRedByCategory(item)}}</span>
-            <span class="orange-light">{{CountOrangeByCategory(item)}}</span>
-            <span class="green-light">{{CountGreenByCategory(item)}}</span></td>
+          <td style='cursor: pointer;'><a (click)="jumpToPage(item)">{{item}}</a></td>
+          <td style="display:block; float: right;">
+            <span class="red-light">{{CountRedByCategory(item)}}</span>High
+            <span class="orange-light">{{CountOrangeByCategory(item)}}</span>Medium
+            <span class="green-light">{{CountGreenByCategory(item)}}</span>Low
+          </td>
         </tr>
       </table>
     </div>
   </div>
   <div class="col-xs-2">
-    <button class="au-btn" style="margin-top:20px;" type="button" (click)="printReport()">Print Report</button>
+    <button class="au-btn au-btn--secondary" type="button" (click)="printReport()">Print
+      report</button>
   </div>
 </div>
-<div class="row">
+<div class="row" style="padding-top: 0px;">
   <div class="col-xs-12 right-col">
     <!-- for print only -->
     <h3 class="print-only">Assessment details</h3>
@@ -75,7 +85,7 @@
     </div>
     <!-- for display only -->
     <h3>Assessment details</h3>
-    <div class="panel panel-default no-print" *ngFor="let item of Categories">
+    <div class="panel panel-default no-print" *ngFor="let item of Categories" style="margin-top: 0px;">
       <div [id]="item">
         <app-report-accordion-item [categoryName]="item" [redCount]="CountRedByCategory(item)" [orangeCount]="CountOrangeByCategory(item)"
           [greenCount]="CountGreenByCategory(item)" [questions]="GetQuestionsByCategory(item)"></app-report-accordion-item>
