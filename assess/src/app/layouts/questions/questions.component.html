@@ -2,12 +2,12 @@
   <div *ngIf="currentQuestion">
     <!-- progress bar -->
     <div class="row-progress" id="progressbar">
-      <app-progress-bar [progressText]="processBar"></app-progress-bar>
+      <app-progress-bar [progress]="processBarProgress" [progressText]="processBar"></app-progress-bar>
     </div>
     <div class="row">
       <div class="col-xs-8">
+        <h4>{{subTitle}}</h4>
         <h2>{{currentQuestion.Quality}}</h2>
-        <h3>{{subTitle}}</h3>
         <div [innerHTML]="currentQuestion.Description"></div>
         <!-- question -->
         <div class="controlPadding" [ngSwitch]="currentQuestion.ValueType">

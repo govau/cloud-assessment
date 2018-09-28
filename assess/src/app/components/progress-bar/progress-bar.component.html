@@ -1,5 +1,5 @@
 <div class="progress-outer">
-  <div class="progress-inner" [style.background-color]="color">
+  <div class="progress-inner" [style.width]="whichProgress(progress) + '%'" [style.background-color]="color">
     {{progressText}}
   </div>
 </div>
