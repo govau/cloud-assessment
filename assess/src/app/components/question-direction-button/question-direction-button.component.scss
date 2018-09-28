@@ -3,9 +3,9 @@
 .form-navigation {
     @include rem(margin-top, 32px);
     @include rem(padding, 0px 0px 32px);
-    .col-xs-6 {
-        padding: 0px;
-    }
+    // .col-xs-6 {
+    //     padding: 0px;
+    // }
     .au-direction-link {
         font-size: 1.25rem;
         border-radius: 4px;
