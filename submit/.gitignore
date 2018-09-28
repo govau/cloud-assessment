@@ -6,3 +6,5 @@
 # dependencies
 /node_modules
 
+# sonar
+/.scannerwork

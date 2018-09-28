@@ -27,33 +27,33 @@ $orange: #FFB951;
     background-color: $green;
 }
 
-.left-col { 
-    @media only screen and (max-width: 600px) {
-        width: 100%;
-    }
-    @media only screen and (max-width: 770px) {
-        width: 100%;
-        padding: 0px;
-        margin: 0px;
-    }
-padding: 0px 20px;
-    h2 {
-        font-size: 1em;
-        padding-bottom: 10px;
-        font-weight: 800;
-    }
+// .left-col { 
+//     @media only screen and (max-width: 600px) {
+//         width: 100%;
+//     }
+//     @media only screen and (max-width: 770px) {
+//         width: 100%;
+//         padding: 0px;
+//         margin: 0px;
+//     }
+// padding: 0px 20px;
+//     h2 {
+//         font-size: 1em;
+//         padding-bottom: 10px;
+//         font-weight: 800;
+//     }
 
-    table {
-    min-width: 100%;
-    border-top: 4px solid #929597;
-    margin-top:15px;
-    }
+//     table {
+//     min-width: 100%;
+//     border-top: 4px solid #929597;
+//     margin-top:15px;
+//     }
 
-    tr, td{
-      border-bottom: 1px solid #dee2e6;
-      vertical-align: inherit;
-    }
-}
+//     tr, td{
+//       border-bottom: 1px solid #dee2e6;
+//       vertical-align: inherit;
+//     }
+// }
 
     // .left-col { 
     //     @media only screen and (max-width: 770px) {
@@ -72,12 +72,6 @@ padding: 0px 20px;
         }
     }
 
-    .panel-default>.panel-heading {
-        color: #333;
-        background-color: #EBEBEB;
-        border-color: #ffffff;
-    }
-    
     .panel-heading {
         padding: 15px 15px;
         border-bottom: 1px solid transparent;
@@ -86,6 +80,20 @@ padding: 0px 20px;
         font-size: 1.1em;
         font-weight: 600;
         clear: both;
+    }
+
+    .panel-default>.panel-heading {
+        color: #333;
+        background-color: #EBEBEB;
+        border-color: #ffffff;
+    }
+    
+    .panel {
+        margin-bottom: 20px;
+        background-color: #fff;
+        border-radius: 2px;
+        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
     }
     
     .panel:not(:first-child) { 
@@ -103,13 +111,6 @@ padding: 0px 20px;
             margin-top: 5px;
             font-size: 0.9em;
         }
-    }
-    .panel {
-        margin-bottom: 20px;
-        background-color: #fff;
-        border-radius: 2px;
-        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
-        box-shadow: 0 1px 1px rgba(0,0,0,.05);
     }
     .panel-default {
         border-right:1px solid #ddd;

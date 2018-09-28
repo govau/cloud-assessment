@@ -75,16 +75,8 @@ body {
   font-size: 18px;
 }
 
-.nav > .nav-links > a {
-  display: inline-block;
-  padding: 13px 10px 13px 10px;
-  text-decoration: none;
-  color: #efefef;
-}
 
-.nav > .nav-links > a:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-}
+
 
 .nav > #nav-check {
   display: none;
@@ -126,6 +118,17 @@ body {
    padding: 0px 20px 0 20px!important; 
 }
 
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+}
+
+.nav > .nav-links > a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
   .navigation .au-link-list--inline > li.active a {
     width: 150px;
     clear: both;
@@ -160,10 +163,6 @@ body {
     overflow-y: hidden;
     top: 44px;
     left: 0px;
-  }
-  .nav > .nav-links > a {
-    display: block;
-    width: 100%;
   }
   .nav > #nav-check:not(:checked) + .nav-links {
     height: 0px;

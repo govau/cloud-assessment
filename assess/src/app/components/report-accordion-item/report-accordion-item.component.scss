@@ -72,12 +72,6 @@ padding: 0px 20px;
             margin: 0px;
         }
     }
-
-    .panel-default>.panel-heading {
-        // color: #333;
-        background-color: #EBEBEB;
-        border-color: #ffffff;
-    }
     
     .panel-heading {
         padding: 15px 15px;
@@ -88,9 +82,11 @@ padding: 0px 20px;
         font-weight: 600;
         clear: both;
     }
-    
-    .panel:not(:first-child) { 
-        margin-top: 50px;  
+
+    .panel-default>.panel-heading {
+        // color: #333;
+        background-color: #EBEBEB;
+        border-color: #ffffff;
     }
 
     .panel-body {
@@ -112,6 +108,11 @@ padding: 0px 20px;
         -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
         box-shadow: 0 1px 1px rgba(0,0,0,.05);
     }
+
+    .panel:not(:first-child) { 
+        margin-top: 50px;  
+    }
+
     .panel-default {
         border-right:1px solid #ddd;
         margin-top:15px;

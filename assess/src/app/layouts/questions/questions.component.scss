@@ -57,24 +57,25 @@ a.au-btn, .au-btn--secondary{
 //   outline: none;
 // }
 
+.au-control-input__text {
+  padding-bottom: 15px;
+  margin-right:20px;
+}
+
+.au-control-input__input:invalid + .au-control-input__text{
+  background-color: white;
+}
+
 .au-control-input__input:invalid + .au-control-input__text:after {
   border-color: transparent;
 }
 
-.au-control-input__input:invalid + .au-control-input__text {
-  background-color: transparent;
-}
 .form-answer-radio {
   display: grid;
   float: left;
   clear: both;
   width: 100%;
   padding: 10px 10px 10px 0px;
-}
-
-.au-control-input__text {
-  padding-bottom: 15px;
-  margin-right:20px;
 }
 
 button.au-btn {
