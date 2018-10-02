@@ -5,7 +5,6 @@ import { Config } from './data/Config';
 import { AssessmentGuard } from './guards/assessment.guard';
 // pages
 import { HomeComponent } from './layouts/home/home.component';
-import { AssessmentComponent } from './layouts/assessment/assessment.component';
 import { AboutComponent } from './layouts/about/about.component';
 import { ContactComponent } from './layouts/contact/contact.component';
 import { QuestionsComponent } from './layouts/questions/questions.component';
@@ -18,7 +17,6 @@ const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: Config.RoutePath.ABOUT, component: AboutComponent },
     { path: Config.RoutePath.CONTACT, component: ContactComponent },
-    { path: Config.RoutePath.ASSESSMENT, component: AssessmentComponent },
     { path: Config.RoutePath.HOWTOPREPARE, component: HowToPrepareComponent },
     { path: Config.RoutePath.GENERALQUESTION, component: GeneralQuestionComponent, canActivate: [AssessmentGuard] },
     { path: Config.RoutePath.QUESTIONS, component: QuestionsComponent, canActivate: [AssessmentGuard] },

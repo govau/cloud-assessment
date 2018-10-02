@@ -4,41 +4,41 @@
   </div>
   <div class="intro__text col-sm-12 col-md-5 col-md-pull-6">
     <h2>Start a new assessment</h2>
-    <p>To get started you'll need to do the following:</p>
+    <p>To get started you need to:</p>
     <ul>
-      <li>Read our <a [routerLink]="['/'+routePath.HOWTOPREPARE]">Prepare page</a></li>
-      <li>Ensure you know the cloud service you would like to assess</li>
-      <li>Ensure you know the classification requirements for your data</li>
+      <li>Read the <a [routerLink]="['/'+routePath.HOWTOPREPARE]">Prepare page</a></li>
+      <li>know the cloud service you want to assess</li>
+      <li>know the classification requirements for your data</li>
     </ul>
-    <p>You can exit the assessment at any time by clicking the Save & Exit button. To resume your assessment at a later
-      time, simply return here using the same device and browser.</p>
-    <p class="cta">
-      <button class="au-btn au-btn--primary" (click)="startAssessment()">Start cloud assessment</button>
-    </p>
+    <p>A progress bar at the top of each screen shows how far you are in the assessment. The number of questions may change depending on your answers.</p>
+    <p>You can pause the assessment with the Save & Exit button. To resume your assessment, simply return using the same device and browser.</p>
+    <div class="cta">
+      <form #declarativeForm="ngForm">
+          <script *ngIf="reCAPTCHAConfig.enable" src='https://www.google.com/recaptcha/api.js'></script>
+          <re-captcha *ngIf="reCAPTCHAConfig.enable" (resolved)="resolved($event)" [siteKey]="reCAPTCHAConfig.siteKey"
+              [(ngModel)]="declarativeFormCaptchaValue" name="captcha" required></re-captcha>
+          <button class="au-btn  au-btn--primary" type="button" (click)="startAssessment()" [disabled]="!declarativeForm.valid && reCAPTCHAConfig.enable">Start
+              cloud assessment</button>
+      </form>
+    </div>
   </div>
 </div>
 <div class="row">
   <div class="col-md-12">
     <h2>About the Cloud Assessment Tool</h2>
-    <p>Welcome to the Cloud Assessment Tool (CAT), a tool to help government agencies self-assess whether a particular
-      cloud service is suitable for its specific business context, taking into consideration relevant compliance,
-      commercial, operability, support and security requirements. The CAT is not a standardised or objective assessment
-      of a cloud vendor or service, but rather, a guided self-assessment to help agencies understand what qualities are
-      important to its needs.</p>
+    <p>The Cloud Assessment Tool (CAT) helps government agencies self-assess if a cloud service is suitable for a specific business context – by considering relevant compliance, commercial, operability, support and security requirements.</p>
 
-    <p>When you start a cloud assessment you will be asked a series of questions relating to the cloud service you are
-      assessing and the context of how you expect to use the service. Some of the questions may require you to complete
-      further research before answering. Further information and links are provided alongside the questions to help you
-      find the relevant information more quickly.</p>
+    <p>The CAT is not a standardised or objective assessment of a cloud vendor or service. It’s a guide to help agencies understand what qualities are important for their needs.</p>
 
-    <p>When you submit your responses, you will be provided with a tailored assessment report which highlights where
-      your
-      responses indicate a potential misalignment between the cloud service and your needs. Additional information will
-      be provided to help you understand the results and next steps.</p>
+    <p>When you start, you’ll be asked about the cloud service and how you expect to use it. You may need to do some research to answer some questions. We’ve provided information and links to help you find relevant information quickly.</p>
 
-    <p>Note: The questionnaire does not ask you to provide any personal or identifiable details. Information in the
-      questionnaire may be used by the DTA to help us improve and evolve this tool.</p>
-    <p class="cta">
-      <button class="au-btn  au-btn--secondary" (click)="learnMore()">Learn more</button></p>
+    <p>When you submit your answers, you’ll get a tailored assessment report which highlights any potential misalignment between the cloud service and your needs. You’ll also get extra information to help you understand the results and next steps.</p>
+    
+    <p>The CAT does not ask for any personal or identifiable details. Information you provide may be used by the DTA to help us improve the CAT.</p>
   </div>
 </div>
+
+<app-modal [show]="showModal" [title]="'Welcome back'" [primaryButtonText]="'Start again'" [secondaryButtonText]="'Resume'"
+    (primaryButtonClick)='startAgain()' (secondaryButtonClick)='resume()' (close)='close()'>
+    <div>Would you like to resume your existing assessment?</div>
+</app-modal>

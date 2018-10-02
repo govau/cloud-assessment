@@ -22,7 +22,6 @@ import { ProgressBarComponent } from './components/progress-bar/progress-bar.com
 import { ReportAccordionItemComponent } from './components/report-accordion-item/report-accordion-item.component';
 // pages
 import { HomeComponent } from './layouts/home/home.component';
-import { AssessmentComponent } from './layouts/assessment/assessment.component';
 import { AboutComponent } from './layouts/about/about.component';
 import { ContactComponent } from './layouts/contact/contact.component';
 import { QuestionsComponent } from './layouts/questions/questions.component';
@@ -47,7 +46,6 @@ import { AssessmentGuard } from './guards/assessment.guard';
     ReportAccordionItemComponent,
 
     HomeComponent,
-    AssessmentComponent,
     AboutComponent,
     ContactComponent,
     QuestionsComponent,
@@ -55,11 +53,6 @@ import { AssessmentGuard } from './guards/assessment.guard';
     GeneralQuestionComponent,
     HowToPrepareComponent,
     PageNotFoundComponent,
-  ],
-  // todo dynamic route
-  entryComponents: [
-    AssessmentComponent,
-    QuestionsComponent
   ],
   imports: [
     BrowserModule,
