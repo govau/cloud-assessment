@@ -12,7 +12,7 @@ jobs:
     steps:
       - checkout                       # get the files from the repo (why would you ever not want the files????)
       - run: cd assess
-      - run: rm -rf node_modules       # delete node_modules to bust caching
+      #- run: rm -rf node_modules       # delete node_modules to bust caching
       - run: npm install               # duh
       - run: npm run build             # required build step
       - run: rm -rf node_modules       # delete node_modules folder again to not push it to cf
