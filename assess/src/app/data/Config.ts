@@ -8,7 +8,7 @@ export const Config = {
     QuestionData: environment.production ? QuestionData : QuestionDataDev,
     reCAPTCHA: {
         enable: environment.production,
-        siteKey: '6LdUXm8UAAAAAFjbuj5c2QR38sIUG1PljyA4Yh7u',
+        siteKey: '6Lcza3MUAAAAACoIfqL65tFs6wxQKCI3HRAwuhv9',
     },
     LocalStorageKey: 'CloudAssessment',
     QuestionType: {
@@ -25,5 +25,5 @@ export const Config = {
         Orange: 'orange',
         Green: 'green'
     },
-    ApiUrl: 'https://submit.apps.y.cld.gov.au'
+    ApiUrl: 'https://submit.apps.b.cld.gov.au'
 };
