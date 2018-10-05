@@ -26,7 +26,7 @@ export const QuestionData: ICSVItem[] = [
     'Condition': '',
     'Relationship': '',
     'Value_type': 'XOR',
-    'Value_options': 'Infrastructure as a Service (IaaS), Platform as a Service (PaaS), Software as a Service (Saas)',
+    'Value_options': 'Infrastructure as a Service (IaaS), Platform as a Service (PaaS), Software as a Service (SaaS)',
     'Required_or_default_value': '',
     'Required_value_rationale': '',
     'Assessment_value': '',
