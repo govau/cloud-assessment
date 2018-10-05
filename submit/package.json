@@ -13,7 +13,7 @@
     "build": "npm run clean && tsc && npm run copy",
     "start": "npm run build && node ./dist/server.js",
     "clean": "rimraf dist",
-    "copy": "copyfiles manifest.yml Procfile config.json package.json package-lock.json ./dist"
+    "copy": "copyfiles manifest.yml ./scripts/cf_run_app.sh ./scripts/ups_as_envs.py Procfile config.json package.json package-lock.json ./dist"
   },
   "dependencies": {
     "aws-sdk": "^2.321.0",

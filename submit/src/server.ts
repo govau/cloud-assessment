@@ -5,6 +5,7 @@ import request = require('request');
 import AWS = require('aws-sdk');
 import { config } from "./config";
 
+
 // Set the AWS 
 AWS.config.update({
     accessKeyId: config.AWS.bucket.accessKeyId,
