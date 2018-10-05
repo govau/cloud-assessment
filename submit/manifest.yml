@@ -1,5 +1,8 @@
+services:
+- submit
 applications:
 - name:    submit 
   memory:  64M
   disk_quota: 1024M
-  command: node server.js
+  instances: 2
+  command: ./scripts/cf_run_app.sh

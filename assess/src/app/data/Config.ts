@@ -25,5 +25,5 @@ export const Config = {
         Orange: 'orange',
         Green: 'green'
     },
-    ApiUrl: 'https://submit.apps.y.cld.gov.au'
+    ApiUrl: 'https://submit.apps.b.cld.gov.au'
 };

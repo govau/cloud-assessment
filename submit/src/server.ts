@@ -5,6 +5,7 @@ import request = require('request');
 import AWS = require('aws-sdk');
 import { config } from "./config";
 
+
 // Set the AWS 
 AWS.config.update({
     accessKeyId: config.AWS.bucket.accessKeyId,
@@ -33,9 +34,9 @@ app.post('/submit', function(req, res) {
     // recaptcha verfication
     let captchaResponse = req.query.data;
 
-    if (captchaResponse === undefined || captchaResponse === '' || captchaResponse === null) {
-        return res.status(403).json({ "success": false, "message": "recaptcha invalid" });
-    }
+    // if (captchaResponse === undefined || captchaResponse === '' || captchaResponse === null) {
+    //     return res.status(403).json({ "success": false, "message": "recaptcha invalid" });
+    // }
 
     const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" + config.Google.reCaptcha_secretKey
         + "&response=" + captchaResponse + "&remoteip=" + req.connection.remoteAddress;
@@ -43,9 +44,9 @@ app.post('/submit', function(req, res) {
     request(verificationURL, function(error, response, body) {
         body = JSON.parse(body);
 
-        if (body.success !== undefined && !body.success) {
-            return res.status(403).json({ "success": false, "message": "Failed captcha verification" });
-        }
+        // if (body.success !== undefined && !body.success) {
+        //     return res.status(403).json({ "success": false, "message": "Failed captcha verification" });
+        // }
 
         var uploadParams = { Bucket: config.AWS.bucket.name, Key: `DTA_Cloud_Assessment_${+Date.now()}`, Body: JSON.stringify(req.body) };
         // call S3 to retrieve upload file to specified bucket
