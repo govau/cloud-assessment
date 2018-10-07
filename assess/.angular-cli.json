@@ -11,7 +11,8 @@
         "assets",
         "favicon.ico",
         "Staticfile",
-	"manifest.yml"
+        "manifest-staging.yml",
+	      "manifest.yml"
       ],
       "index": "index.html",
       "main": "main.ts",
