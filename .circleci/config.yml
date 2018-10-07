@@ -20,9 +20,7 @@ jobs:
       - run: echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
       - run: sudo apt-get update
       - run: sudo apt-get install cf-cli
-      - run: cd dist
-      - run: wget -q -O - https://github.com/contraband/autopilot/releases/download/0.0.8/autopilot-linux
-      - run: cf install-plugin autopilot-linux
+      - run: cf install-plugin https://github.com/govau/autopilot/releases/download/0.0.5-venapp/autopilot-linux -f
       - run: cf version                # log what version we are running
       - run: cf login -a $CF_API_STAGING -o $CF_ORG -s $CF_SPACE -u $CF_USER -p $CF_PASSWORD
       - run: cd dist && cf push assess -f manifest-staging.yml
