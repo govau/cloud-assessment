@@ -1,8 +1,0 @@
-services:
-- submit
-applications:
-- name:    submit 
-  memory:  64M
-  disk_quota: 1024M
-  instances: 2
-  command: ./scripts/cf_run_app.sh
