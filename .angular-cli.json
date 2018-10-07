@@ -12,7 +12,7 @@
         "favicon.ico",
         "Staticfile",
         "manifest-staging.yml",
-	      "manifest.yml"
+        "manifest.yml"
       ],
       "index": "index.html",
       "main": "main.ts",
