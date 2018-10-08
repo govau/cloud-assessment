@@ -2,6 +2,22 @@
     height: 300px;
 }
 
-.row{
+.error{
     background-color: #f5f5f5;
+
+    .error__intro{
+        h3{
+            font-weight:bold;
+            color:#414141;
+        }
+    }
+
+    #code {
+        font-weight: bold;
+    }
+    
+    //Override border width to match designsystem.gov.au
+    .au-btn {
+        border-width:2px;
+    }
 }
