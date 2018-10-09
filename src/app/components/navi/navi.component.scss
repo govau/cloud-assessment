@@ -1,12 +1,5 @@
 @import '../../../styles/global-includes';
 
-.icon {
-  img {
-    height: 1rem;
-    vertical-align: text-bottom;
-  }
-}
-
 #mainmenu {
   @include rem(padding-top, 32px);
   overflow: visible;
@@ -39,6 +32,16 @@ ul.navbar-nav {
         border-bottom: solid #fff;
         @include rem(border-bottom-width, 8px);
       }
+    }
+  }
+
+  .icon {
+    img {
+      height: 1rem;
+      vertical-align: text-bottom;
+    }
+    a {
+      text-decoration: none;
     }
   }
 }
