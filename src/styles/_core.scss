@@ -7,23 +7,27 @@
 .banner{
   width:100%;
   min-height: 30px;
-  background: rgb(30, 56, 63);
-  color: #fff;
+  // background: rgb(30, 56, 63);
+  background: #fff;
+  color: #000;
   a {
-    color: #fff;
+    color: rgba(0,112,153,0.99);
     }
     a:hover{
-     color: #fff;
+     color: rgba(0,112,153,0.99)
   }
   a.headergovau{
     float: right;
   }
   .headergovau__title{
     font-size: .9em;
-    font-weight: 600;
   }
   .banner-bk {
     padding:5px 0 5px 0;
+  }
+  .stage-beta {
+    color: #CD4D10;
+    font-weight: bold;
   }
 }
 
