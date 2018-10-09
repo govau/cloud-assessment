@@ -1,5 +1,12 @@
 @import '../../../styles/global-includes';
 
+.icon {
+  img {
+    height: 1rem;
+    vertical-align: text-bottom;
+  }
+}
+
 #mainmenu {
   @include rem(padding-top, 32px);
   overflow: visible;
