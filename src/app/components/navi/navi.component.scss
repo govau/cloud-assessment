@@ -34,6 +34,16 @@ ul.navbar-nav {
       }
     }
   }
+
+  .icon {
+    img {
+      height: 1rem;
+      vertical-align: text-bottom;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
 }
 
 // .au-body.au-body--dark a:focus {
