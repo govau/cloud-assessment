@@ -6,7 +6,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-61222473-20"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'UA-61222473-20');
   </script>
@@ -21,10 +21,15 @@
 </head>
 
 <body>
+    <nav class="au-skip-link" aria-label="skip links navigation">
+        <a class="au-skip-link__link" href="#content">Skip to main content</a>
+        <a class="au-skip-link__link" href="#nav">Skip to main navigation</a>
+      </nav>
   <div class="main au-grid au-body banner">
     <div class="container banner-bk">
-      <div class="col-md-12" style="font-size:.9em"><img alt="" class="icon-star" src="https://cloud.gov.au/static/media/star.6d326af2.svg">
-        <span class="headergovau__title">Australian Government official website <a href="https://dta.gov.au" class="headergovau">dta.gov.au</a></span>
+      <div class="col-md-12" style="font-size:.9em">
+        <!-- <img alt="" class="icon-star" src="https://cloud.gov.au/static/media/star.6d326af2.svg"> -->
+        <span class="headergovau__title">This website is in <span class="stage-beta">beta</span>. We’re testing new designs and a small amount of content. <a href="mailto:secure.cloud@digital.gov.au">Let us know</a> what you think. Go back to <a href="https://dta.gov.au" rel="external">dta.gov.au</a></span>
       </div>
     </div>
   </div>
