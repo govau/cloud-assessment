@@ -14,8 +14,7 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': '',
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'General',
@@ -30,8 +29,7 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': '',
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Vendor',
@@ -46,15 +44,14 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 4,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Vendor',
     'Sub_category': '',
     'Quality': 'Agency adoption',
     'Description': '<p>Knowing if the service is being used by other government agencies or reputable companies can provide assurance and help assess risk.</p>\n<p><strong>How broadly do you think the vendor\'s services are being used by other agencies?</strong></p>',
-    'Reference': '<p>Visit the vendor\'s website and look for case studies and a list of existing clients.</p>',
+    'Reference': '<p>Visit the vendor\'s website and look for case studies and a list of existing clients.</p>\n<p>You can also ask the DTA\'s <a href="https://beta.dta.gov.au/help-and-advice/communities-practice#cloud-community" target="_blank">Cloud Community</a>.',
     'Condition': '',
     'Relationship': '',
     'Value_type': 'Integer',
@@ -62,8 +59,7 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 2,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Vendor',
@@ -78,8 +74,7 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 1,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Commercials',
@@ -94,14 +89,13 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 1,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Commercials',
     'Sub_category': '',
     'Quality': 'Price transparency',
-    'Description': '<p>It is important to ensure that all costs for the service are clear and understandable.</p>\n<p><strong>How well do you think that all costs are clearly outlined by the vendor?</strong></p>',
+    'Description': '<p>It is important to ensure that all costs for the service are clear and understandable. This could include costs that are metered, where you only pay for what you use. Metering also lets you get accurate, real-time metrics about your costs.</p>\n<p><strong>How well do you think that all costs are transparent and clearly outlined by the vendor?</strong></p>',
     'Reference': '<p>Don’t forget to look at costs for contract termination, additional usage, and other unplanned changes to the service.</p>',
     'Condition': '',
     'Relationship': '',
@@ -110,15 +104,14 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 4,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Commercials',
     'Sub_category': '',
     'Quality': 'Value for money',
     'Description': '<p>When procuring a service for government, you need to ensure value for money.</p>\n\n<p><strong>How well do you think this service provides government value for money?</strong></p>',
-    'Reference': '<p>Learn more about assessing value for money by visiting the Department of Finance’s <a href="https://www.finance.gov.au/procurement/procurement-policy-and-guidance/commonwealth-procurement-rules" target="_blank">Commonwealth Procurement Rules</a>.</p>\n<p>You can also check the <a href="https://www.finance.gov.au/policy-guides-procurement/cloud-services-panel/" target="_blank">Cloud Services Panel</a> to see if the service has already been assessed.</p>',
+    'Reference': '<p>The <a href="https://www.finance.gov.au/policy-guides-procurement/cloud-services-panel/" target="_blank">Cloud Services Panel</a> will let you know if the service has already been assessed.</p>\n<p>Learn more about assessing value for money by visiting the Department of Finance’s <a href="https://www.finance.gov.au/procurement/procurement-policy-and-guidance/commonwealth-procurement-rules" target="_blank">Commonwealth Procurement Rules</a>.</p>',
     'Condition': '',
     'Relationship': '',
     'Value_type': 'Integer',
@@ -126,8 +119,7 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 3,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Commercials',
@@ -142,8 +134,7 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 4,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Commercials',
@@ -158,8 +149,7 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 2,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Commercials',
@@ -174,15 +164,14 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 5,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': 'I think this could be a Yes/No "Does all content remain the property of your organisation?'
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Commercials',
     'Sub_category': '',
     'Quality': 'Exit provisions',
     'Description': '<p>You should understand the exit conditions of any contract you sign. </p>\n<p>You should consider things like:</p>\n<p><ul><li>costs for early exit</li>\n<li>restrictions for exporting the data</li>\n</ul></p>\n\n<p><strong>How well do you think the contract states the exit conditions?</strong></p>',
-    'Reference': '<p>If exit provisions aren\'t clear, contact the vendor and ask them to provide this information.</p>\n<p>You could ask your legal department for help.</p>',
+    'Reference': '<p>If exit provisions aren\'t clear, contact the vendor and ask them to provide this information.</p>\n<p>You could also ask your legal department for help.</p>',
     'Condition': '',
     'Relationship': 'Operability - Portability (vendor lock-in)',
     'Value_type': 'Integer',
@@ -190,14 +179,13 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 3,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Compliance',
     'Sub_category': 'Laws & regulations',
     'Quality': 'Australian Privacy Principles',
-    'Description': '<p>Government agencies are required to make sure contracted vendors do not breach the Australian Privacy Principles (APP). Agencies must ensure that personal information will be protected. The cloud service provider must state in the contract that they will comply with the APPs.</p>\n<p>If a data breach occurs, the service provider is obligated to report the breach.</p>\n\n<p><strong>How well do you think service complies with the Australian Privacy Principles?</strong></p>',
+    'Description': '<p>Government agencies are required to make sure contracted vendors do not breach the Australian Privacy Principles (APPs). Agencies must ensure that personal information will be protected. The cloud service provider must state in the contract that they will comply with the APPs.</p>\n<p>If a data breach occurs, the service provider is obligated to report the breach.</p>\n\n<p><strong>How well do you think service complies with the Australian Privacy Principles?</strong></p>',
     'Reference': '<p>Learn more about the <a href="https://www.oaic.gov.au/privacy-law/privacy-act/australian-privacy-principles" target="_blank">Australian Privacy Principles</a>.</p>\n<p>Learn more about the <a href="https://www.oaic.gov.au/privacy-law/privacy-act/notifiable-data-breaches-scheme" target="_blank">Notifiable Data Breaches scheme</a>.</p>',
     'Condition': '',
     'Relationship': 'Commercials - APPs compliance',
@@ -206,14 +194,13 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 5,
     'Required_value_rationale': 'Mandatory',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Compliance',
     'Sub_category': 'Laws & regulations',
     'Quality': 'Archives Act',
-    'Description': '<p>Government agencies are required to ensure all information complies with the <em>Archives Act 1983</em>.</p>\n<p>You should consider:</p>\n<p><ul><li>if the service complies with the act</li>\n<li>if you need to create a process yourself to ensure compliance</li></ul><p>\n\n<p><strong>How well do you think the service complies with the requirements of the <em>Archives Act 1983</em>?</strong></p>',
+    'Description': '<p>Government agencies are required to ensure all information complies with the <em>Archives Act 1983</em>.</p>\n<p>You should consider:</p>\n<p><ul><li>if the service complies with the act</li>\n<li>if you can retrieve all your data easily</li>\n<li>if you can automate retrieving your data</li>\n<li>if there are other ways you can ensure compliance</li></ul>\n\n<p><strong>How well do you think the service complies with the requirements of the <em>Archives Act 1983</em>?</strong></p>',
     'Reference': '<p>Learn more about the <a href="https://www.legislation.gov.au/Details/C2016C00772" target="_blank">Archives Act</a>.</p>',
     'Condition': '',
     'Relationship': '',
@@ -222,14 +209,13 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 4,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Compliance',
     'Sub_category': 'Laws & regulations',
     'Quality': 'Freedom of Information Act',
-    'Description': '<p>As part of the <em>Freedom of Information Act 1982</em>, individuals have the right to request access to documents from Australian Government.</p>\n<p>You should consider:</p>\n<p><ul><li>if the service complies with the act</li>\n<li>if you can retrieve all your data easily</li>/n<li>if you can automate retrieving your data</li>\n<li>if there are other ways you can ensure compliance</li></ul>\n\n<p><strong>How well do you think the service complies with the requirements of the <em>Freedom of Information Act 1982</em>?</strong></p>',
+    'Description': '<p>As part of the <em>Freedom of Information Act 1982</em>, individuals have the right to request access to documents from Australian Government.</p>\n<p>You should consider:</p>\n<p><ul><li>if the service complies with the act</li>\n<li>if you can retrieve all your data easily</li>\n<li>if you can automate retrieving your data</li>\n<li>if there are other ways you can ensure compliance</li></ul>\n\n<p><strong>How well do you think the service complies with the requirements of the <em>Freedom of Information Act 1982</em>?</strong></p>',
     'Reference': '<p>Learn more about the <a href="https://www.oaic.gov.au/freedom-of-information/foi-act" target="_blank">Freedom of Information Act</a>.</p>',
     'Condition': '',
     'Relationship': '',
@@ -238,8 +224,7 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 4,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': 'This should be a yes/No "Does the service comply with the Freedom of Information act?'
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Compliance',
@@ -254,15 +239,14 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 1,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Compliance',
     'Sub_category': 'Certifications, accreditations & standards',
     'Quality': 'ASD certification',
-    'Description': '<p>Some cloud services have been awarded Australian Signals Directorate (ASD) Certification and are on the Certified Cloud Services List (CCSL).</p>\n\n<p>If the service is on the list, you should:</p>\n<p><ul><li>request a copy of the ASD Certification Letter</li>\n<li>request a copy of the Certification Report</li>\n<li>consider ASD’s advice on the certification</li></p>\n\n<p><strong>Select the level at which the service is certified by the Australian Signals Directorate.</strong></p>',
-    'Reference': '<p>Learn more about <a href="https://acsc.gov.au/infosec/irap/certified_clouds.htm" target="_blank">ASD Certification and the Certified Cloud Services List.</a> </p>\n<p>Please note the following:\n<ul><li>A certified cloud service may need to be configured correctly in order to be compliant</li>\n<li>If the service isn\'t on the CCSL, you can still self-certify the service.</li>\n<li>For more information on self-certification, refer to ASD\'s <a href="https://acsc.gov.au/publications/irap/IRAP_Anatomy_of_a_Cloud_Certification.pdf" target="_blank">Anatomy of Cloud</a> .</li></ul></p>',
+    'Description': '<p>Some cloud services have been awarded Australian Signals Directorate (ASD) Certification and are on the Certified Cloud Services List (CCSL).</p>\n\n<p>If the service is on the list, you should:</p>\n<p><ul><li>request a copy of the ASD Certification Letter</li>\n<li>request a copy of the Certification Report</li>\n<li>consider ASD’s advice on the certification</li></ul></p>\n\n<p><strong>Select the level at which the service is certified by the Australian Signals Directorate.</strong></p>',
+    'Reference': '<p>Learn more about <a href="https://acsc.gov.au/infosec/irap/certified_clouds.htm" target="_blank">ASD Certification and the Certified Cloud Services List.</a> </p>\n<p>Please note the following:\n<ul><li>A certified cloud service may need to be configured correctly in order to be compliant.</li>\n<li>If the service isn\'t on the CCSL, you can still self-certify the service.</li>\n<li>For more information on self-certification, refer to ASD\'s <a href="https://acsc.gov.au/publications/irap/IRAP_Anatomy_of_a_Cloud_Certification.pdf" target="_blank">Anatomy of a Cloud Certification</a>.</li></ul></p>',
     'Condition': '',
     'Relationship': '',
     'Value_type': 'XOR',
@@ -270,15 +254,14 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': '',
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Compliance',
     'Sub_category': 'Certifications, accreditations & standards',
     'Quality': 'IRAP assessment',
-    'Description': '<p>Some cloud providers might have undertaken an Information Security Registered Assessors Program (IRAP) assessment.</p>\n<p>You should request the results of any IRAP assessment from the vendor directly.</p>\n<p><strong>Was the service assessed by an IRAP assessor?</strong></p>',
-    'Reference': '<p>Learn more about <a href="https://acsc.gov.au/infosec/irap.htm" target="_blank">IRAP</a>.</p>\n\n<p>Contact the vendor to find out if they have undertaken an IRAP assessment. If they have, ask to see the outcome.</p>\n\n<p>You can also perform your own IRAP assessment. Find out more at the <a href="https://acsc.gov.au/infosec/irap.htm" target="_blank">Australian Cyber Security Centre</a>.</p>',
+    'Description': '<p>Some cloud providers might have undertaken an Information Security Registered Assessors Program (IRAP) assessment.</p>\n<p>You should request the results of any IRAP assessment from the vendor directly.</p>\n<p><strong>Has the service been assessed by an IRAP assessor?</strong></p>',
+    'Reference': '<p>Contact the vendor to find out if they have undertaken an IRAP assessment. If they have, ask to see the outcome.</p>\n\n<p>You can also perform your own IRAP assessment. Find out more at the <a href="https://acsc.gov.au/infosec/irap.htm" target="_blank">Australian Cyber Security Centre</a>.</p>',
     'Condition': 'asd_certified === \'n/a\' ||\nasd_certified === \'no\' ||\nasd_certified === \'unsure\'',
     'Relationship': '',
     'Value_type': 'XOR',
@@ -286,8 +269,7 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': '',
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Compliance',
@@ -302,8 +284,7 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 'No',
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Compliance',
@@ -318,8 +299,7 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 3,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': 'This should be a yes/no "Does the service comply with the Web Content Accessibility guidelines?'
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Compliance',
@@ -334,8 +314,7 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 3,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Compliance',
@@ -350,8 +329,7 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 3,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': 'This should be a yes/no " Is data guaranteed to reside within Australia exclusively?'
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Security',
@@ -366,13 +344,12 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 3,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Security',
     'Sub_category': '',
-    'Quality': 'Logging & audit',
+    'Quality': 'Logging & auditing',
     'Description': '<p>It is important that the service provides auditable logs of all activities.</p><p><strong>How well do you think the service provides logs that can be audited?</strong></p>',
     'Reference': '<p>If the approach to logging isn\'t clear, contact the vendor and ask for them to provide this information.</p>',
     'Condition': '',
@@ -382,8 +359,7 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 4,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Operability',
@@ -398,15 +374,14 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 3,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Operability',
     'Sub_category': '',
     'Quality': 'Maturity',
     'Description': '<p>Knowing the maturity of a service can help assess risk. This may provide assurance to the quality of the service however, lack of maturity doesn’t imply a lower quality of service.</p> \n\n<p>You should consider:</p>\n<p><ul><li>how long the vendor has been in operation</li>\n<li>how established the vendor is in the market</li></ul></p>\n\n<p><strong>How do you think the cloud service rates in terms of maturity?</strong></p>',
-    'Reference': '<p>Contact the vendor and ask them to provide this information.</p>',
+    'Reference': '<p>Contact the vendor and ask them to provide this information.</p>\n<p>You can also ask the DTA\'s <a href="https://beta.dta.gov.au/help-and-advice/communities-practice#cloud-community" target="_blank">Cloud Community</a>.',
     'Condition': '',
     'Relationship': 'Vendor - Experience / maturity',
     'Value_type': 'Integer',
@@ -414,15 +389,14 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 3,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Operability',
     'Sub_category': '',
     'Quality': 'Orchestration and automation',
-    'Description': '<p>It\'s often important to be able to automate your cloud systems. This can improve the service\'s reliability, deployment efficiiency and security.</p>\n<p><strong>How well do you think the cloud service can be automated?</strong></p>',
-    'Reference': '<p>Contact the vendor and ask them to provide this information.</p>',
+    'Description': '<p>It\'s often important to be able to automate your cloud systems. This can improve the service\'s reliability, deployment efficiency and security.</p>\n<p><strong>How well do you think the cloud service can be automated?</strong></p>',
+    'Reference': '<p>Contact the vendor and ask them to provide this information.</p>\n<p>Learn more about the importance of Infrastructure as Code in the <a href="https://puppet.com/resources/whitepaper/state-of-devops-report" target="_blank">State of DevOps Report</a>.</p>',
     'Condition': '',
     'Relationship': '',
     'Value_type': 'Integer',
@@ -430,15 +404,14 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 0,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Support',
     'Sub_category': '',
     'Quality': 'Resources',
-    'Description': '<p>Knowing the service is well supported can help with implementation and ongoing use of the service.</p>\n<p>Resources may include:</p>\n<p><ul><li>online resources</li>\n<li>training</li>\n<li>technical experts</li>\n<li>an online community of users and developers</li> </ul></p>\n\n<p><strong>How well do you think the cloud service is supported with resources?</strong></p>',
-    'Reference': '<p>Try searching the vendor\'s website for resources and support. Community forums can also be a useful pointer.</p>',
+    'Description': '<p>Knowing the service is well supported can help with implementation and ongoing use of the service.</p>\n<p>Resources may include:</p>\n<p><ul><li>online resources</li>\n<li>training</li>\n<li>technical experts</li>\n<li>an online community of users and developers</li></ul></p>\n\n<p><strong>How well do you think the cloud service is supported with resources?</strong></p>',
+    'Reference': '<p>Try searching the vendor\'s website for resources and support.</p>\n<p>Community forums can also be a useful pointer.</p>',
     'Condition': '',
     'Relationship': '',
     'Value_type': 'Integer',
@@ -446,8 +419,7 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 4,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Support',
@@ -462,7 +434,6 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 3,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   }
 ];
