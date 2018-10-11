@@ -14,8 +14,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': '',
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'General',
@@ -30,8 +29,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': '',
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Vendor',
@@ -46,8 +44,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': 4,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Vendor',
@@ -62,8 +59,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': 2,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Vendor',
@@ -78,8 +74,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': 1,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Commercials',
@@ -94,8 +89,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': 1,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Commercials',
@@ -110,8 +104,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': 4,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Commercials',
@@ -126,8 +119,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': 3,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Commercials',
@@ -142,8 +134,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': 4,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Commercials',
@@ -158,8 +149,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': 2,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Commercials',
@@ -190,8 +180,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': 3,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Compliance',
@@ -206,8 +195,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': 5,
     'Required_value_rationale': 'Mandatory',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Compliance',
@@ -222,8 +210,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': 4,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Compliance',
@@ -254,8 +241,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': 1,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Compliance',
@@ -270,8 +256,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': '',
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Compliance',
@@ -286,8 +271,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': '',
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Compliance',
@@ -302,8 +286,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': 'No',
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Compliance',
@@ -334,8 +317,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': 3,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Compliance',
@@ -366,8 +348,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': 3,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Security',
@@ -382,8 +363,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': 4,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Operability',
@@ -398,8 +378,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': 3,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Operability',
@@ -414,8 +393,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': 3,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Operability',
@@ -430,8 +408,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': 0,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Support',
@@ -446,8 +423,7 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': 4,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Support',
@@ -462,7 +438,6 @@ export const QuestionData: ICSVItem[] = [
     'Required_or_default_value': 3,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': ''
+    'Assessment_value_rationale': ''
   }
 ];
