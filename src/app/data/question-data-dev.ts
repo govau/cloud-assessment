@@ -164,8 +164,7 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 5,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': 'I think this could be a Yes/No "Does all content remain the property of your organisation?'
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Commercials',
@@ -225,8 +224,7 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 4,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': 'This should be a yes/No "Does the service comply with the Freedom of Information act?'
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Compliance',
@@ -301,8 +299,7 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 3,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': 'This should be a yes/no "Does the service comply with the Web Content Accessibility guidelines?'
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Compliance',
@@ -332,8 +329,7 @@ export const QuestionDataDev: ICSVItem[] = [
     'Required_or_default_value': 3,
     'Required_value_rationale': '',
     'Assessment_value': '',
-    'Assessment_value_rationale': '',
-    'Jess\' notes': 'This should be a yes/no " Is data guaranteed to reside within Australia exclusively?'
+    'Assessment_value_rationale': ''
   },
   {
     'Category': 'Security',
