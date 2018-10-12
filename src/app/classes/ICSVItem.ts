@@ -12,5 +12,4 @@ export default interface ICSVItem {
     Required_value_rationale: string;
     Assessment_value: any;
     Assessment_value_rationale: string;
-    'Jess\' notes': string;
 }
