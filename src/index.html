@@ -21,82 +21,179 @@
 </head>
 
 <body>
-    <nav class="au-skip-link" aria-label="skip links navigation">
-        <a class="au-skip-link__link" href="#content">Skip to main content</a>
-        <a class="au-skip-link__link" href="#nav">Skip to main navigation</a>
-      </nav>
+  <nav class="au-skip-link" aria-label="skip links navigation">
+    <a class="au-skip-link__link" href="#content">Skip to main content</a>
+    <a class="au-skip-link__link" href="#nav">Skip to main navigation</a>
+  </nav>
   <div class="main au-grid au-body banner">
     <div class="container banner-bk">
       <div class="col-md-12" style="font-size:.9em">
         <!-- <img alt="" class="icon-star" src="https://cloud.gov.au/static/media/star.6d326af2.svg"> -->
-        <span class="headergovau__title">This website is in <span class="stage-beta">beta</span>. We’re testing new designs and a small amount of content. <a href="mailto:secure.cloud@digital.gov.au">Let us know</a> what you think. Go back to <a href="https://dta.gov.au" rel="external">dta.gov.au</a></span>
+        <span class="headergovau__title">This website is in <span class="stage-beta">beta</span>. We’re testing new
+          designs and a small amount of content. <a href="mailto:secure.cloud@digital.gov.au">Let us know</a> what you
+          think. Go back to <a href="https://dta.gov.au" rel="external">dta.gov.au</a></span>
       </div>
     </div>
   </div>
   <app-root></app-root>
 
   <noscript>
-    <!-- header -->
-    <header class="au-grid au-header au-header--dark" role="banner">
-      <div class="container container-fluid">
-        <div class="row">
-          <div class="col-md-9">
-            <div class="au-header__brand">
-              <a href="#" class="title-link">
-                <img class="au-header__brand-image" alt="Australian Government Crest" src="assets/img/header-logo-agov.png">
-                <div class="au-header__text">
-                  <h1 class="au-header__heading" style="color:#ffffff;">Cloud Assessment Tool<span class="header__badge"
-                      style="padding: 2px 8px 2px 6px;margin-left: 8px;margin-left: 0.5rem;border: solid 2px #ffffff;border-radius: 2em;font-size: 12px;font-size: 0.75rem;font-weight: normal;vertical-align: super;">
-                      beta</span></h1>
-                  <div class="au-header__subline">
-                    The common cloud assessment framework
-                  </div>
+  <!-- header -->
+  <header class="au-grid au-header au-header--dark" role="banner">
+    <div class="container container-fluid">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="au-header__brand">
+            <a href="#" class="title-link">
+              <img class="au-header__brand-image" alt="Australian Government Crest" src="assets/img/header-logo-agov.png">
+              <div class="au-header__text">
+                <h1 class="au-header__heading" style="color:#ffffff;">Cloud Assessment Tool<span class="header__badge"
+                    style="padding: 2px 8px 2px 6px;margin-left: 8px;margin-left: 0.5rem;border: solid 2px #ffffff;border-radius: 2em;font-size: 12px;font-size: 0.75rem;font-weight: normal;vertical-align: super;">
+                    beta</span></h1>
+                <div class="au-header__subline">
+                  The common cloud assessment framework
                 </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <!-- body -->
-    <div class="main au-grid au-body">
-      <div class="container">
-        <div class="row" style="height: 300px;">
-          <div class="col-md-12">
-            <div>
-              <p>Welcome to the Cloud Assessment Tool (CAT), a tool to help government agencies self-assess whether a
-                particular cloud service is suitable for its specific business context, taking into consideration
-                relevant
-                compliance, commercial, operability, support and security requirements.
-              </p>
-              <p>
-                The Cloud Assessment Tool requires JavaScript to run. Please enable JavaScript in your browser and
-                reload the page to continue.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- footer -->
-    <div class="au-grid au-body">
-      <footer class="au-footer au-footer--dark" role="contentinfo">
-        <div class="container">
-          <section class="au-footer__end row">
-            <div class="col-sm-12">
-              <div style="clear:both">
-                <p><img class="au-responsive-media-img footer-img" style="max-width: 16rem;" src="/assets/img/header-logo-agov.png"
-                    alt="Brand image "></p>
-                <small>&copy; Commonwealth of Australia, <a style="color: white;" href="https://github.com/govau/uikit/blob/master/LICENSE.md"
-                    rel="external license">MIT
-                    licensed
-                  </a></small>
               </div>
-            </div>
-          </section>
+            </a>
+          </div>
         </div>
-      </footer>
+      </div>
     </div>
+  </header>
+  <!-- header -->
+
+
+  <div class="main au-grid au-body">
+    <div class="row highlight">
+
+      <div class="container container-fluid">
+        <div class="col-sm-12 col-md-6 col-md-push-6">
+          <img class="au-responsive-media-img" src="assets/img/cloud.png" alt="Brand image">
+        </div>
+        <div class="intro__text col-sm-12 col-md-5 col-md-pull-6" id="content" tabindex="-1">
+          <h2>Perform an assessment</h2>
+          <p>Welcome to the Cloud Assessment Tool (CAT), a tool to help government agencies self-assess whether a
+            particular cloud service is suitable for its specific business context, taking into consideration
+            relevant compliance, commercial, operability, support and security requirements.
+          </p>
+          <p>While the CAT requires JavaScript to run, you can still consider the questions that the CAT will ask you.
+            These questions are outlined below.
+          </p>
+          <p>If you would like to perform an assessment using the CAT, please enable JavaScript in your browser and
+            then reload the page.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <h2>Question Summary</h2>
+      <p>The Cloud Assessment Tool (CAT) asks you a series of questions about the cloud service you're assessing and
+        how you expect to use it. The questions are broken into 7 categories.</p>
+
+      <h3>Overview</h3>
+      <p>These are top level questions to provide context around the cloud service.</p>
+      <p>These questions cover the:</p>
+      <ul>
+        <li>name of the cloud service and vendor</li>
+        <li>approximate number of users who will use it</li>
+        <li>primary purpose for the cloud service</li>
+      </ul>
+
+      <h3>Vendor</h3>
+      <p>These questions are about the provider of the cloud service and the reputation and viability of the
+        organisation.</p>
+      <p>These questions cover:</p>
+      <ul>
+        <li>the vendor's history and experience</li>
+        <li>other agencies that have used the vendor</li>
+        <li>any red flags that suggest the vendor may be unable to provide the service at the level you require</li>
+      </ul>
+
+      <h3>Commercials</h3>
+      <p>These questions look at the contract or Service Level Agreement (SLA) the cloud service provides.</p>
+      <p>These questions cover:</p>
+      <ul>
+        <li>the terms and conditions provided by the cloud service</li>
+        <li>how the cloud service handles content ownership and data privacy</li>
+        <li>how the vendor deals with exit provisions and additional usage pricing</li>
+      </ul>
+      <p>You may also want to talk to your Legal and Finance teams to determine your agency's requirements, so you can
+        ensure the cloud service can meet them.</p>
+
+      <h3>Compliance</h3>
+      <p>These questions look at how you can assure you are meeting the appropriate compliance requirements when using
+        the cloud service.</p>
+      <p>These questions cover:</p>
+      <ul>
+        <li>your obligations relating to the <a target="_blank" href="https://www.oaic.gov.au/privacy-law/privacy-archive/privacy-resources-archive/information-privacy-principle">Privacy
+            Act 1988</a></li>
+        <li>your obligations relating to the <a target="_blank" href="https://www.legislation.gov.au/Details/C2016C00772">Archives
+            Act 1983</a></li>
+        <li>your obligations relating to the <a target="_blank" href="https://www.oaic.gov.au/freedom-of-information/foi-act">Freedom
+            of Information Act 1982</a></li>
+        <li><a target="_blank" href="https://acsc.gov.au/infosec/irap/certified_clouds.htm">ASD Certification and the
+            Certified Cloud Services list</a></li>
+        <li>the <a target="_blank" href="https://acsc.gov.au/infosec/irap.htm">Information Security Registered
+            Assessors Program</a> (IRAP)</li>
+        <li>the <a target="_blank" href="https://acsc.gov.au/infosec/ism">Information Government Security Manual</a></li>
+        <li><a target="_blank" href="https://acsc.gov.au/infosec/ism">WCAG compliance</a> under the Disability
+          Discrimination Act 1992.</li>
+        <li>the location of the cloud service's data centres, including who has access to the data</li>
+      </ul>
+
+      <h3>Security</h3>
+      <p>These questions look at the security aspects of the cloud service.</p>
+      <p>These questions cover:</p>
+      <ul>
+        <li>the security of data both in transit and at rest</li>
+        <li>how the service manages and tracks access</li>
+        <li>the physical security of the data centres</li>
+      </ul>
+
+      <h3>Operability</h3>
+      <p>These questions look at the performance of the cloud service in terms of scalability, connectivity and general
+        use.</p>
+      <p>These questions cover:</p>
+      <ul>
+        <li>any past performance data the vendor makes available</li>
+        <li>how the service manages availability, compatibility and load balancing</li>
+        <li>how the service manages data transfer and portability</li>
+        <li>any information that speaks to the ease of use of the product</li>
+      </ul>
+
+      <h3>Support</h3>
+      <p>These questions look at the resources and support provided by the vendor to help you use the cloud service.</p>
+      <p>These questions cover:</p>
+      <ul>
+        <li>any online training resources such as videos or tutorials</li>
+        <li>customer support and community-based help</li>
+        <li>technical experts to assist with implementation and maintenance</li>
+      </ul>
+    </div>
+  </div>
+  <!-- body -->
+  <!-- footer -->
+  <footer class="au-footer au-footer--dark" role="contentinfo">
+    <div class="container">
+      <section class="au-footer__end row">
+        <div class="col-sm-12">
+          <ul class="list-inline">
+            <li class="list-inline-item"><a target="_blank" href="https://www.dta.gov.au/privacy-statement/">Privacy</a></li>
+            <li class="list-inline-item"><a href="mailto:secure.cloud@digital.gov.au">Need Help?</a></li>
+            <li class="list-inline-item"><a target="_blank" href="https://www.dta.gov.au/accessibility/">Accessibility</a></li>
+            <li class="list-inline-item"><a target="_blank" href="https://www.dta.gov.au/disclaimer/">Disclaimer</a></li>
+          </ul>
+          <div style="clear:both">
+            <p><img class="au-responsive-media-img footer-img" src="/assets/img/header-logo-agov.png" alt="Brand image "></p>
+            <p><small>&copy; Commonwealth of Australia. With the exception of the Commonwealth Coat of Arms</small></p>
+            <p><small>and where otherwise noted, this work is licensed under the
+                <a href="https://github.com/govau/uikit/blob/master/LICENSE" rel="external">MIT Licence</a></small></p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </footer>
+  <!-- footer -->
 
   </noscript>
 </body>
