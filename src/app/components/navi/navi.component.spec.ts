@@ -1,5 +1,9 @@
+//import from @angular
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from "@angular/router/testing";
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 
+//import components from application
 import { NaviComponent } from './navi.component';
 
 describe('NaviComponent', () => {
@@ -8,9 +12,15 @@ describe('NaviComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NaviComponent ]
+      declarations: [ NaviComponent ],
+      imports: [
+        RouterTestingModule
+      ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +29,7 @@ describe('NaviComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create the navi component', () => {
     expect(component).toBeTruthy();
   });
 });
