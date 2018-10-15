@@ -7,8 +7,10 @@ describe('cloud-assessment App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  //Header
+  it('should display the app title in the header', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getAppTitle()).toEqual('Cloud Assessment Tool beta');
   });
+
 });
