@@ -1,6 +1,15 @@
+//import from @angular
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from "@angular/router/testing";
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 
+//import components from application
 import { HomeComponent } from './home.component';
+
+//import services from application
+import { WorkFlowService } from "../../services/work-flow.service";
+import { LocalStorageService } from "../../services/local-storage.service";
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -8,9 +17,22 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [
+        HomeComponent
+      ],
+      imports: [
+        RouterTestingModule,
+        FormsModule
+      ],
+      providers: [
+        WorkFlowService,
+        LocalStorageService
+      ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +41,7 @@ describe('HomeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create the home component', () => {
     expect(component).toBeTruthy();
   });
 });
