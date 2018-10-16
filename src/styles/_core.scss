@@ -268,10 +268,7 @@ label + textarea {
   background-color: #ffffff;
 }
 
-.form-answer-scale,
-.fake-form-label {
-  @include AU-space( margin-top, 1unit );
+// Container fluid max width
+.container-fluid {
+  @include AU-space( max-width, 72unit );
 }
-
-
-
