@@ -1,10 +1,10 @@
-@import '../../../styles/global-includes';
+@import '../../../styles/mixins';
 
 $green: #21B87D;
 $red: #FF625C;
 $orange: #FFB951;
 
-.traffic-light {  
+.traffic-light {
     height: 25px;
     width: 25px;
     border-radius: 50%;
@@ -27,7 +27,7 @@ $orange: #FFB951;
     background-color: $green;
 }
 
-// .left-col { 
+// .left-col {
 //     @media only screen and (max-width: 600px) {
 //         width: 100%;
 //     }
@@ -55,7 +55,7 @@ $orange: #FFB951;
 //     }
 // }
 
-    // .left-col { 
+    // .left-col {
     //     @media only screen and (max-width: 770px) {
     //         width: 100%;
     //         padding: 0px;
@@ -87,7 +87,7 @@ $orange: #FFB951;
         background-color: #EBEBEB;
         border-color: #ffffff;
     }
-    
+
     .panel {
         margin-bottom: 20px;
         background-color: #fff;
@@ -95,9 +95,9 @@ $orange: #FFB951;
         -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
         box-shadow: 0 1px 1px rgba(0,0,0,.05);
     }
-    
-    .panel:not(:first-child) { 
-        margin-top: 50px;  
+
+    .panel:not(:first-child) {
+        margin-top: 50px;
     }
 
     .panel-body {
@@ -140,20 +140,20 @@ $orange: #FFB951;
     }
 
     .traffic-green{
-        color: $green; 
-        font-size:1.3em; 
+        color: $green;
+        font-size:1.3em;
         padding:5px;
     }
 
     .traffic-orange{
-        color: $orange; 
-        font-size:1.3em; 
+        color: $orange;
+        font-size:1.3em;
         padding:5px;
     }
 
     .traffic-red{
-        color: $red; 
-        font-size:1.3em; 
+        color: $red;
+        font-size:1.3em;
         padding:5px;
     }
 
@@ -218,7 +218,7 @@ $orange: #FFB951;
 
 table{
     background-color: #F5F5F5;
-    border-collapse: collapse; 
+    border-collapse: collapse;
 }
 
 tr{

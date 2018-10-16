@@ -3,8 +3,7 @@ import { Config } from '../../data/Config';
 
 @Component({
   selector: 'app-navi',
-  templateUrl: './navi.component.html',
-  styleUrls: ['./navi.component.scss']
+  templateUrl: './navi.component.html'
 })
 export class NaviComponent implements OnInit {
 

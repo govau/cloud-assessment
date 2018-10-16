@@ -8,7 +8,8 @@
 
 # dependencies
 /node_modules
-/pancake
+/src/styles/_uikit.scss
+/src/assets/js/uikit.min.js
 
 # IDEs and editors
 /.idea

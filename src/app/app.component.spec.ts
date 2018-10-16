@@ -6,7 +6,6 @@ import { RouterTestingModule } from '@angular/router/testing'
 //import components from application
 import { AppComponent } from './app.component';
 import { SiteHeaderComponent } from "./components/site-header/site-header.component";
-import { SiteFooterComponent } from "./components/site-footer/site-footer.component";
 import { NaviComponent } from "./components/navi/navi.component";
 
 //import services from application
@@ -22,7 +21,6 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         SiteHeaderComponent,
-        SiteFooterComponent,
         NaviComponent
       ],
       imports: [
