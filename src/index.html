@@ -1,6 +1,16 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<!--[if lt IE 8]>
+	<html class="no-js lt-ie8 lt-ie9" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="no-js lt-ie9 ie8" lang="en">
+<![endif]-->
+<!--[if IE 9 ]>
+	<html class="no-js ie9" lang="en">
+<![endif]-->
+<!--[if !(IE)]><!-->
+	<html class="no-js" lang="en">
+<!--<![endif]-->
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-61222473-20"></script>
@@ -18,15 +28,19 @@
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <script type="text/javascript">
+		var $html = document.documentElement; if ($html.classList) $html.classList.remove("no-js"), $html.classList.add("js"); else { var className = "no-js"; $html.className = $html.className.replace(new RegExp("(^|\\b)" + className.split(" ").join("|") + "(\\b|$)", "gi"), " "), $html.className += " js" }
+	</script>
 </head>
 
-<body>
+<body class="au-grid">
   <nav class="au-skip-link" aria-label="skip links navigation">
     <a class="au-skip-link__link" href="#content">Skip to main content</a>
     <a class="au-skip-link__link" href="#nav">Skip to main navigation</a>
   </nav>
-  <div class="main au-grid au-body banner">
-    <div class="container banner-bk">
+  <div class="au-body banner">
+    <div class="container container-fluid banner-bk">
       <div class="col-md-12" style="font-size:.9em">
         <!-- <img alt="" class="icon-star" src="https://cloud.gov.au/static/media/star.6d326af2.svg"> -->
         <span class="headergovau__title">This website is in <span class="stage-beta">beta</span>. We’re testing new
@@ -172,30 +186,32 @@
     </div>
   </div>
   <!-- body -->
-  <!-- footer -->
-  <footer class="au-footer au-footer--dark" role="contentinfo">
-    <div class="container">
-      <section class="au-footer__end row">
-        <div class="col-sm-12">
-          <ul class="list-inline">
-            <li class="list-inline-item"><a target="_blank" href="https://www.dta.gov.au/privacy-statement/">Privacy</a></li>
-            <li class="list-inline-item"><a href="mailto:secure.cloud@digital.gov.au">Need Help?</a></li>
-            <li class="list-inline-item"><a target="_blank" href="https://www.dta.gov.au/accessibility/">Accessibility</a></li>
-            <li class="list-inline-item"><a target="_blank" href="https://www.dta.gov.au/disclaimer/">Disclaimer</a></li>
-          </ul>
-          <div style="clear:both">
-            <p><img class="au-responsive-media-img footer-img" src="/assets/img/header-logo-agov.png" alt="Brand image "></p>
-            <p><small>&copy; Commonwealth of Australia. With the exception of the Commonwealth Coat of Arms</small></p>
-            <p><small>and where otherwise noted, this work is licensed under the
-                <a href="https://github.com/govau/uikit/blob/master/LICENSE" rel="external">MIT Licence</a></small></p>
-          </div>
-        </div>
-      </section>
-    </div>
-  </footer>
-  <!-- footer -->
 
   </noscript>
-</body>
 
+  <div class="au-body au-body--dark">
+    <footer class="au-footer au-footer--dark" role="contentinfo">
+      <div class="container container-fluid">
+        <nav class="au-footer__navigation row" aria-label="footer navigation">
+          <div class="col-md-6 col-sm-6">
+            <ul class="au-link-list au-link-list--inline">
+              <li><a target="_blank" href="https://www.dta.gov.au/privacy-statement/">Privacy</a></li>
+              <li><a href="mailto:secure.cloud@digital.gov.au">Need Help?</a></li>
+              <li><a target="_blank" href="https://www.dta.gov.au/accessibility/">Accessibility</a></li>
+              <li><a target="_blank" href="https://www.dta.gov.au/disclaimer/">Disclaimer</a></li>
+            </ul>
+          </div>
+        </nav>
+        <section class="au-footer__end">
+          <div class="row">
+            <div class="col-sm-12">
+                <p>© Commonwealth of Australia. With the exception of the Commonwealth Coat of Arms and where otherwise noted, this work is licensed under the <a href="https://github.com/govau/uikit/blob/master/LICENSE" rel="external">MIT license</a></p>
+              </div>
+          </div>
+        </section>
+      </footer>
+    </div>
+  </div>
+  <script src="/assets/js/uikit.min.js"></script>
+</body>
 </html>
