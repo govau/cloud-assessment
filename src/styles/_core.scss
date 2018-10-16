@@ -173,7 +173,7 @@
     page-break-inside: avoid; // Prevent images from being split up
   }
 
-  .top{
+  .top {
     display: none;
   }
 
@@ -183,15 +183,7 @@
 }
 
 
-
-@media only screen and (max-width: 600px) {
-  .list-inline-item {
-      float: left;
-      clear: left;
-      padding: 10px!important;
-  }
-}
-
+// Menu item on the right
 @include AU-media( $AU-main-nav-breakpoint ){
   .au-main-nav {
     .au-link-list {
@@ -204,6 +196,7 @@
   }
 }
 
+// Icon
 .icon:before {
   @include AU-space( margin-right, 0.5unit );
 	width: 1.25em;
@@ -220,6 +213,7 @@
 	}
 }
 
+// Github icon
 .icon--github {
 	&:before {
 		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25">' +
@@ -234,7 +228,50 @@
 	}
 }
 
-
-.main.au-body {
-  @include AU-space( padding, 4unit 0 );
+// Add spacing at top and bottom of the page
+.main .container-fluid {
+  @include AU-space( padding-top, 4unit );
+  @include AU-space( padding-bottom, 4unit );
 }
+
+
+// Add spacing between rows in content area
+.home-page-content {
+  .row {
+    @include AU-space( padding, 4unit 0 );
+  }
+
+  .container-fluid {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+// Progress bar styles
+.progress-bar-wrapper {
+  @include AU-space( margin-bottom, 2unit );
+}
+
+
+// Text input and text area spacing
+.general-question {
+  @include AU-space( margin-top, 2.5unit );
+}
+
+label + input,
+label + textarea {
+  @include AU-space( margin-top, 0.5unit );
+}
+
+.au-text-input:invalid {
+  border-color: #808080;
+  background-color: #ffffff;
+}
+
+.form-answer-scale,
+.fake-form-label {
+  @include AU-space( margin-top, 1unit );
+}
+
+
+

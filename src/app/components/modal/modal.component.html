@@ -8,11 +8,11 @@
       <ng-content></ng-content>
     </div>
     <div class='buttonBar'>
-      <button *ngIf='secondaryButtonText !== undefined' class='au-btn au-btn--block au-btn--secondary' (click)="secondaryClicked()">
-        {{ secondaryButtonText }}</button>
-      <button *ngIf='primaryButtonText !== undefined' class='au-btn au-btn--block au-btn-modal' (click)="primaryClicked()">
+      <button *ngIf='primaryButtonText !== undefined' class='au-btn au-btn--secondary' (click)="primaryClicked()">
         {{ primaryButtonText }}
       </button>
+      <button *ngIf='secondaryButtonText !== undefined' class='au-btn' (click)="secondaryClicked()">
+          {{ secondaryButtonText }}</button>
     </div>
   </div>
 </div>

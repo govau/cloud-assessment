@@ -11,8 +11,7 @@ import { LocalStorageService } from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-general-question',
-  templateUrl: './general-question.component.html',
-  styleUrls: ['./general-question.component.scss']
+  templateUrl: './general-question.component.html'
 })
 export class GeneralQuestionComponent implements OnInit {
   formSubmitted: boolean;

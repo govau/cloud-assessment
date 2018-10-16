@@ -1,44 +1,52 @@
-<div class="row highlight">
-  <div class="col-sm-12 col-md-6 col-md-push-6">
-    <img class="au-responsive-media-img" src="assets/img/cloud.png" alt="Brand image">
-  </div>
-  <div class="intro__text col-sm-12 col-md-5 col-md-pull-6" id="content" tabindex="-1">
-    <h2>Start an assessment</h2>
-    <p>To get started you need to:</p>
-    <ul>
-      <li>read the <a [routerLink]="['/'+routePath.HOWTOPREPARE]">Prepare page</a></li>
-      <li>know the cloud service you want to assess</li>
-      <li>know the classification requirements for your data</li>
-    </ul>
-    <p>A progress bar at the top of each screen shows how far you are in the assessment. The number of questions may change depending on your answers.</p>
-    <p>You can pause the assessment with the Save & Exit button. To resume your assessment, simply return using the same device and browser.</p>
-    <div class="cta">
-      <form #declarativeForm="ngForm">
-          <script *ngIf="reCAPTCHAConfig.enable" src='https://www.google.com/recaptcha/api.js'></script>
-          <re-captcha *ngIf="reCAPTCHAConfig.enable" (resolved)="resolved($event)" [siteKey]="reCAPTCHAConfig.siteKey"
-              [(ngModel)]="declarativeFormCaptchaValue" name="captcha" required></re-captcha>
-          <button class="au-btn  au-btn--primary" type="button" (click)="startAssessment()" [disabled]="!declarativeForm.valid && reCAPTCHAConfig.enable">Start
-              cloud assessment</button>
-      </form>
+<div class="home-page-content">
+  <div class="au-body au-body--alt">
+    <div class="container container-fluid">
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-md-push-6">
+          <img class="au-responsive-media-img" src="assets/img/cloud.png" alt="Brand image">
+        </div>
+        <div class="intro__text col-sm-12 col-md-5 col-md-pull-6" id="content" tabindex="-1">
+          <h2>Start an assessment</h2>
+          <p>To get started you need to:</p>
+          <ul>
+            <li>read the <a [routerLink]="['/'+routePath.HOWTOPREPARE]">Prepare page</a></li>
+            <li>know the cloud service you want to assess</li>
+            <li>know the classification requirements for your data</li>
+          </ul>
+          <p>A progress bar at the top of each screen shows how far you are in the assessment. The number of questions may change depending on your answers.</p>
+          <p>You can pause the assessment with the Save & Exit button. To resume your assessment, simply return using the same device and browser.</p>
+          <div class="cta">
+            <form #declarativeForm="ngForm">
+                <script *ngIf="reCAPTCHAConfig.enable" src='https://www.google.com/recaptcha/api.js'></script>
+                <re-captcha *ngIf="reCAPTCHAConfig.enable" (resolved)="resolved($event)" [siteKey]="reCAPTCHAConfig.siteKey"
+                    [(ngModel)]="declarativeFormCaptchaValue" name="captcha" required></re-captcha>
+                <button class="au-btn  au-btn--primary" type="button" (click)="startAssessment()" [disabled]="!declarativeForm.valid && reCAPTCHAConfig.enable">Start
+                    cloud assessment</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <h2>About the Cloud Assessment Tool</h2>
-    <p>The Cloud Assessment Tool (CAT) helps government agencies self-assess if a cloud service is suitable for a specific business context – by considering relevant compliance, commercial, operability, support and security requirements.</p>
+  <div class="container container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>About the Cloud Assessment Tool</h2>
+        <p>The Cloud Assessment Tool (CAT) helps government agencies self-assess if a cloud service is suitable for a specific business context – by considering relevant compliance, commercial, operability, support and security requirements.</p>
 
-    <p>The CAT is not a standardised or objective assessment of a cloud vendor or service. It’s a guide to help agencies understand what qualities are important for their needs.</p>
+        <p>The CAT is not a standardised or objective assessment of a cloud vendor or service. It’s a guide to help agencies understand what qualities are important for their needs.</p>
 
-    <p>When you start, you’ll be asked about the cloud service and how you expect to use it. You may need to do some research to answer some questions. We’ve provided information and links to help you find relevant information quickly.</p>
+        <p>When you start, you’ll be asked about the cloud service and how you expect to use it. You may need to do some research to answer some questions. We’ve provided information and links to help you find relevant information quickly.</p>
 
-    <p>When you submit your answers, you’ll get a tailored assessment report which highlights any potential misalignment between the cloud service and your needs. You’ll also get extra information to help you understand the results and next steps.</p>
-    
-    <p>The CAT does not ask for any personal or identifiable details. Information you provide may be used by the DTA to help us improve the CAT.</p>
+        <p>When you submit your answers, you’ll get a tailored assessment report which highlights any potential misalignment between the cloud service and your needs. You’ll also get extra information to help you understand the results and next steps.</p>
+
+        <p>The CAT does not ask for any personal or identifiable details. Information you provide may be used by the DTA to help us improve the CAT.</p>
+      </div>
+    </div>
+
+    <app-modal [show]="showModal" [title]="'Welcome back'" [primaryButtonText]="'Start again'" [secondaryButtonText]="'Resume'"
+        (primaryButtonClick)='startAgain()' (secondaryButtonClick)='resume()' (close)='close()'>
+        <div>Would you like to resume your existing assessment?</div>
+    </app-modal>
   </div>
 </div>
-
-<app-modal [show]="showModal" [title]="'Welcome back'" [primaryButtonText]="'Start again'" [secondaryButtonText]="'Resume'"
-    (primaryButtonClick)='startAgain()' (secondaryButtonClick)='resume()' (close)='close()'>
-    <div>Would you like to resume your existing assessment?</div>
-</app-modal>
