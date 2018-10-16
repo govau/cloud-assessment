@@ -1,4 +1,4 @@
-@import '../../../styles/global-includes';
+@import '../../../styles/mixins';
 .au-text-input{
     width:100%;
 }
@@ -20,17 +20,11 @@
         padding-top: 20px!important;
     }
 
-//.errorMessage {
-//border-left: 3px solid #cc0200;
-//color:#cc0200;
-//transition: all .3s linear;
-//}
-
 @media only screen and (max-width: 600px) {
     .col-xs-8 {
       width: 100%
     }
-  
+
     .col-xs-4 {
       width: 100%
     }
@@ -39,4 +33,3 @@
       max-width: 95.8% !important;
     }
   }
-  

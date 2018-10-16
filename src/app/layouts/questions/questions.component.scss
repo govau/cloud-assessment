@@ -1,18 +1,13 @@
-@import '../../../styles/global-includes';
+@import '../../../styles/mixins';
 .controlPadding{
   padding-top: 10px;
-}  
+}
 
 .row-progress {
   padding-top: 20px;
   margin: 25px 30px;
 }
 
-//.errorMessage {
-  //border-left: 3px solid #cc0200;
-//  color:#cc0200;
-//  transition: all .3s linear;
-//  }
 
 .au-display-xxxl {
   font-weight: 400;

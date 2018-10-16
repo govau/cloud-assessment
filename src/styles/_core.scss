@@ -1,4 +1,4 @@
-@import '/global-includes';
+@import '/mixins';
 
 // .main {
 //   @include rem(margin, 50px 0px);
@@ -57,13 +57,6 @@
   // outline: none;
 // }
 
-.errorMessage {
-  margin: 10px 0 20px 0;
-  border-left: 5px solid $error;
-  background: #F3E2E2;
-  padding: 10px;
-  color: $error;
-}
 
 .error {
   padding: 5px 10px 5px;
@@ -145,7 +138,7 @@
   border-left: #FF625C!important;
   -webkit-print-color-adjust:exact;
   }
-    
+
 .traffic-green{
   color: #21B87D!important;
   -webkit-print-color-adjust:exact;
@@ -201,7 +194,7 @@ ul.au-link-list.au-link-list--inline.mainmenu-right{
   .au-footer__end.row {
   display:none;
   padding: 10px 10px;
-  }  
+  }
 .au-grid .col-xs-4 {
   width: 60%;
 }
@@ -271,7 +264,7 @@ page-break-before: always;
   }
   .footer-img{
       max-width: 16rem;
-      
+
   }
 }
 

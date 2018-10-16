@@ -1,4 +1,4 @@
-@import '../../../styles/global-includes';
+@import '../../../styles/mixins';
 
 #mainmenu {
   @include rem(padding-top, 32px);
@@ -125,7 +125,7 @@ body {
 }
 
   #mainmenu .container {
-   padding: 0px 20px 0 20px!important; 
+   padding: 0px 20px 0 20px!important;
 }
 
 .nav > .nav-links > a {
