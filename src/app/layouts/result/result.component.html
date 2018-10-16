@@ -1,118 +1,120 @@
-<div class="row">
-  <div class="col-xs-10">
-    <h2>Cloud assessment report</h2>
-    <!-- <p>Here are your assessment results sorted by assessment category. If you need to share these results you can use
-      the Print report button to print or save a PDF copy.</p>
-    <p>The service your have assessed is {{ServiceName}}, which you have categorised as {{CloudModel}} and
-      is estimated to be used by {{NumberOfUsers}} users.</p>
-    <p>You have indicated that the main purpose for use of {{ServiceName}} is as follows:</p>
-    <p>{{ServicePurpose}}</p>
-    <p>These assessment results were produced on {{ assessmentDate | date: 'dd/MM/yyyy' }}</p> -->
-    <div class="asessment-report-summary">
-      <div>
-        <span>Service assessed:</span> {{ServiceName}}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-10">
+      <h2>Cloud assessment report</h2>
+      <!-- <p>Here are your assessment results sorted by assessment category. If you need to share these results you can use
+        the Print report button to print or save a PDF copy.</p>
+      <p>The service your have assessed is {{ServiceName}}, which you have categorised as {{CloudModel}} and
+        is estimated to be used by {{NumberOfUsers}} users.</p>
+      <p>You have indicated that the main purpose for use of {{ServiceName}} is as follows:</p>
+      <p>{{ServicePurpose}}</p>
+      <p>These assessment results were produced on {{ assessmentDate | date: 'dd/MM/yyyy' }}</p> -->
+      <div class="asessment-report-summary">
+        <div>
+          <span>Service assessed:</span> {{ServiceName}}
+        </div>
+        <div>
+          <span>Service mode:</span> {{CloudModel}}
+        </div>
+        <div>
+          <span>Purpose:</span> {{ServicePurpose}}
+        </div>
+        <div>
+          <span>Number of users:</span> {{NumberOfUsers}}
+        </div>
+        <div>
+          <span>Assessment date:</span> {{ assessmentDate | date: 'dd MMMM yyyy' }}
+        </div>
       </div>
-      <div>
-        <span>Service mode:</span> {{CloudModel}}
-      </div>
-      <div>
-        <span>Purpose:</span> {{ServicePurpose}}
-      </div>
-      <div>
-        <span>Number of users:</span> {{NumberOfUsers}}
-      </div>
-      <div>
-        <span>Assessment date:</span> {{ assessmentDate | date: 'dd MMMM yyyy' }}
+      <!-- Categories -->
+      <div style="margin-top: 24px;">
+        <h3>Assessment summary</h3>
+        <table>
+          <tr>
+            <th style="text-align:start;padding-left:15px;">
+              Category
+            </th>
+            <th>
+              Risk rating
+            </th>
+          </tr>
+          <tr *ngFor="let item of Categories">
+            <td style='cursor: pointer;'><a (click)="jumpToPage(item)">{{item}}</a></td>
+            <td style="display:block; float: right;">
+              <span class="red-light">{{CountRedByCategory(item)}}</span>High
+              <span class="orange-light">{{CountOrangeByCategory(item)}}</span>Medium
+              <span class="green-light">{{CountGreenByCategory(item)}}</span>Low
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
-    <!-- Categories -->
-    <div style="margin-top: 24px;">
-      <h3>Assessment summary</h3>
-      <table>
-        <tr>
-          <th style="text-align:start;padding-left:15px;">
-            Category
-          </th>
-          <th>
-            Risk rating
-          </th>
-        </tr>
-        <tr *ngFor="let item of Categories">
-          <td style='cursor: pointer;'><a (click)="jumpToPage(item)">{{item}}</a></td>
-          <td style="display:block; float: right;">
+    <div class="col-xs-2">
+      <button class="au-btn au-btn--secondary" type="button" (click)="printReport()">Print
+        report</button>
+    </div>
+  </div>
+  <div class="row" style="padding-top: 0px;">
+    <div class="col-xs-12 right-col">
+      <!-- for print only -->
+      <div class="print-only">
+        <h3>Assessment details</h3>
+        <div class="panel panel-default" *ngFor="let item of Categories">
+          <div class="panel-heading">{{item}}</div>
+          <div class="traffic-lights">Risk rating:
             <span class="red-light">{{CountRedByCategory(item)}}</span>High
             <span class="orange-light">{{CountOrangeByCategory(item)}}</span>Medium
             <span class="green-light">{{CountGreenByCategory(item)}}</span>Low
-          </td>
-        </tr>
-      </table>
-    </div>
-  </div>
-  <div class="col-xs-2">
-    <button class="au-btn au-btn--secondary" type="button" (click)="printReport()">Print
-      report</button>
-  </div>
-</div>
-<div class="row" style="padding-top: 0px;">
-  <div class="col-xs-12 right-col">
-    <!-- for print only -->
-    <div class="print-only">
-      <h3>Assessment details</h3>
-      <div class="panel panel-default" *ngFor="let item of Categories">
-        <div class="panel-heading">{{item}}</div>
-        <div class="traffic-lights">Risk rating:
-          <span class="red-light">{{CountRedByCategory(item)}}</span>High
-          <span class="orange-light">{{CountOrangeByCategory(item)}}</span>Medium
-          <span class="green-light">{{CountGreenByCategory(item)}}</span>Low
-        </div>
+          </div>
 
-        <div *ngFor="let question of GetQuestionsByCategory(item)">
-          <div class="panel-body" [ngClass]="{'panel-green':CalculateSymbol(question)==='green', 'panel-orange': CalculateSymbol(question)==='orange', 'panel-red':CalculateSymbol(question)==='red'}">
-            <h2 *ngIf="CalculateSymbol(question)==='green'">
-              <span class="traffic-green">&#10004;</span>
-              {{question.Quality}}
-            </h2>
-            <h2 *ngIf="CalculateSymbol(question)==='orange'">
-              <span class="traffic-orange">&#33;</span>
-              {{question.Quality}}
-            </h2>
-            <h2 *ngIf="CalculateSymbol(question)==='red'">
-              <span class="traffic-red">&#10005;</span>
-              {{question.Quality}}
-            </h2>
-            <p *ngIf="question.ValueType==='Integer'&&(question.AssessmentValue==='Not applicable'||question.AssessmentValue==='Unsure')">You
-              provided a rating of {{question.AssessmentValue}}</p>
-            <p *ngIf="question.ValueType==='Integer'&&(question.AssessmentValue!=='Not applicable'&&question.AssessmentValue!=='Unsure')">You
-              provided a rating of {{question.AssessmentValue}}/5</p>
-            <p *ngIf="question.ValueType==='OR'">You answered {{GetXORAssessmentValue(question.AssessmentValue)}}</p>
-            <p *ngIf="question.ValueType==='XOR'">You answered {{question.AssessmentValue}}</p>
-            <div>
-              <p>You provided the following rationale for the score:
-              </p>
-              <p *ngIf="question.Comments">{{question.Comments}}</p>
-              <p *ngIf="CalculateSymbol(question)==='green'">You have provided a rating that indicates the service is
-                acceptable for this measure.</p>
-              <p *ngIf="CalculateSymbol(question)==='orange'">You provided a rating for this measure that may indicate
-                shortcomings in this area.</p>
-              <p *ngIf="CalculateSymbol(question)==='red'">You provided a rating for this measure that indicates issues
-                in this area.</p>
+          <div *ngFor="let question of GetQuestionsByCategory(item)">
+            <div class="panel-body" [ngClass]="{'panel-green':CalculateSymbol(question)==='green', 'panel-orange': CalculateSymbol(question)==='orange', 'panel-red':CalculateSymbol(question)==='red'}">
+              <h2 *ngIf="CalculateSymbol(question)==='green'">
+                <span class="traffic-green">&#10004;</span>
+                {{question.Quality}}
+              </h2>
+              <h2 *ngIf="CalculateSymbol(question)==='orange'">
+                <span class="traffic-orange">&#33;</span>
+                {{question.Quality}}
+              </h2>
+              <h2 *ngIf="CalculateSymbol(question)==='red'">
+                <span class="traffic-red">&#10005;</span>
+                {{question.Quality}}
+              </h2>
+              <p *ngIf="question.ValueType==='Integer'&&(question.AssessmentValue==='Not applicable'||question.AssessmentValue==='Unsure')">You
+                provided a rating of {{question.AssessmentValue}}</p>
+              <p *ngIf="question.ValueType==='Integer'&&(question.AssessmentValue!=='Not applicable'&&question.AssessmentValue!=='Unsure')">You
+                provided a rating of {{question.AssessmentValue}}/5</p>
+              <p *ngIf="question.ValueType==='OR'">You answered {{GetXORAssessmentValue(question.AssessmentValue)}}</p>
+              <p *ngIf="question.ValueType==='XOR'">You answered {{question.AssessmentValue}}</p>
+              <div>
+                <p>You provided the following rationale for the score:
+                </p>
+                <p *ngIf="question.Comments">{{question.Comments}}</p>
+                <p *ngIf="CalculateSymbol(question)==='green'">You have provided a rating that indicates the service is
+                  acceptable for this measure.</p>
+                <p *ngIf="CalculateSymbol(question)==='orange'">You provided a rating for this measure that may indicate
+                  shortcomings in this area.</p>
+                <p *ngIf="CalculateSymbol(question)==='red'">You provided a rating for this measure that indicates issues
+                  in this area.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- for display only -->
-    <div class="no-print">
-      <h3>Assessment details</h3>
-      <div class="panel panel-default" *ngFor="let item of Categories" style="margin-top: 0px;">
-        <div [id]="item">
-          <app-report-accordion-item [categoryName]="item" [redCount]="CountRedByCategory(item)" [orangeCount]="CountOrangeByCategory(item)"
-            [greenCount]="CountGreenByCategory(item)" [questions]="GetQuestionsByCategory(item)"></app-report-accordion-item>
+      <!-- for display only -->
+      <div class="no-print">
+        <h3>Assessment details</h3>
+        <div class="panel panel-default" *ngFor="let item of Categories" style="margin-top: 0px;">
+          <div [id]="item">
+            <app-report-accordion-item [categoryName]="item" [redCount]="CountRedByCategory(item)" [orangeCount]="CountOrangeByCategory(item)"
+              [greenCount]="CountGreenByCategory(item)" [questions]="GetQuestionsByCategory(item)"></app-report-accordion-item>
+          </div>
         </div>
       </div>
-    </div>
 
-    <p class="top">&#10224; <button class="au-direction-link au-direction-link--up" (click)="backToTop()">Back to top</button></p>
+      <p class="top">&#10224; <button class="au-direction-link au-direction-link--up" (click)="backToTop()">Back to top</button></p>
+    </div>
   </div>
 </div>

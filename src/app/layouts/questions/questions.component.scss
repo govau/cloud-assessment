@@ -1,25 +1,8 @@
 @import '../../../styles/mixins';
-.controlPadding{
-  padding-top: 10px;
-}
-
-.row-progress {
-  padding-top: 20px;
-  margin: 25px 30px;
-}
-
 
 .au-display-xxxl {
   font-weight: 400;
   font-size: 2.7em;
-}
-
-.row {
-  padding-top: 20px!important;
-  }
-
-.au-text-input {
-border: 2px solid gray;
 }
 
 a.au-btn, .au-btn--secondary{
@@ -44,18 +27,6 @@ a.au-btn, .au-btn--secondary{
   font-weight: 400;
   font-size: 2em;
 }
-// .au-text-input:focus, .au-body.au-body--dark a:focus {
-//   outline: none;
-// }
-
-// .au-control-input__input:focus + .au-control-input__text:before, .au-control-input__input:focus + .au-control-input__text:after {
-//   outline: none;
-// }
-
-.au-control-input__text {
-  padding-bottom: 15px;
-  margin-right:20px;
-}
 
 .au-control-input__input:invalid + .au-control-input__text{
   background-color: white;
@@ -65,31 +36,11 @@ a.au-btn, .au-btn--secondary{
   border-color: transparent;
 }
 
-.form-answer-radio {
-  display: grid;
-  float: left;
-  clear: both;
-  width: 100%;
-  padding: 10px 10px 10px 0px;
-}
-
 button.au-btn {
   margin-top: 20px;
 }
 
 @media only screen and (max-width: 600px) {
-  .col-xs-8 {
-    width: 100%
-  }
-
-  .col-xs-4 {
-    width: 100%
-  }
-  .progress-inner {
-    min-width: 7%;
-    max-width: 95.8% !important;
-  }
-
   .form-answer-scale {
     display: grid;
     float: left;
@@ -100,6 +51,6 @@ button.au-btn {
 }
 
 .au-control-input{
-  vertical-align:top;
+  vertical-align: top;
 }
 

@@ -93,14 +93,14 @@
     },
     "sass": {
       "modules": false,
-      "location": "pancake/sass/",
-      "name": "pancake.scss"
+      "location": "src/styles/",
+      "name": "_uikit.scss"
     },
     "js": {
       "minified": true,
       "modules": false,
-      "location": "pancake/js/",
-      "name": "pancake.min.js"
+      "location": "src/assets/js/",
+      "name": "uikit.min.js"
     }
   }
 }

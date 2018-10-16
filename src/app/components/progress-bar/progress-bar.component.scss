@@ -1,7 +1,5 @@
 
 .progress-outer {
-    width: 95.5%!important;
-    margin: 10px 2%;
     padding: 3px;
     background-color: #f4f4f4;
     border: 1px solid #dcdcdc;
@@ -9,10 +7,10 @@
     border-radius: 2px;
     text-align: center;
   }
-  
+
   .progress-inner {
     min-width: 10%;
-    max-width:98.8%!important;
+    max-width: 98.8%!important;
     white-space: nowrap;
     overflow: hidden;
     // padding: 0px;

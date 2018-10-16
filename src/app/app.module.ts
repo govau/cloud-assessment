@@ -13,7 +13,6 @@ import { SubmitServiceService } from './services/submit-service.service';
 // components
 import { AppComponent } from './app.component';
 import { SiteHeaderComponent } from './components/site-header/site-header.component';
-import { SiteFooterComponent } from './components/site-footer/site-footer.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { QuestionDirectionButtonComponent } from './components/question-direction-button/question-direction-button.component';
 import { HelpSectionComponent } from './components/help-section/help-section.component';
@@ -37,7 +36,6 @@ import { AssessmentGuard } from './guards/assessment.guard';
   declarations: [
     AppComponent,
     SiteHeaderComponent,
-    SiteFooterComponent,
     NaviComponent,
     QuestionDirectionButtonComponent,
     HelpSectionComponent,
