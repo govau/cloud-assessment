@@ -23,8 +23,8 @@ const routes: Routes = [
     { path: Config.RoutePath.RESULT, component: ResultComponent, canActivate: [AssessmentGuard] },
     { path: Config.RoutePath.PAGENOTFOUND, component: PageNotFoundComponent },
     {
-        path: '**',
-        redirectTo: Config.RoutePath.PAGENOTFOUND,
+      path: '**',
+      redirectTo: Config.RoutePath.PAGENOTFOUND,
     }
 ];
 

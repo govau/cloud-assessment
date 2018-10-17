@@ -21,7 +21,7 @@ $baseline-px: $font-size-base;
       @else {
         $rem-values: append($rem-values, $value / $baseline-rem); } }
     // Return the property and its list of converted values
-    #{$property}: $rem-values; 
+    #{$property}: $rem-values;
   }
 }
 $global-container-width: 79%;
@@ -212,24 +212,3 @@ $browser-context: 16;
     margin-top: em(50px, 25px);
   }
 }
-
-// @mixin accordion-group() {
-//   moa-accordion {
-//     &:first-of-type .root{
-//       border-radius: 3px 3px 0 0;
-//       border-bottom: none;
-//       margin-bottom: 0;
-//     }
-
-//     &:last-of-type .root{
-//       border-radius: 0 0 3px 3px;
-//       margin-bottom: 0;
-//     }
-
-//     &:not(:first-of-type):not(:last-of-type) .root{
-//       border-radius: 0;
-//       border-bottom: none;
-//       margin-bottom: 0;
-//     }
-//   }
-// }

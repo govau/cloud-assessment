@@ -1,44 +1,48 @@
-<form #myform="ngForm">
-  <!-- progress bar -->
-  <div class="row">
-    <app-progress-bar [progress]="1" [progressText]="processBar"></app-progress-bar>
-  </div>
-  <div class="row">
-    <div class="col-xs-8">
-      <h2>About the cloud service</h2>
-      <div>Please tell us a bit about the cloud service you are thinking of assessing.</div>
-
-      <div class="general-question">
-        <label for="serivceName" class="rationaleLabel">What is the name of the service?</label>
-        <input class="au-text-input" name="serivceName" id="serivceName" type="text" [(ngModel)]="generalQuestion.ServiceName"
-          required #servicename="ngModel">
-        <div *ngIf="servicename.invalid && formSubmitted" role="alert" class="au-body au-page-alerts au-page-alerts--error">
-          <p>Please answer this question before continuing.</p>
-        </div>
+<div class="container-fluid">
+  <form #myform="ngForm">
+    <!-- progress bar -->
+    <div class="row progress-bar-wrapper" id="progressbar">
+      <div class="col-md-12">
+        <app-progress-bar [progress]="1" [progressText]="processBar"></app-progress-bar>
       </div>
-
-      <div class="general-question">
-        <label for="numberOfUsers" class="rationaleLabel">How many users are expected to directly use the service?</label>
-        <input class="au-text-input" name="numberOfUsers" id="numberOfUsers" type="text" [(ngModel)]="generalQuestion.NumberOfUsers"
-          required #numberofusers="ngModel">
-        <div *ngIf="numberofusers.invalid && formSubmitted" role="alert" class="au-body au-page-alerts au-page-alerts--error">
-          <p>Please answer this question before continuing.</p>
-        </div>
-      </div>
-
-      <div class="general-question">
-        <label for="servicePurpose" class="rationaleLabel">What is your main reason  for using this service?</label>
-        <textarea class="au-text-input au-text-input--block" name="servicePurpose" id="servicePurpose" [(ngModel)]="generalQuestion.ServicePurpose"
-          required #servicepurpose="ngModel"></textarea>
-        <div *ngIf="servicepurpose.invalid && formSubmitted" role="alert" class="au-body au-page-alerts au-page-alerts--error">
-          <p>Please answer this question before continuing.</p>
-        </div>
-      </div>
-      <app-question-direction-button (goNextButtonClick)="goNext()"></app-question-direction-button>
     </div>
+    <div class="row">
+      <div class="col-sm-8 col-xs-12">
+        <h2>About the cloud service</h2>
+        <p>Please tell us a bit about the cloud service you are thinking of assessing.</p>
 
-    <div class="col-xs-4">
-      <app-help-section [helpTitle]="'Why are we asking?'" [helpText]="'Your information will feed into a report you can take away. It will also help us understand how people are using this tool so that we can continue to improve it.'"></app-help-section>
+        <div class="general-question">
+          <label for="serivceName" class="rationaleLabel">What is the name of the service?</label>
+          <input class="au-text-input au-text-input--block" name="serivceName" id="serivceName" type="text" [(ngModel)]="generalQuestion.ServiceName"
+            required #servicename="ngModel">
+          <div *ngIf="servicename.invalid && formSubmitted" role="alert" class="au-body au-page-alerts au-page-alerts--error">
+            <p>Please answer this question before continuing.</p>
+          </div>
+        </div>
+
+        <div class="general-question">
+          <label for="numberOfUsers" class="rationaleLabel">How many users are expected to directly use the service?</label>
+          <input class="au-text-input au-text-input--block" name="numberOfUsers" id="numberOfUsers" type="text" [(ngModel)]="generalQuestion.NumberOfUsers"
+            required #numberofusers="ngModel">
+          <div *ngIf="numberofusers.invalid && formSubmitted" role="alert" class="au-body au-page-alerts au-page-alerts--error">
+            <p>Please answer this question before continuing.</p>
+          </div>
+        </div>
+
+        <div class="general-question">
+          <label for="servicePurpose" class="rationaleLabel">What is your main reason  for using this service?</label>
+          <textarea class="au-text-input au-text-input--block" name="servicePurpose" id="servicePurpose" [(ngModel)]="generalQuestion.ServicePurpose"
+            required #servicepurpose="ngModel"></textarea>
+          <div *ngIf="servicepurpose.invalid && formSubmitted" role="alert" class="au-body au-page-alerts au-page-alerts--error">
+            <p>Please answer this question before continuing.</p>
+          </div>
+        </div>
+        <app-question-direction-button (goNextButtonClick)="goNext()"></app-question-direction-button>
+      </div>
+
+      <div class="col-sm-4 col-xs-12">
+        <app-help-section [helpTitle]="'Why are we asking?'" [helpText]="'Your information will feed into a report you can take away. It will also help us understand how people are using this tool so that we can continue to improve it.'"></app-help-section>
+      </div>
     </div>
-  </div>
-</form>
+  </form>
+</div>

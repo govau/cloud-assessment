@@ -1,4 +1,4 @@
-@import '../../../styles/global-includes';
+@import '../../../styles/mixins';
 
 .form-navigation {
     @include rem(margin-top, 32px);
@@ -38,7 +38,7 @@
 // .au-direction-link:focus {
 //     outline: none!important;
 //   }
-  
+
   .au-direction-link:after {
     content: none;
   }
@@ -46,7 +46,7 @@
   .au-direction-link--left:before {
     content: none;
   }
-  
+
 
   @media only screen and (max-width: 600px) {
     .au-direction-link{
