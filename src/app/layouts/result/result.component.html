@@ -1,14 +1,7 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-10">
+    <div class="col-xs-12">
       <h2>Cloud assessment report</h2>
-      <!-- <p>Here are your assessment results sorted by assessment category. If you need to share these results you can use
-        the Print report button to print or save a PDF copy.</p>
-      <p>The service your have assessed is {{ServiceName}}, which you have categorised as {{CloudModel}} and
-        is estimated to be used by {{NumberOfUsers}} users.</p>
-      <p>You have indicated that the main purpose for use of {{ServiceName}} is as follows:</p>
-      <p>{{ServicePurpose}}</p>
-      <p>These assessment results were produced on {{ assessmentDate | date: 'dd/MM/yyyy' }}</p> -->
       <div class="asessment-report-summary">
         <div>
           <span>Service assessed:</span> {{ServiceName}}
@@ -35,24 +28,33 @@
               Category
             </th>
             <th>
-              Risk rating
+              High Risk
+            </th>
+            <th>
+              Medium Risk
+            </th>
+            <th>
+              Low Risk
             </th>
           </tr>
           <tr *ngFor="let item of Categories">
             <td style='cursor: pointer;'><a (click)="jumpToPage(item)">{{item}}</a></td>
-            <td style="display:block; float: right;">
-              <span class="red-light">{{CountRedByCategory(item)}}</span>High
-              <span class="orange-light">{{CountOrangeByCategory(item)}}</span>Medium
-              <span class="green-light">{{CountGreenByCategory(item)}}</span>Low
+            <td>
+              <span class="red-light">{{CountRedByCategory(item)}}</span>
+            </td>
+            <td>
+              <span class="orange-light">{{CountOrangeByCategory(item)}}</span>
+            </td>
+            <td>
+              <span class="green-light">{{CountGreenByCategory(item)}}</span>
             </td>
           </tr>
         </table>
       </div>
     </div>
-    <div class="col-xs-2">
-      <button class="au-btn au-btn--secondary" type="button" (click)="printReport()">Print
-        report</button>
-    </div>
+  </div>
+  <div class="col-xs-12">
+    <button class="au-btn au-btn--secondary" type="button" (click)="printReport()">Print report</button>
   </div>
   <div class="row" style="padding-top: 0px;">
     <div class="col-xs-12 right-col">
@@ -104,7 +106,7 @@
       </div>
 
       <!-- for display only -->
-      <div class="no-print">
+      <div class="no-print col-xs-12">
         <h3>Assessment details</h3>
         <div class="panel panel-default" *ngFor="let item of Categories" style="margin-top: 0px;">
           <div [id]="item">
