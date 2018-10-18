@@ -4,6 +4,27 @@
       <h2>Cloud assessment report</h2>
       <div class="asessment-report-summary">
         <div>
+          <span>Congratulations! You've completed your CAT report.
+          </span>
+        </div>
+      </div>
+
+  <div class="col-xs-12" style="margin-top: 24px;">
+      <button class="au-btn au-btn--primary" type="button" (click)="printReport()">Print report</button>
+    </div>
+      <div class="col-xs-12" style="margin-top: 24px;">
+          <span>Your next steps could be to:
+            <ul>
+              <li>save your report to PDF or print it out</li>
+              <li>discuss any risks that this report has identified</li>
+              <li>work with your vendor to resolve any risks</li>
+              <li>take this report to an executive to sign off on any risks that still remain</li>
+              <li><a href="https://beta.dta.gov.au/help-and-advice/communities-practice#cloud-community" target="_blank">sign
+                  up</a> to the <a href="https://community.digital.gov.au" target="_blank">Cloud Community</a> and share
+                your report with other agencies</li>
+            </ul>
+          </span>
+        <div style="margin-top: 24px;">
           <span>Service assessed:</span> {{ServiceName}}
         </div>
         <div>
@@ -53,9 +74,6 @@
       </div>
     </div>
   </div>
-  <div class="col-xs-12">
-    <button class="au-btn au-btn--primary" type="button" (click)="printReport()">Print report</button>
-  </div>
   <div class="row" style="padding-top: 0px;">
     <div class="col-xs-12 right-col">
       <!-- for print only -->
@@ -95,9 +113,11 @@
                 <p *ngIf="question.Comments">{{question.Comments}}</p>
                 <p *ngIf="CalculateSymbol(question)==='green'">You have provided a rating that indicates the service is
                   acceptable for this measure.</p>
-                <p *ngIf="CalculateSymbol(question)==='orange'">You provided a rating for this measure that may indicate
+                <p *ngIf="CalculateSymbol(question)==='orange'">You provided a rating for this measure that may
+                  indicate
                   shortcomings in this area.</p>
-                <p *ngIf="CalculateSymbol(question)==='red'">You provided a rating for this measure that indicates issues
+                <p *ngIf="CalculateSymbol(question)==='red'">You provided a rating for this measure that indicates
+                  issues
                   in this area.</p>
               </div>
             </div>
