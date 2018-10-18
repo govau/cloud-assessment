@@ -290,7 +290,7 @@ export const QuestionData: ICSVItem[] = [
     'Category': 'Compliance',
     'Sub_category': 'Certifications, accreditations & standards',
     'Quality': 'WCAG compliance',
-    'Description': '<p>Government agencies are required to make sure information and services comply with the Web Content Accessibility Guidelines (WCAG).</p>\n\n<p>WCAG aims to make sure that all content is more accessible to people with diabilities.</p>\n\n<p><strong>How well do you think the service complies with WCAG?</strong></p>',
+    'Description': '<p>Government agencies are required to make sure information and services comply with the Web Content Accessibility Guidelines (WCAG).</p>\n\n<p>WCAG aims to make sure that all content is more accessible to people with disabilities.</p>\n\n<p><strong>How well do you think the service complies with WCAG?</strong></p>',
     'Reference': '<p>Learn more about <a href="https://guides.service.gov.au/digital-service-standard/9-make-it-accessible/" target="_blank">accessibility</a> and <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank">Web Content Accessibility Guidelines</a>.</p>',
     'Condition': 'cloud_model !== \'Software as a service (SaaS)\'',
     'Relationship': '',

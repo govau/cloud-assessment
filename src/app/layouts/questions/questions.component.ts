@@ -32,14 +32,6 @@ export class QuestionsComponent implements OnInit {
     this.formSubmitted = false;
   }
 
-  get subTitle(): string {
-    let subtitle = '';
-    subtitle += this.currentQuestion.Category ? this.currentQuestion.Category + ' > ' : '';
-    subtitle += this.currentQuestion.SubCategory ? this.currentQuestion.SubCategory + ' > ' : '';
-    subtitle += this.currentQuestion.Quality ? this.currentQuestion.Quality : '';
-    return subtitle;
-  }
-
   get processBar(): string {
     return (this.workFlowService.index + 2) + ' of ' + (this.workFlowService.count + 1);
   }

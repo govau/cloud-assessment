@@ -10,8 +10,8 @@
       </div>
       <div class="row">
         <div class="col-sm-8 col-xs-12">
-          <span>{{subTitle}}</span>
-          <h2>{{currentQuestion.Quality}}</h2>
+          <h2>{{currentQuestion.Category}} </h2>
+          <h3>{{currentQuestion.Quality}}</h3>
           <p [innerHTML]="currentQuestion.Description"></p>
           <!-- question -->
           <div [ngSwitch]="currentQuestion.ValueType">
