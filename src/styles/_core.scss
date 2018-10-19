@@ -26,6 +26,10 @@
   }
 }
 
+.au-callout {
+  border-left: .25rem solid #45c2f0;
+}
+
 .rationaleLabel {
   font-weight: 700;
   clear: both;
@@ -48,6 +52,9 @@
   border: 2px solid gray;
 }
 
+.au-site-logo {
+  max-height: 3rem;
+}
 
 .error {
   padding: 5px 10px 5px;
