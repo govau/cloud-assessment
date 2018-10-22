@@ -73,7 +73,7 @@ export class WorkFlowService {
   Next(): QuestionItem {
     if (!this.isLast) {
       this.currentAssessmentIndex++;
-      return this.checkRules(this.currentAssessmentIndex) ? this.current() : this.Next();
+      return this.current()
     } else {
       return undefined;
     }
@@ -82,7 +82,7 @@ export class WorkFlowService {
   Previous(): QuestionItem {
     if (!this.isFirst) {
       this.currentAssessmentIndex--;
-      return this.checkRules(this.currentAssessmentIndex) ? this.current() : this.Previous();
+      return this.current()
     } else {
       return undefined;
     }
@@ -107,41 +107,4 @@ export class WorkFlowService {
     this.appDataModel = <AppDataModel>this.localStorageService.get();
   }
 
-  private checkRules(rowIndex: number): boolean {
-
-    let result = true;
-    const asd_certified_index = (18 - 2);
-    const IRAP_assessment_index = (19 - 2);
-    const cloud_model_index = (3 - 2);
-
-    switch (rowIndex) {
-      case (19 - 2):
-        result = this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue &&
-          (this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === 'Not certified' ||
-            this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === Config.QuestionExtraOptions.NA ||
-            this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === Config.QuestionExtraOptions.Unsure);
-        break;
-      case (20 - 2):
-        result = this.appDataModel.AssessmentQuestion[IRAP_assessment_index].AssessmentValue &&
-          (this.appDataModel.AssessmentQuestion[IRAP_assessment_index].AssessmentValue.trim() === 'No' ||
-            this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === Config.QuestionExtraOptions.NA ||
-            this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === Config.QuestionExtraOptions.Unsure);
-        break;
-      case (21 - 2):
-      case (22 - 2):
-        // case (25 - 2):
-        // case (26 - 2):
-        result = this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue &&
-          this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() !== 'Software as a Service (Saas)';
-        break;
-      // case (27 - 2):
-      //   result = this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue &&
-      //     (this.appDataModel.AssessmentQuestion[cloud_model_index].AssessmentValue.trim() === 'Infrastructure as a Service (IaaS)' ||
-      //       this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === Config.QuestionExtraOptions.NA ||
-      //       this.appDataModel.AssessmentQuestion[asd_certified_index].AssessmentValue.trim() === Config.QuestionExtraOptions.Unsure);
-      //   break;
-    }
-
-    return result;
-  }
 }
