@@ -1,14 +1,20 @@
-# cloud-assessment
+# Cloud Assessment Tool
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.8.
+## Outline
+
+The [Cloud Assessment Tool (CAT)](assess.cloud.gov.au) is designed to help Australian Government agencies discover and understand their compliance obligations when moving to cloud. It is part of the [Digital Transformation Agency's](dta.gov.au) [Secure Cloud Strategy](https://www.dta.gov.au/what-we-do/policies-and-programs/secure-cloud/).
+
+## Production deployment
+
+The CAT is designed to be hosted on cloud.gov.au using CircleCI for deployments. The Cloud Foundry manifest is available at `src/manifest.yml`. The CircleCI config is available at `.circleci/config.yml`.
+
+## Server-side application
+
+There is a related server-side app called [cloud-assessment-server](https://github.com/govau/cloud-assessment-server) which is used for uploading and storing completed reports.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
@@ -22,6 +28,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## More information
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.8.
