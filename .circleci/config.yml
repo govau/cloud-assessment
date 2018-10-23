@@ -14,7 +14,6 @@ jobs:
       - run: rm -rf node_modules       # delete node_modules to bust caching
       - run: npm install               # duh
       - run: npm run build             # required build step
-      - run: npm run test              # runs ng test for unit tests
       - run: npm run e2e               # runs ng e2e for end to end tests
       - run: rm -rf node_modules       # delete node_modules folder again to not push it to cf
       - run: sudo apt-get install apt-transport-https
@@ -38,7 +37,6 @@ jobs:
       - run: rm -rf node_modules
       - run: npm install
       - run: npm run build
-      - run: npm run test
       - run: npm run e2e
       - run: rm -rf node_modules
       - run: sudo apt-get install apt-transport-https
