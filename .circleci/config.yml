@@ -15,7 +15,6 @@ jobs:
       - run: npm install               # duh
       - run: npm run build             # required build step
       - run: npm run test -- --watch=false --progress=false --browsers=ChromeHeadlessCI #runs unit tests with headless chrome
-      - run: xvfb-run -a npm run e2e -- --no-progress --config=protractor-ci.conf.js #runs unit test headless
       - run: rm -rf node_modules       # delete node_modules folder again to not push it to cf
       - run: sudo apt-get install apt-transport-https
       - run: wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
