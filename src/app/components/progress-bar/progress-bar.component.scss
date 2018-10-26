@@ -10,7 +10,7 @@
 
   .progress-inner {
     min-width: 10%;
-    max-width: 98.8%!important;
+    max-width: 98.8%;
     white-space: nowrap;
     overflow: hidden;
     // padding: 0px;
@@ -26,3 +26,10 @@
       min-width: 17%;
     }
   }
+
+//Mobiles screens (including iPhone Plus)
+@media only screen and (max-width: 414px) {
+  .progress-inner {
+    max-width: 97%;
+  }
+}
