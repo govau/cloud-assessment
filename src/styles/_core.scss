@@ -280,7 +280,7 @@ label + textarea {
   @include AU-space( max-width, 72unit );
 }
 
-//iPad sized screen
+//Smaller screens, iPads and Mobile
 @media only screen and (max-width: 991px) {
   .au-body p {
     max-width: 100%;
