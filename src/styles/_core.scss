@@ -281,7 +281,7 @@ label + textarea {
 }
 
 //iPad sized screen
-@media (max-width: 769px) {
+@media only screen and (max-width: 991px) {
   .au-body p {
     max-width: 100%;
   }
