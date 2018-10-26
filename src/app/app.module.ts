@@ -22,7 +22,6 @@ import { ReportAccordionItemComponent } from './components/report-accordion-item
 // pages
 import { HomeComponent } from './layouts/home/home.component';
 import { AboutComponent } from './layouts/about/about.component';
-import { ContactComponent } from './layouts/contact/contact.component';
 import { QuestionsComponent } from './layouts/questions/questions.component';
 import { ResultComponent } from './layouts/result/result.component';
 import { GeneralQuestionComponent } from './layouts/general-question/general-question.component';
@@ -45,7 +44,6 @@ import { AssessmentGuard } from './guards/assessment.guard';
 
     HomeComponent,
     AboutComponent,
-    ContactComponent,
     QuestionsComponent,
     ResultComponent,
     GeneralQuestionComponent,

@@ -6,7 +6,6 @@ import { AssessmentGuard } from './guards/assessment.guard';
 // pages
 import { HomeComponent } from './layouts/home/home.component';
 import { AboutComponent } from './layouts/about/about.component';
-import { ContactComponent } from './layouts/contact/contact.component';
 import { QuestionsComponent } from './layouts/questions/questions.component';
 import { ResultComponent } from './layouts/result/result.component';
 import { GeneralQuestionComponent } from './layouts/general-question/general-question.component';
@@ -16,7 +15,6 @@ import { PageNotFoundComponent } from './layouts/page-not-found/page-not-found.c
 const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: Config.RoutePath.ABOUT, component: AboutComponent },
-    { path: Config.RoutePath.CONTACT, component: ContactComponent },
     { path: Config.RoutePath.HOWTOPREPARE, component: HowToPrepareComponent },
     { path: Config.RoutePath.GENERALQUESTION, component: GeneralQuestionComponent, canActivate: [AssessmentGuard] },
     { path: Config.RoutePath.QUESTIONS, component: QuestionsComponent, canActivate: [AssessmentGuard] },
