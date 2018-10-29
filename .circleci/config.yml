@@ -31,7 +31,7 @@ jobs:
   # installing dependencies, building assets and deploying to production
   deploy-prod:
     docker:
-      - image: circleci/node:8.9.1
+      - image: circleci/node:8.12.0-browsers
 
     steps:
       - checkout
