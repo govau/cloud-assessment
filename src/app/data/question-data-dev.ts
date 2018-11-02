@@ -182,6 +182,21 @@ export const QuestionDataDev: ICSVItem[] = [
     'Assessment_value_rationale': ''
   },
   {
+    'Category': 'Commercials',
+    'Sub_category': '',
+    'Quality': 'Funding Models',
+    'Description': '<p>Cloud is an operational expense, rather than a capital expense. Agencies that have traditionally had capital-heavy budgets for purchasing hardware might find that they don\'t have enough OpEx to fund their cloud migration.</p>\n<p><strong>How well do you think you will be able to fund your cloud migration?</strong></p>',
+    'Reference': '<p>For more information about converting CapEx to OpEx, you could talk with <ul><li>your internal finance team</li><li>your Ministerial & Parliamentary team</li><li>your Agency Advice Unit at the Department of Finance</li><li>the Secure Cloud team at the <a href="mailto:secure.cloud@digital.gov.au">DTA</a></li></ul></p>',
+    'Condition': '',
+    'Relationship': '',
+    'Value_type': 'Integer',
+    'Value_options': '1, 2, 3, 4, 5',
+    'Required_or_default_value': 3,
+    'Required_value_rationale': '',
+    'Assessment_value': '',
+    'Assessment_value_rationale': ''
+  },
+  {
     'Category': 'Compliance',
     'Sub_category': 'Laws & regulations',
     'Quality': 'Australian Privacy Principles',
