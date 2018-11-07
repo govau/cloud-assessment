@@ -182,6 +182,21 @@ export const QuestionData: ICSVItem[] = [
     'Assessment_value_rationale': ''
   },
   {
+    'Category': 'Commercials',
+    'Sub_category': '',
+    'Quality': 'Funding Models',
+    'Description': '<p>Cloud is an operational expense, rather than a capital expense. Agencies that have traditionally had capital-heavy budgets for purchasing hardware might find that they don\'t have enough OpEx to fund their cloud migration.</p>\n<p><strong>How well do you think you will be able to fund your cloud migration?</strong></p>',
+    'Reference': '<p>For more information about converting CapEx to OpEx, you can talk with your internal finance team, your Ministerial & Parliamentary team, with your Agency Advice Unit at the Department of Finance, or with the <a href="mailto:secure.cloud@digital.gov.au">DTA</a>.</p>',
+    'Condition': '',
+    'Relationship': '',
+    'Value_type': 'Integer',
+    'Value_options': '1, 2, 3, 4, 5',
+    'Required_or_default_value': 3,
+    'Required_value_rationale': '',
+    'Assessment_value': '',
+    'Assessment_value_rationale': ''
+  },
+  {
     'Category': 'Compliance',
     'Sub_category': 'Laws & regulations',
     'Quality': 'Australian Privacy Principles',
@@ -335,8 +350,8 @@ export const QuestionData: ICSVItem[] = [
     'Category': 'Compliance',
     'Sub_category': '',
     'Quality': 'Data sovereignty',
-    'Description': '<p>Government agencies can store and/or process personal information overseas; however, they must comply with the Australian Privacy Principles.</p>\n\n<p>This applies to both live data and backed up data.</p>\n\n<p><strong>How well do you think the service provides data storage that complies with the Australian Privacy Principles? </strong></p>',
-    'Reference': '<p>Learn more about <a href="https://www.oaic.gov.au/agencies-and-organisations/agency-resources/privacy-agency-resource-4-sending-personal-information-overseas" target="_blank">sending personal information overseas</a>.</p>',
+    'Description': '<p>The storage and/or processing of government data overseas is governed by the ISM and, in the case of personal information, by the Australian Privacy Principles. This applies to both live data and backed up data.</p>\n\n<p><strong>How well do you think the service provides data storage that complies with the ISM and the Australian Privacy Principles? </strong></p>',
+    'Reference': '<p>Refer to the <a href="https://acsc.gov.au/publications/Information_Security_Manual_2017_Controls.pdf" target="_blank">ISM controls</a> on using service providers located in Australia.</p><p>Learn more about <a href="https://www.oaic.gov.au/agencies-and-organisations/agency-resources/privacy-agency-resource-4-sending-personal-information-overseas" target="_blank">sending personal information overseas</a>.</p>',
     'Condition': '',
     'Relationship': '',
     'Value_type': 'Integer',
