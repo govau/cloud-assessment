@@ -351,7 +351,7 @@ export const QuestionDataDev: ICSVItem[] = [
     'Sub_category': '',
     'Quality': 'Data sovereignty',
     'Description': '<p>The storage and/or processing of government data overseas is governed by the ISM and, in the case of personal information, by the Australian Privacy Principles. This applies to both live data and backed up data.</p>\n\n<p><strong>How well do you think the service provides data storage that complies with the ISM and the Australian Privacy Principles? </strong></p>',
-    'Reference': '<p>Refer to the <a href="https://acsc.gov.au/publications/Information_Security_Manual_2017_Controls.pdf" target="_blank">ISM controls</a> on using service providers located in Australia.</p><p>Learn more about <a href="https://www.oaic.gov.au/agencies-and-organisations/agency-resources/privacy-agency-resource-4-sending-personal-information-overseas" target="_blank">sending personal information overseas</a>.</p>',
+    'Reference': '<p>Refer to the <a href="https://acsc.gov.au/infosec/ism/" target="_blank">ISM</a> on using service providers located in Australia.</p><p>Learn more about <a href="https://www.oaic.gov.au/agencies-and-organisations/agency-resources/privacy-agency-resource-4-sending-personal-information-overseas" target="_blank">sending personal information overseas</a>.</p>',
     'Condition': '',
     'Relationship': '',
     'Value_type': 'Integer',
