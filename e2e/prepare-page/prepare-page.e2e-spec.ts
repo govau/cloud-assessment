@@ -21,7 +21,7 @@ describe('Prepare Page', () => {
   it('should display 10 hyperlinks in the Compliance section', () => {
     page.navigateTo();
     let linkCount = element.all(by.css('app-how-to-prepare a'));
-    expect(linkCount.count()).toBe(7);
+    expect(linkCount.count()).toBe(10);
   });
 
 });
