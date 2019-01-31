@@ -18,10 +18,10 @@ describe('Prepare Page', () => {
     expect(page.getPrepareTitleText()).toEqual('Preparing for an assessment');
   });
 
-  /*it('should display 10 hyperlinks in the Compliance section', () => {
+  it('should display 10 hyperlinks in the Compliance section', () => {
     page.navigateTo();
     let linkCount = element.all(by.css('app-how-to-prepare a'));
     expect(linkCount.count()).toBe(7);
-  });*/
+  });
 
 });
