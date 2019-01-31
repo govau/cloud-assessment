@@ -319,9 +319,9 @@ export const QuestionData: ICSVItem[] = [
   {
     'Category': 'Compliance',
     'Sub_category': 'Certifications, accreditations & standards',
-    'Quality': 'WCAG compliance',
-    'Description': '<p>Government agencies are required to make sure information and services comply with the Web Content Accessibility Guidelines (WCAG).</p>\n\n<p>WCAG aims to make sure that all content is more accessible to people with disabilities.</p>\n\n<p><strong>How well do you think the service complies with WCAG?</strong></p>',
-    'Reference': '<p>Learn more about <a href="https://guides.service.gov.au/digital-service-standard/9-make-it-accessible/" target="_blank">accessibility</a> and <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank">Web Content Accessibility Guidelines</a>.</p>',
+    'Quality': 'Accessible Procurement',
+    'Description': '<p>When procuring a product or service for government, you need to conform with accessibility standards.</p>\n\n<p>AS EN 301 549 is the standard for accessible ICT procurement. It covers products and services, including hardware and software. It also includes WCAG (the Web Content Accessibility Guidelines).</p>\n\n<p><strong>How well do you think the service complies with AS EN 301 549?</strong></p>',
+    'Reference': '<p>Learn more about <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/" target="_blank">digital accessibility</a> and ‘Accessibility requirements suitable for public procurement of ICT products and services’ <a href="https://infostore.saiglobal.com/store/PreviewDoc.aspx?saleItemID=2973652" target="_blank">AS EN 301 549 (pdf)</a>. You might also be interested in <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank">WCAG</a>.</p>',
     'Condition': '',
     'Relationship': '',
     'Value_type': 'Integer',
