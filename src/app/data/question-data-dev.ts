@@ -1,6 +1,6 @@
 import ICSVItem from '../classes/ICSVItem';
 
-export const QuestionData: ICSVItem[] = [
+export const QuestionDataDev: ICSVItem[] = [
   {
     'Category': 'General',
     'Sub_category': '',
