@@ -291,3 +291,10 @@ label + textarea {
     display: block;
   }
 }
+
+
+.au-header {
+  @include AU-media( sm ) {
+      padding-bottom: 0;
+  } 
+}
