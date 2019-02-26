@@ -298,3 +298,12 @@ label + textarea {
       padding-bottom: 0;
   } 
 }
+
+
+.au-footer__navigation .au-link-list li + li {
+  @include AU-space( margin-left, 0.4unit );
+
+  @include AU-media ( xs ) {
+    @include AU-space( margin-left, 1unit );
+  }
+}
