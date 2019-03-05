@@ -34,6 +34,8 @@
 npm-debug.log
 testem.log
 /typings
+/src/assets/js/uikit.min.js
+/src/styles/_uikit.scss
 
 # e2e
 /e2e/*.js
