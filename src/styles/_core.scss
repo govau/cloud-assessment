@@ -307,3 +307,12 @@ label + textarea {
     @include AU-space( margin-left, 1unit );
   }
 }
+
+.au-grid .container-fluid {
+  @include AU-space( max-width, 83unit );
+
+  @include AU-media( xs ){
+      @include AU-space( padding-left, 2unit );
+      @include AU-space( padding-right, 2unit );
+  }
+}
