@@ -17,9 +17,6 @@
           <p>You can pause the assessment with the Save & Exit button. To resume your assessment, simply return using the same device and browser.</p>
           <div class="cta">
             <form #declarativeForm="ngForm">
-                <script *ngIf="reCAPTCHAConfig.enable" src='https://www.google.com/recaptcha/api.js'></script>
-                <re-captcha *ngIf="reCAPTCHAConfig.enable" (resolved)="resolved($event)" [siteKey]="reCAPTCHAConfig.siteKey"
-                    [(ngModel)]="declarativeFormCaptchaValue" name="captcha" required></re-captcha>
                 <button class="au-btn  au-btn--primary" type="button" (click)="startAssessment()" [disabled]="!declarativeForm.valid && reCAPTCHAConfig.enable">Start
                     cloud assessment</button>
             </form>
