@@ -270,9 +270,9 @@ label + textarea {
   @include AU-space( margin-top, 0.5unit );
 }
 
-.au-text-input:invalid {
-  border-color: #808080;
-  background-color: #ffffff;
+.empty-required {
+  border-color: #808080 !important;
+  background-color: #ffffff !important;
 }
 
 // Container fluid max width
